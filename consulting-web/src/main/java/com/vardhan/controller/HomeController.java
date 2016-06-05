@@ -28,4 +28,11 @@ public class HomeController {
 
 		return new ModelAndView("index");
 	}
+	
+	@RequestMapping("/createCompany")
+	public ModelAndView createCompany() {
+		logger.debug("createCompany() is executed", "vardhan");
+
+		return new ModelAndView("createCompany");
+	}
 }
