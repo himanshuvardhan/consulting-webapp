@@ -359,6 +359,7 @@ Single slide animation
     transition: opacity 0.4s 0.4s, transform 0.5s 0.4s;
   }
   .cd-hero-slider .cd-full-width h2,
+  .cd-hero-slider .cd-full-width h3,
   .cd-hero-slider .cd-full-width p,
   .cd-hero-slider .cd-full-width .cd-btn {
     opacity: 0;
@@ -369,6 +370,7 @@ Single slide animation
     transform: translateX(100px);
   }
   .cd-hero-slider .move-left .cd-full-width h2,
+  .cd-hero-slider .move-left .cd-full-width h3,
   .cd-hero-slider .move-left .cd-full-width p,
   .cd-hero-slider .move-left .cd-full-width .cd-btn {
     opacity: 0;
@@ -379,6 +381,7 @@ Single slide animation
     transform: translateX(-100px);
   }
   .cd-hero-slider .selected .cd-full-width h2,
+  .cd-hero-slider .selected .cd-full-width h3,
   .cd-hero-slider .selected .cd-full-width p,
   .cd-hero-slider .selected .cd-full-width .cd-btn {
     /* this is the visible slide */
@@ -390,6 +393,7 @@ Single slide animation
     transform: translateX(0);
   }
   .cd-hero-slider li.is-moving .cd-full-width h2,
+  .cd-hero-slider li.is-moving .cd-full-width h3,
   .cd-hero-slider li.is-moving .cd-full-width p,
   .cd-hero-slider li.is-moving .cd-full-width .cd-btn {
     /* this is the slide moving outside the viewport 
@@ -398,7 +402,8 @@ Single slide animation
     -moz-transition: opacity 0s 0.5s, -moz-transform 0s 0.5s;
     transition: opacity 0s 0.5s, transform 0s 0.5s;
   }
-  .cd-hero-slider li.selected h2 {
+  .cd-hero-slider li.selected h2,
+  .cd-hero-slider li.selected h3 {
     -webkit-transition: opacity 0.4s 0.2s, -webkit-transform 0.5s 0.2s;
     -moz-transition: opacity 0.4s 0.2s, -moz-transform 0.5s 0.2s;
     transition: opacity 0.4s 0.2s, transform 0.5s 0.2s;
@@ -482,7 +487,7 @@ Slider navigation
 }
 .cd-slider-nav li {
   display: inline-block;
-  width: 60px;
+  width: 80px;
   float: left;
 }
 .cd-slider-nav li.selected a {
@@ -562,7 +567,7 @@ Slider navigation
   }
   .cd-slider-nav .cd-marker,
   .cd-slider-nav li {
-    width: 80px;
+    width: 110px;
   }
   .cd-slider-nav a {
     padding-top: 10px;

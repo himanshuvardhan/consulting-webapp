@@ -177,8 +177,14 @@
 					<div class="cd-full-width">
 						<h2>Need To Invent The Future!</h2>
 						<h3>We Making Difference To Great Things Possible</h3>
-						<a href="#0" class="btn btn-primary white cd-btn">Start Now</a>
-						<a href="#0" class="btn btn-primary solid cd-btn">Learn More</a>
+						<div class="row">
+						    <div class="col-md-6 input-group subscribe col-md-offset-3">
+						    	<input type="email" class="form-control " placeholder="Enter Company Name" required="">
+	                            <span class="input-group-addon">
+	                              <button class="btn" type="submit">Register a Company in India</button>
+	                            </span>      
+						    </div>
+						</div>
 					</div> <!-- .cd-full-width -->
 				</li>
 				<li>
@@ -245,7 +251,7 @@
 			<div class="row">
 				<div class="col-md-12 heading">
 					<span class="title-icon pull-left"><i class="fa fa-cogs"></i></span>
-					<h2 class="title">Service We Provide <span class="title-desc">A Quality Experience Team with 4 years experience</span></h2>
+					<h2 class="title">Service We Provide <span class="title-desc">A Quality Experience Team with 3 years  Experience</span></h2>
 				</div>
 			</div><!-- Title row end -->
 
@@ -253,16 +259,16 @@
 				<div class="col-md-12">
 					<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay=".5s">
 						<div class="service-content text-center">
-							<span class="service-icon icon-pentagon"><i class="fa fa-tachometer"></i></span>
-							<h3>Web Design</h3>
+							<span class="service-icon icon-pentagon"><i class="fa fa-rocket"></i></span>
+							<h3>Pvt Company</h3>
 							<p>High Life narwhal, banh mi PBR single-origin coffee Odd Future actually aliqua polaroid befor</p>
 						</div>
 					</div><!--/ End first service -->
 
 					<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay=".8s" >
 						<div class="service-content text-center">
-							<span class="service-icon icon-pentagon"><i class="fa fa-android"></i></span>
-							<h3>Apps Development</h3>
+							<span class="service-icon icon-pentagon"><i class="fa fa-money"></i></span>
+							<h3>Fund Requirement</h3>
 							<p>Food truck master cleanse mixtape minim Portland, cardigan stumptown chambray swag</p>
 						</div>
 						
@@ -270,16 +276,16 @@
 
 					<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="1.1s">
 						<div class="service-content text-center">
-							<span class="service-icon icon-pentagon"><i class="fa fa-shopping-cart"></i></span>
-							<h3>eCommerce Websites</h3>
+							<span class="service-icon icon-pentagon"><i class="fa fa-android"></i></span>
+							<h3>Tax Return Compliances</h3>
 							<p>Neutra Thundercats craft beer, listicle meggings bicycle rights 90's XOXO beard cardiga</p>
 						</div>
 					</div><!--/ End Third service -->
 
 					<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="1.4s">
 						<div class="service-content text-center">
-							<span class="service-icon icon-pentagon"><i class="fa fa-lightbulb-o"></i></span>
-							<h3>Design for Startups</h3>
+							<span class="service-icon icon-pentagon"><i class="fa fa-book"></i></span>
+							<h3>Bookkeeping</h3>
 							<p>We design beautiful modern engaging websites that always latest responsive technologies.</p>
 						</div>
 					</div><!--/ End 4th service -->
@@ -1071,6 +1077,8 @@
 	<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
 	<!-- Template custom -->
 	<script type="text/javascript" src="resources/js/custom.js"></script>
+	<!-- Template custom -->
+	<script type="text/javascript" src="resources/js/main.js"></script>
 	</div><!-- Body inner end -->
 </body>
 </html>
