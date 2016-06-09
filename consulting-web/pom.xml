@@ -14,9 +14,13 @@
 		<jdk.version>1.8</jdk.version>
 		<logback.version>1.1.7</logback.version>
 		<jcl.slf4j.version>1.7.12</jcl.slf4j.version>
+		<apache.commons.lang.version>3.0</apache.commons.lang.version>
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
 	</properties>
 
 	<dependencies>
+	
+		<!-- Spring Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -48,15 +52,62 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-context</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-tx</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjrt</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjweaver</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 
+		<!-- Javax Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-
-		<!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
-			<version>${commons.logging.version}</version> </dependency> -->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -76,6 +127,19 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${logback.version}</version>
+		</dependency>
+		
+		<!-- Apache Commons -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>${apache.commons.lang.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-lang</groupId>
+		    <artifactId>commons-lang</artifactId>
+		    <version>2.6</version>
 		</dependency>
 
 	</dependencies>

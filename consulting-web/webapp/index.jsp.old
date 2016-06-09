@@ -54,7 +54,7 @@
 </head>
 	
 <body>
-
+	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}"/>
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
 		<div class="style-switch-button">

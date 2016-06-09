@@ -54,7 +54,9 @@
 </head>
 	
 <body>
-
+	<!-- CSRF Token -->
+	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}"/>
+	
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
 		<div class="style-switch-button">
@@ -181,7 +183,7 @@
 						    <div class="col-md-6 input-group subscribe col-md-offset-3">
 						    	<input type="email" class="form-control " placeholder="Enter Company Name" required="">
 	                            <span class="input-group-addon">
-	                              <button class="btn" type="submit">Register a Company in India</button>
+	                              <button class="btn" id="createCompany">Register a Company in India</button>
 	                            </span>      
 						    </div>
 						</div>
