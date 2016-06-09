@@ -24,31 +24,31 @@
 	================================================== -->
 	
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/style/bootstrap.min.css">
 	<!-- Template styles-->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="resources/style/style.css">
 	<!-- Responsive styles-->
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="resources/style/responsive.css">
 	<!-- FontAwesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="resources/style/font-awesome.min.css">
 	<!-- Animation -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="resources/style/animate.css">
 	<!-- Prettyphoto -->
-	<link rel="stylesheet" href="css/prettyPhoto.css">
+	<link rel="stylesheet" href="resources/style/prettyPhoto.css">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="resources/style/owl.carousel.css">
+	<link rel="stylesheet" href="resources/style/owl.theme.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="resources/style/flexslider.css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="css/cd-hero.css">
+	<link rel="stylesheet" href="resources/style/cd-hero.css">
 	<!-- Style Swicther -->
-	<link id="style-switch" href="css/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+	<link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="resources/js/html5shiv.js"></script>
+      <script src="resources/js/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -68,8 +68,8 @@
 				        <span class="icon-bar"></span>
 				    </button>
 				    <div class="navbar-brand navbar-bg">
-					    <a href="index.html">
-					    	<img class="img-responsive" src="images/logo.png" alt="logo">
+					    <a href="index.htm">
+					    	<img class="img-responsive" src="resources/images/logo.png" alt="logo">
 					    </a> 
 				    </div>                   
 				</div><!--/ Logo end -->
@@ -79,7 +79,7 @@
                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
                        		<div class="dropdown-menu">
 								<ul>
-		                            <li><a href="index.html">Home 1</a></li>
+		                            <li><a href="index.htm">Home 1</a></li>
 		                            <li><a href="index-2.html">Home 2</a></li>
 		                            <li><a href="index-3.html">Home 3</a></li>
 		                            <li><a href="index-4.html">Home 4</a></li>
@@ -147,7 +147,7 @@
 	</header><!--/ Header end -->
 
 	<div id="banner-area">
-		<img src="images/banner/banner2.jpg" alt ="" />
+		<img src="resources/images/banner/banner2.jpg" alt ="" />
 		<div class="parallax-overlay"></div>
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
@@ -156,7 +156,7 @@
 		        	<ul class="breadcrumb">
 			            <li>Home</li>
 			            <li>Pages</li>
-			            <li><a href="index.html"> 404 Error Page</a></li>
+			            <li><a href="index.htm"> 404 Error Page</a></li>
 		          	</ul>
 	          	</div>
           	</div><!-- Subpage title end -->
@@ -175,7 +175,7 @@
 				</div>
 				<div class="error-body">
 					Try using the button below to go to main page of the site <br/>
-					<a href="index.html" class="btn btn-primary solid blank"><i class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
+					<a href="index.htm" class="btn btn-primary solid blank"><i class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
 				</div>
 			</div>
 		</div>
@@ -229,32 +229,32 @@
 
 					<div class="img-gallery">
 						<div class="img-container">
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/1.jpg">
-								<img src="images/gallery/1.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/1.jpg">
+								<img src="resources/images/gallery/1.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/2.jpg">
-								<img src="images/gallery/2.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/2.jpg">
+								<img src="resources/images/gallery/2.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/3.jpg">
-								<img src="images/gallery/3.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/3.jpg">
+								<img src="resources/images/gallery/3.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/4.jpg">
-								<img src="images/gallery/4.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/4.jpg">
+								<img src="resources/images/gallery/4.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/5.jpg">
-								<img src="images/gallery/5.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/5.jpg">
+								<img src="resources/images/gallery/5.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-								<img src="images/gallery/6.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/6.jpg">
+								<img src="resources/images/gallery/6.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-								<img src="images/gallery/7.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/6.jpg">
+								<img src="resources/images/gallery/7.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-								<img src="images/gallery/8.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/6.jpg">
+								<img src="resources/images/gallery/8.jpg" alt="">
 							</a>
-							<a class="thumb-holder" data-rel="prettyPhoto" href="images/gallery/6.jpg">
-								<img src="images/gallery/9.jpg" alt="">
+							<a class="thumb-holder" data-rel="prettyPhoto" href="resources/images/gallery/6.jpg">
+								<img src="resources/images/gallery/9.jpg" alt="">
 							</a>
 						</div>
 					</div>
@@ -342,39 +342,39 @@
 	================================================== -->
 
 	<!-- initialize jQuery Library -->
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.js"></script>
 	<!-- Bootstrap jQuery -->
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 	<!-- Style Switcher -->
-	<script type="text/javascript" src="js/style-switcher.js"></script>
+	<script type="text/javascript" src="resources/js/style-switcher.js"></script>
 	<!-- Owl Carousel -->
-	<script type="text/javascript" src="js/owl.carousel.js"></script>
+	<script type="text/javascript" src="resources/js/owl.carousel.js"></script>
 	<!-- PrettyPhoto -->
-	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
 	<!-- Bxslider -->
-	<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.flexslider.js"></script>
 	<!-- CD Hero slider -->
-	<script type="text/javascript" src="js/cd-hero.js"></script>
+	<script type="text/javascript" src="resources/js/cd-hero.js"></script>
 	<!-- Isotope -->
-	<script type="text/javascript" src="js/isotope.js"></script>
-	<script type="text/javascript" src="js/ini.isotope.js"></script>
+	<script type="text/javascript" src="resources/js/isotope.js"></script>
+	<script type="text/javascript" src="resources/js/ini.isotope.js"></script>
 	<!-- Wow Animation -->
-	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="resources/js/wow.min.js"></script>
 	<!-- SmoothScroll -->
-	<script type="text/javascript" src="js/smoothscroll.js"></script>
+	<script type="text/javascript" src="resources/js/smoothscroll.js"></script>
 	<!-- Eeasing -->
-	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
 	<!-- Counter -->
-	<script type="text/javascript" src="js/jquery.counterup.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.counterup.min.js"></script>
 	<!-- Waypoints -->
-	<script type="text/javascript" src="js/waypoints.min.js"></script>
+	<script type="text/javascript" src="resources/js/waypoints.min.js"></script>
 	<!-- Google Map API Key Source -->
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<!-- For Google Map -->
-	<script type="text/javascript" src="js/gmap3.js"></script>
+	<script type="text/javascript" src="resources/js/gmap3.js"></script>
 	<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
 	<!-- Template custom -->
-	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="resources/js/custom.js"></script>
 	</div><!-- Body inner end -->
 </body>
 </html>

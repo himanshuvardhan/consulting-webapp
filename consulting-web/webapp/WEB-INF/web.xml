@@ -18,5 +18,10 @@
         <url-pattern>/welcome.html</url-pattern>
         <url-pattern>*.htm</url-pattern>
     </servlet-mapping>
-  
+    
+	<error-page>
+	 <error-code>404</error-code>
+	 <location>/404.htm</location>
+	</error-page>
+	 
 </web-app>
