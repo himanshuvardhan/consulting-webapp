@@ -180,12 +180,16 @@
 						<h2>Need To Invent The Future!</h2>
 						<h3>We Making Difference To Great Things Possible</h3>
 						<div class="row">
-						    <div class="col-md-6 input-group subscribe col-md-offset-3">
-						    	<input type="email" class="form-control " placeholder="Enter Company Name" required="">
-	                            <span class="input-group-addon">
-	                              <button class="btn" id="createCompany">Register a Company in India</button>
-	                            </span>      
-						    </div>
+							<form accept-charset="UTF-8" action="createCompany.htm" method="post">
+								<!-- CSRF Token -->
+								<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}"/>
+							    <div class="col-md-6 input-group subscribe col-md-offset-3">
+							    	<input name="companyName" type="text" class="form-control " placeholder="Enter Company Name" id="companyName" required="">
+		                            <span class="input-group-addon">
+		                              <button  class="btn" id="createCompany" type="submit">Register a Company in India</button></a>
+		                            </span>      
+							    </div>
+						    </form>
 						</div>
 					</div> <!-- .cd-full-width -->
 				</li>

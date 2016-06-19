@@ -6,10 +6,9 @@ jQuery(document).ready(function($) {
 		});
 	});
 	
-	$("#createCompany").on("click", function(){
+/*	$("#createCompany").on("click", function(){
         $.ajax({
             beforeSend: function() {
-            	alert($('#Csrf_RQ_PARAM_NAME').val());
             },
             complete: function() {
             },
@@ -22,6 +21,6 @@ jQuery(document).ready(function($) {
             error: function(xhr, status, error) {
             }
         });
-	});
+	});*/
 
 });
