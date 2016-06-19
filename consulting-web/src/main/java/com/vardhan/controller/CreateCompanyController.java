@@ -23,6 +23,7 @@ public class CreateCompanyController {
 	@RequestMapping(value = "/createCompany", method = RequestMethod.POST)
 	public ModelAndView createCompany(@RequestParam(value = "companyName") String companyName, Model model) {
 		logger.debug("createCompany() is executed", "vardhan");
+		
 		model.addAttribute("companyName", companyName);
 		return new ModelAndView("createCompany");
 	}

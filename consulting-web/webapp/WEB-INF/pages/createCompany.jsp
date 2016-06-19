@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +60,23 @@
 	<!-- CSRF Token -->
 	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}"/>
 	
+	<!-- Style switcher start -->
+	<div class="style-switch-wrapper">
+		<div class="style-switch-button">
+			<i class="fa fa-sliders"></i>
+		</div>
+		<h3>Style Options</h3>
+		<button id="preset1" class="btn btn-sm btn-primary"></button>
+		<button id="preset2" class="btn btn-sm btn-primary"></button>
+		<button id="preset3" class="btn btn-sm btn-primary"></button>
+		<button id="preset4" class="btn btn-sm btn-primary"></button>
+		<button id="preset5" class="btn btn-sm btn-primary"></button>
+		<button id="preset6" class="btn btn-sm btn-primary"></button>
+		<br/><br/>
+		<a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
+	</div>
+	<!-- Style switcher end -->
+	
 	<!-- Header start -->
 	<header id="header" class="navbar-fixed-top header" role="banner">
 		<div class="container">
@@ -72,7 +90,7 @@
 				        <span class="icon-bar"></span>
 				    </button>
 				    <div class="navbar-brand navbar-bg">
-					    <a href="index.html">
+					    <a href="index.htm">
 					    	<img class="img-responsive" src="resources/images/logo.png" alt="logo">
 					    </a> 
 				    </div>                   
@@ -83,7 +101,7 @@
                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
                        		<div class="dropdown-menu">
 								<ul>
-		                            <li><a href="index.html">Home 1</a></li>
+		                            <li><a href="index.htm">Home 1</a></li>
 		                            <li><a href="index-2.html">Home 2</a></li>
 		                            <li><a href="index-3.html">Home 3</a></li>
 		                            <li><a href="index-4.html">Home 4</a></li>
@@ -175,146 +193,130 @@
 	<!-- Main container start -->
 
 	<section id="main-container">
-		<div class="container">
+		<div id="pricing-container" class="container">
 
 			<!-- Pricing table start -->
 			<div class="row">
 				<div class="col-md-12 heading">
 					<span class="title-icon classic pull-left"><i class="fa fa-university"></i></span>
-					<h2 class="title classic">Pricing Table 4 Col</h2>
+					<c:if test="${not empty companyName}">
+					   <h2 class="title classic">${companyName} is available</h2>
+					</c:if>
+					<c:if test="${empty companyName}">
+					   <h2 class="title classic">Pricing</h2>
+					</c:if>
 				</div>
 			</div><!-- Title row end -->
-
 
 	  		<div class="row">
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
 				    <div class="plan text-center">
-				        <span class="plan-name">Basic <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>49</strong><sub>.99</sub></p>
+				        <span class="plan-name">${companyName} Private Limited</span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>11,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DIN for 2 Directors</li>
+				            <li>Digital Signature for 2</li>
+				            <li>Name Approval</li>
+				            <li>MOA / AOA</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x Company PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
 				    <div class="plan text-center">
-				        <span class="plan-name">Standared <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>99</strong><sub>.99</sub></p>
+				        <span class="plan-name">${companyName} Limited Liability Partnership</span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>7,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DPIN for 2 Partners</li>
+				            <li>Digital Signature for 2</li>
+				            <li>Name Approval</li>
+				            <li>LLP Agreement</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x LLP PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1.4s">
-				    <div class="plan text-center featured">
-				        <span class="plan-name">Professional <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>149</strong><sub>.99</sub></p>
+				    <div class="plan text-center">
+				        <span class="plan-name">${companyName} One Person Company</span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>10,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DIN for 1 Director / Owner</li>
+				            <li>Digital Signature for 1</li>
+				            <li>Name Approval</li>
+				            <li>MOA / AOA</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x Company PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1.6s">
 				    <div class="plan text-center">
-				        <span class="plan-name">Premium <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>399</strong><sub>.99</sub></p>
+				        <span class="plan-name">${companyName} Public Limited Company</span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>39,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DIN for 3 Directors</li>
+				            <li>Digital Signature for 3</li>
+				            <li>Name Approval</li>
+				            <li>MOA / AOA</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x Company PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 			</div><!--/ Content row end -->
 
 			<div class="gap-60"></div>
 			<div class="gap-40"></div>
-
-
-			<!-- Pricing table start -->
+					
 			<div class="row">
-				<div class="col-md-12 heading">
-					<span class="title-icon classic pull-left"><i class="fa fa-university"></i></span>
-					<h2 class="title classic">Pricing Table 3 Col</h2>
-				</div>
-			</div><!-- Title row end -->
-
-
-	  		<div class="row">
 				<!-- plan start -->
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
+				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
 				    <div class="plan text-center">
-				        <span class="plan-name">Basic <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>49</strong><sub>.99</sub></p>
+				        <span class="plan-name">${companyName} Nidhi Limited Company</span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>84,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DIN for 3 Directors</li>
+				            <li>Digital Signature for 3</li>
+				            <li>Name Approval</li>
+				            <li>MOA / AOA</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x Company PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 
 				<!-- plan start -->
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1s">
+				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
 				    <div class="plan text-center">
-				        <span class="plan-name">Standared <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>99</strong><sub>.99</sub></p>
+				        <span class="plan-name">${companyName} Section 8 Company</small></span>
+				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>25,000</strong><sub>.00</sub>
+				        </p>
 				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
+				            <li>DIN for 2 Directors</li>
+				            <li>Digital Signature for 2</li>
+				            <li>Name Approval</li>
+				            <li>MOA / AOA</li>
+				            <li>ROC Registration Certificate</li>
+				            <li>1 x Company PAN & TAN</li>
 				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
+				        <a class="btn btn-primary" href="#.">Create</a>
 				    </div>
 				</div><!-- plan end -->
 
-				<!-- plan start -->
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="1.4s">
-				    <div class="plan text-center featured">
-				        <span class="plan-name">Professional <small>Monthly plan</small></span>
-				        <p class="plan-price"><sup class="currency">$</sup><strong>149</strong><sub>.99</sub></p>
-				        <ul class="list-unstyled">
-				            <li>100GB Monthly Bandwidth</li>
-				            <li>$100 Google AdWords</li>
-				            <li>100 Domain Hosting</li>
-				            <li>SSL Shopping Cart</li>
-				            <li>24/7 Live Support</li>
-				        </ul>
-				        <a class="btn btn-primary" href="#.">Sign Up</a>
-				    </div>
-				</div><!-- plan end -->
-
-		
 			</div><!--/ Content row end -->
 
 		</div><!-- container end -->
@@ -525,7 +527,7 @@
 	<!-- Template custom -->
 	<script type="text/javascript" src="resources/js/custom.js"></script>
 	
-	<script type="text/javascript" src="resources/js/main.js"></script>
+	<script type="text/javascript" src="resources/js/createCompany.js"></script>
 	</div><!-- Body inner end -->
 </body>
 </html>
