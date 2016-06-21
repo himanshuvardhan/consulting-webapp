@@ -62,5 +62,24 @@
 
 	<!-- Data Value Processor -->
 	<bean name="requestDataValueProcessor" class="com.vardhan.security.CustomRequestDataValueProcessor" />
+	
+	<!-- Exception Handler Controller -->
+	<!-- <bean id="exceptionHandlerController" class="com.vardhan.controller.ExceptionHandlerController">
+   </bean> -->
+   
+   <!-- Home Controller -->
+	<!-- <bean id="homeController" class="com.vardhan.controller.HomeController">
+   </bean> -->
+	
+	<!-- Create Comapny Controller -->
+	<!-- <bean id="createCompany" class="com.vardhan.controller.CreateCompanyController">
+		<property name="createCompanyManager" ref="createCompanyManager" ></property>
+   </bean> -->
+   
+   	<!-- Create Comapny Manager -->
+	<bean id="createCompanyManager" class="com.vardhan.service.CreateCompanyManager">
+		<property name="proxyRequired" value="true" ></property>
+   </bean>
+   
 
 </beans>
