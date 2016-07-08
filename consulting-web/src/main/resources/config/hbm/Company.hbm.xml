@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.vardhan.data.entity.Company" table="company_details">
+        <id name="companyId" type="int">
+            <column name="company_id" />
+        </id>
+        <property name="companyName" type="string">
+            <column name="company_name" length="100" not-null="true" />
+        </property>
+        <property name="companyPrice" type="java.lang.Double">
+            <column name="company_price" />
+        </property>
+        <property name="companyType" type="string">
+            <column name="company_type" length="100" not-null="true" />
+        </property>
+		<property name="createdDt" type="timestamp">
+			<column length="250" name="created_dt" />
+		</property>
+		<property name="updatedDt" type="timestamp">
+			<column length="250" name="updated_dt" />
+		</property>
+    </class>
+</hibernate-mapping>

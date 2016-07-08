@@ -40,7 +40,8 @@
 		</property>
 	</bean>
 
-	<mvc:annotation-driven content-negotiation-manager="contentNegotiationManager" />
+	<mvc:annotation-driven
+		content-negotiation-manager="contentNegotiationManager" />
 
 	<context:component-scan base-package="com.vardhan.controller" />
 
@@ -50,7 +51,7 @@
 		<bean class="com.vardhan.util.CsrfRequestInterceptor"></bean>
 	</mvc:interceptors>
 
-	<mvc:view-controller path="/" view-name="index"/>
+	<mvc:view-controller path="/" view-name="index" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -62,24 +63,13 @@
 
 	<!-- Data Value Processor -->
 	<bean name="requestDataValueProcessor" class="com.vardhan.security.CustomRequestDataValueProcessor" />
-	
-	<!-- Exception Handler Controller -->
-	<!-- <bean id="exceptionHandlerController" class="com.vardhan.controller.ExceptionHandlerController">
-   </bean> -->
-   
-   <!-- Home Controller -->
-	<!-- <bean id="homeController" class="com.vardhan.controller.HomeController">
-   </bean> -->
-	
-	<!-- Create Comapny Controller -->
-	<!-- <bean id="createCompany" class="com.vardhan.controller.CreateCompanyController">
-		<property name="createCompanyManager" ref="createCompanyManager" ></property>
-   </bean> -->
-   
-   	<!-- Create Comapny Manager -->
+
+	<!-- Create Comapny Manager -->
 	<bean id="createCompanyManager" class="com.vardhan.service.CreateCompanyManager">
-		<property name="proxyRequired" value="true" ></property>
-   </bean>
-   
+		<property name="proxyRequired" value="${network.proxyRequired}"></property>
+		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
+		<property name="companyDetailDao" ref="companyDetailDao"></property>
+	</bean>
+
 
 </beans>
