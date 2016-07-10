@@ -68,7 +68,7 @@
 	<bean id="createCompanyManager" class="com.vardhan.service.CreateCompanyManager">
 		<property name="proxyRequired" value="${network.proxyRequired}"></property>
 		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
-		<property name="companyDetailDao" ref="companyDetailDao"></property>
+		<property name="companyDao" ref="companyDao"></property>
 	</bean>
 
 

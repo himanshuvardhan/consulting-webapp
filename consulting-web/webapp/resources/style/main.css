@@ -7,3 +7,17 @@ h4{
 body {
 	background-image: url('http://crunchify.com/bg.png');
 }
+.plan .order {
+    color: #323232 !important;
+    background: #fff !important;
+    margin-top: 25px !important;
+    margin-bottom: -20px !important;
+    padding: 8px 30px !important;
+}
+
+.plan .order:hover {
+    color: #fff !important;
+}
+.plan .order:hover {
+    background: #ee3b24 !important;
+}
