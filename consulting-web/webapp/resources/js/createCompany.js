@@ -14,6 +14,13 @@ jQuery(document).ready(function($) {
         $(this).removeClass('featured');
     });
 	
+	//Disable Create button if comapnay name is empty
+	if($("#companyName").val().length == 0){
+		$("button.order").attr("disabled","disabled");
+	}else{
+		$("button.order").removeAttr("disabled");
+	}
+	
 /*	$("#createCompany").on("click", function(){
         $.ajax({
             beforeSend: function() {

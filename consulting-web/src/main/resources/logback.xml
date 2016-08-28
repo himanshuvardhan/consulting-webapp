@@ -13,24 +13,27 @@
 
 	<appender name="FILE_APPENDER"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>D:/Logs/consulting-web.log.html</file>
+		<file>D:/Logs/consulting-web.log</file>
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 			<fileNamePattern>D:/Logs/consulting-web-%d{yyyy-MM-dd}.%i.log.html</fileNamePattern>
-			<maxFileSize>200MB</maxFileSize>
+			<maxFileSize>100MB</maxFileSize>
 			<maxHistory>30</maxHistory>
 			<!-- <totalSizeCap>1GB</totalSizeCap> -->
 		</rollingPolicy>
-		<!-- <encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} 
-			- %msg%n</pattern> </encoder> -->
-		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+		<encoder> <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} 
+			- %msg%n</pattern> </encoder>
+		<!-- <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
 			<layout class="ch.qos.logback.classic.html.HTMLLayout">
 				<pattern>%d{yyyy-MM-dd HH:mm:ss}%thread%-5level%logger{36}%msg</pattern>
 			</layout>
-		</encoder>
+		</encoder> -->
 	</appender>
 
-	<root level="debug">
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.hibernate" level="ERROR" />
+	
+	<root level="DEBUG">
 		<appender-ref ref="CONSOLE_APPENDER" />
 		<appender-ref ref="FILE_APPENDER" />
 	</root>

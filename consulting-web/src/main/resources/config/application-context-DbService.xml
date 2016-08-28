@@ -48,6 +48,8 @@
 			<list>
 				<value>classpath:config/hbm/Company.hbm.xml
 				</value>
+				<value>classpath:config/hbm/CompanyRequest.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -95,6 +97,13 @@
 		class="com.vardhan.data.dao.CompanyDaoImpl">
 		<constructor-arg>
 			<value>com.vardhan.data.entity.Company</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="companyRequestDao" parent="abstractDaoTarget"
+		class="com.vardhan.data.dao.CompanyRequestDaoImpl">
+		<constructor-arg>
+			<value>com.vardhan.data.entity.CompanyRequest</value>
 		</constructor-arg>
 	</bean>
 

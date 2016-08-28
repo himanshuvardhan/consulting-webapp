@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.vardhan.base.ApplicationException;
 import com.vardhan.service.CreateCompanyManager;
 import com.vardhan.web.model.CompanyModel;
+import com.vardhan.web.model.CompanyOrderModel;
 
 @Controller
 public class CreateCompanyController {
@@ -43,7 +45,6 @@ public class CreateCompanyController {
 		boolean result = true;
 		try {
 			result = createCompanyManager.checkCompanyStatus(companyName);
-			System.out.println(result + " : " + companyName);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -53,7 +54,8 @@ public class CreateCompanyController {
 	}
 
 	@RequestMapping(value = "/companyOrder", method = RequestMethod.POST)
-	public ModelAndView companyOrder(@RequestParam(value = "companyName", required = true) String companyName,@RequestParam(value = "companyId", required = true) int companyId, Model model) {
+	public ModelAndView companyOrder(@RequestParam(value = "companyName", required = true) String companyName,
+			@RequestParam(value = "companyId", required = true) int companyId, Model model) {
 		logger.debug("companyOrder() is executed", "vardhan");
 		CompanyModel companyModel = new CompanyModel();
 		try {
@@ -65,12 +67,30 @@ public class CreateCompanyController {
 		}
 		model.addAttribute("companyName", companyName);
 		model.addAttribute("companyDetail", companyModel);
-		return new ModelAndView("companyOrder");
+		return new ModelAndView("companyOrder", "companyOrderModel", new CompanyOrderModel());
+	}
+
+	@RequestMapping(value = "/confirmCompanyOrder", method = RequestMethod.POST)
+	public String confirmCompanyOrder(@ModelAttribute CompanyOrderModel companyOrderModel, Model model) {
+		try {
+			createCompanyManager.requestCompanyOrder(companyOrderModel);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+		return "redirect:/companySuccess.htm";
+	}
+
+	@RequestMapping(value = "/companySuccess", method = RequestMethod.GET)
+	public String companySuccess(@ModelAttribute CompanyOrderModel companyOrderModel, Model model) {
+
+		return "companySuccess";
 	}
 
 	public CreateCompanyManager getCreateCompanyManager() {
 		return createCompanyManager;
 	}
+
 	public void setCreateCompanyManager(CreateCompanyManager createCompanyManager) {
 		this.createCompanyManager = createCompanyManager;
 	}
