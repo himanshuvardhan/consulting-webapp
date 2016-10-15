@@ -14,6 +14,7 @@ public class CompanyRequest  implements java.io.Serializable{
 	private static final long serialVersionUID = 1084004325945424103L;
 	
 	private int companyRequestId;
+	private String requestedCompanyName;
 	private String requestorLastName;
 	private String requestorFirstName;
 	private String requestorEmail;
@@ -83,5 +84,11 @@ public class CompanyRequest  implements java.io.Serializable{
 	}
 	public void setUpdatedDt(Date updatedDt) {
 		this.updatedDt = updatedDt;
+	}
+	public String getRequestedCompanyName() {
+		return requestedCompanyName;
+	}
+	public void setRequestedCompanyName(String requestedCompanyName) {
+		this.requestedCompanyName = requestedCompanyName;
 	}
 }

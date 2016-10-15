@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.vardhan.base.ApplicationException;
-import com.vardhan.service.CreateCompanyManager;
+import com.vardhan.service.ICreateCompanyManager;
 import com.vardhan.web.model.CompanyModel;
 import com.vardhan.web.model.CompanyOrderModel;
 
@@ -24,7 +24,7 @@ public class CreateCompanyController {
 	private static final Logger logger = LoggerFactory.getLogger(CreateCompanyController.class);
 
 	@Autowired
-	private CreateCompanyManager createCompanyManager;
+	private ICreateCompanyManager createCompanyManager;
 
 	@RequestMapping(value = "/createCompany", method = RequestMethod.GET)
 	public ModelAndView createCompany(Model model) {
@@ -87,11 +87,11 @@ public class CreateCompanyController {
 		return "companySuccess";
 	}
 
-	public CreateCompanyManager getCreateCompanyManager() {
+	public ICreateCompanyManager getCreateCompanyManager() {
 		return createCompanyManager;
 	}
 
-	public void setCreateCompanyManager(CreateCompanyManager createCompanyManager) {
+	public void setCreateCompanyManager(ICreateCompanyManager createCompanyManager) {
 		this.createCompanyManager = createCompanyManager;
 	}
 

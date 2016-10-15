@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.vardhan.data.entity.LoanTypes" table="loan_types">
+		<id name="loanId" type="int">
+			<column name="loan_id" />
+		</id>
+		<property name="loanName" type="string">
+			<column name="loan_name" length="100" not-null="true" />
+		</property>
+		<property name="loanType" type="string">
+			<column name="loan_type" length="100" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

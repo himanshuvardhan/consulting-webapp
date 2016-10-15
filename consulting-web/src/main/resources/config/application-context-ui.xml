@@ -70,7 +70,34 @@
 		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
 		<property name="companyDao" ref="companyDao"></property>
 		<property name="companyRequestDao" ref="companyRequestDao"></property>
+		<property name="emailer" ref="emailer"></property>
 	</bean>
 
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="consultingwebapp@gmail.com" />
+		<property name="password" value="swordfish123" />
+		<property name="protocol" value="smtp"></property>
 
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.smtps.ssl.checkserveridentity">true</prop>
+				<prop key="mail.smtps.ssl.trust">*</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="emailer" class="com.vardhan.util.Emailer">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+	
+	<!-- Loans Manager -->
+	<bean id="loansManager" class="com.vardhan.service.LoansManager">
+		<property name="loanTypesDao" ref="loanTypesDao"></property>
+		<property name="loanRequestDao" ref="loanRequestDao"></property>
+		<property name="emailer" ref="emailer"></property>
+	</bean>
 </beans>

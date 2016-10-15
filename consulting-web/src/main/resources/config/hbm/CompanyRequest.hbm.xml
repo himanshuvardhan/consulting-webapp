@@ -7,6 +7,9 @@
             <column name="company_request_id" />
             <generator class="native"/>
         </id>
+        <property name="requestedCompanyName" type="string">
+            <column name="company_name" length="100" not-null="true" />
+        </property>
         <property name="requestorFirstName" type="string">
             <column name="requestor_first_name" length="100" not-null="true" />
         </property>

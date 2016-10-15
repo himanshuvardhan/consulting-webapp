@@ -50,6 +50,10 @@
 				</value>
 				<value>classpath:config/hbm/CompanyRequest.hbm.xml
 				</value>
+				<value>classpath:config/hbm/LoanTypes.hbm.xml
+				</value>
+				<value>classpath:config/hbm/LoanRequest.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -104,6 +108,20 @@
 		class="com.vardhan.data.dao.CompanyRequestDaoImpl">
 		<constructor-arg>
 			<value>com.vardhan.data.entity.CompanyRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="loanTypesDao" parent="abstractDaoTarget"
+		class="com.vardhan.data.dao.LoanTypeDaoImpl">
+		<constructor-arg>
+			<value>com.vardhan.data.entity.LoanTypes</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="loanRequestDao" parent="abstractDaoTarget"
+		class="com.vardhan.data.dao.LoanRequestDaoImpl">
+		<constructor-arg>
+			<value>com.vardhan.data.entity.LoanRequest</value>
 		</constructor-arg>
 	</bean>
 

@@ -18,6 +18,8 @@
 		<spring.security.version>3.2.5.RELEASE</spring.security.version>
 		<jsoup.html.version>1.9.2</jsoup.html.version>
 		<aspectj.version>1.6.5.RELEASE</aspectj.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
+		<javax.mail.api.version>1.5.5</javax.mail.api.version>
 	</properties>
 
 	<dependencies>
@@ -109,6 +111,15 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context-support</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		
 
 		<!-- Aspectj -->
 		<dependency>
@@ -197,6 +208,14 @@
 			<artifactId>jsoup</artifactId>
 			<version>${jsoup.html.version}</version>
 		</dependency>
+		
+		<!-- Java Mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javax.mail.version}</version>
+		</dependency>
+		 
 	</dependencies>
 	
 	<repositories>

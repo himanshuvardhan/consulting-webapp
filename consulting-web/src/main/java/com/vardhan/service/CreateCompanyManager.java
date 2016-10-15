@@ -16,6 +16,7 @@ import com.vardhan.data.dao.CompanyDao;
 import com.vardhan.data.dao.CompanyRequestDao;
 import com.vardhan.data.entity.Company;
 import com.vardhan.data.entity.CompanyRequest;
+import com.vardhan.util.Emailer;
 import com.vardhan.web.model.CompanyModel;
 import com.vardhan.web.model.CompanyOrderModel;
 
@@ -26,6 +27,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private String comapnyAvailabilityURL;
 	private CompanyDao companyDao;
 	private CompanyRequestDao companyRequestDao;
+	private Emailer emailer;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -110,6 +112,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		boolean result = false;
 
 		try {
+
 			CompanyRequest companyRequest = new CompanyRequest();
 			companyRequest.setCompany(companyDao.read(companyOrderModel.getCompanyId()));
 			companyRequest.setRequestorEmail(companyOrderModel.getEmail());
@@ -118,14 +121,35 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			companyRequest.setRequestorPanNo(companyOrderModel.getPanNumber());
 			companyRequest.setRequestorPhoneNo(companyOrderModel.getPhoneNumber());
 			companyRequest.setMessage(companyOrderModel.getMessage());
+			companyRequest.setRequestedCompanyName(companyOrderModel.getRequestedCompanyName());
 			companyRequest.setUpdatedDt(new Date());
 			companyRequest.setCreatedDt(new Date());
 
 			companyRequestDao.saveOrUpdate(companyRequest);
+								
+			result = sendConfirmationEmail(companyRequest);
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
 
+		return result;
+	}
+
+	private boolean sendConfirmationEmail(CompanyRequest companyRequest)
+			throws ApplicationException {
+		logger.debug("sendConfirmationEmail() is executed", "vardhan");
+		boolean result = false;
+		try {
+			String body = "Hi " + companyRequest.getRequestorFirstName() + "\n Your order have been placed for the following \n" +
+					"Company Name : " + companyRequest.getRequestedCompanyName() +"\n"+
+							"Request Id : " + companyRequest.getCompanyRequestId() + "\n"+
+								"Request Time : " + new Date()+"\n";
+			
+			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), "", "Company Order Confirmation", body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException(e);
+		}
 		return result;
 	}
 
@@ -159,5 +183,9 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 
 	public void setCompanyRequestDao(CompanyRequestDao companyRequestDao) {
 		this.companyRequestDao = companyRequestDao;
+	}
+
+	public void setEmailer(Emailer emailer) {
+		this.emailer = emailer;
 	}
 }

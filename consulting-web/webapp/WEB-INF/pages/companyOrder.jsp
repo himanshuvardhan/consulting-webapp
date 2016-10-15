@@ -7,25 +7,20 @@
 <!-- Basic Page Needs
 	================================================== -->
 <meta charset="utf-8">
-<title>Consulting</title>
+<title>Quick Accounting & Consulting</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
 <!-- Mobile Specific Metas
 	================================================== -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- Favicons
 	================================================== -->
-<link rel="icon" href="img/favicon/favicon-32x32.png"
-	type="image/x-icon" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144"
-	href="img/favicon/favicon-144x144.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72"
-	href="img/favicon/favicon-72x72.png">
-<link rel="apple-touch-icon-precomposed"
-	href="img/favicon/favicon-54x54.png">
+<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/x-icon" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/favicon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/favicon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="img/favicon/favicon-54x54.png">
 
 <!-- CSS
 	================================================== -->
@@ -50,8 +45,7 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="resources/style/presets/preset3.css"
-	media="screen" rel="stylesheet" type="text/css">
+<link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -69,23 +63,18 @@
 				<div class="row">
 					<!-- Logo start -->
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse"
-							data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span
-								class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
-							<a href="index.htm"> <img class="img-responsive"
-								src="resources/images/logo.png" alt="logo">
+							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
 							</a>
 						</div>
 					</div>
 					<!--/ Logo end -->
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="index.htm">Home 1</a></li>
@@ -94,8 +83,7 @@
 										<li><a href="index-4.html">Home 4</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="about.html">About Us</a></li>
@@ -105,19 +93,15 @@
 										<li><a href="faq.html">Faq</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="portfolio-classic.html">Portfolio
-												Classic</a></li>
+										<li><a href="portfolio-classic.html">Portfolio Classic</a></li>
 										<li><a href="portfolio-static.html">Portfolio Static</a></li>
 										<li><a href="portfolio-item.html">Portfolio Single</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown active"><a href="#"
-								class="dropdown-toggle" data-toggle="dropdown">Pages <i
-									class="fa fa-angle-down"></i></a>
+							<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="team.html">Our Team</a></li>
@@ -128,16 +112,14 @@
 										<li class="active"><a href="404.html">404 Page</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="blog-rightside.html">Blog with Sidebar</a></li>
 										<li><a href="blog-item.html">Blog Single</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="typography.html">Typography</a></li>
@@ -179,24 +161,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
-						<form:form id="contact-form" action="confirmCompanyOrder.htm"
-							method="post" modelAttribute="companyOrderModel">
+						<form:form id="contact-form" action="confirmCompanyOrder.htm" method="post" modelAttribute="companyOrderModel">
 							<!-- CSRF Token -->
-							<input type="hidden" id="Csrf_RQ_PARAM_NAME"
-								name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>First Name</label>
-										<form:input path="firstName" class="form-control"
-											name="firstName" id="firstName" type="text"></form:input>
+										<form:input path="firstName" class="form-control" name="firstName" id="firstName" type="text"></form:input>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Last Name</label>
-										<form:input path="lastName" class="form-control"
-											name="lastName" id="lastName" type="text"></form:input>
+										<form:input path="lastName" class="form-control" name="lastName" id="lastName" type="text"></form:input>
 									</div>
 								</div>
 							</div>
@@ -205,22 +183,19 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Mobile Number</label>
-										<form:input path="phoneNumber" class="form-control"
-											name="phoneno" id="phoneno" type="text"></form:input>
+										<form:input path="phoneNumber" class="form-control" name="phoneno" id="phoneno" type="text"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Email</label>
-										<form:input path="email" class="form-control" name="email"
-											id="email" type="email"></form:input>
+										<form:input path="email" class="form-control" name="email" id="email" type="email"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>PAN Number</label>
-										<form:input path="panNumber" class="form-control"
-											name="panNumber" id="panNumber" typy="text"></form:input>
+										<form:input path="panNumber" class="form-control" name="panNumber" id="panNumber" typy="text"></form:input>
 									</div>
 								</div>
 							</div>
@@ -229,8 +204,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>Address</label>
-										<form:input path="address" class="form-control" name="address"
-											id="address" type="text"></form:input>
+										<form:input path="address" class="form-control" name="address" id="address" type="text"></form:input>
 									</div>
 								</div>
 							</div>
@@ -238,35 +212,30 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>City</label>
-										<form:input path="city" class="form-control" name="city"
-											id="city" type="text"></form:input>
+										<form:input path="city" class="form-control" name="city" id="city" type="text"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>State</label>
-										<form:input path="state" class="form-control" name="state"
-											id="state" type="text"></form:input>
+										<form:input path="state" class="form-control" name="state" id="state" type="text"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Pincode</label>
-										<form:input path="pincode" class="form-control" type="text"
-											name="pincode" id="pincode"></form:input>
+										<form:input path="pincode" class="form-control" type="text" name="pincode" id="pincode"></form:input>
 									</div>
 								</div>
 							</div>
 							<hr>
 							<div class="form-group">
 								<label>Message</label>
-								<form:textarea class="form-control" path="message"
-									name="message" id="message" rows="10"></form:textarea>
+								<form:textarea class="form-control" path="message" name="message" id="message" rows="10"></form:textarea>
 							</div>
 							<div class="text-right">
 								<br>
-								<button class="btn btn-primary solid blank" type="submit">Order
-									Now</button>
+								<button class="btn btn-primary solid blank" type="submit">Order Now</button>
 							</div>
 					</div>
 					<div class="col-md-5">
@@ -281,8 +250,8 @@
 							<p>
 								<i>Price</i> : &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>${companyDetail.companyPrice }
 							</p>
-							<form:hidden path="companyId" class="form-control" name="state"
-											id="companyId" value="${companyDetail.companyId }"></form:hidden>
+							<form:hidden path="companyId" class="form-control" name="state" id="companyId" value="${companyDetail.companyId }"></form:hidden>
+							<form:hidden path="requestedCompanyName" class="form-control" name="state" id="requestedCompanyName" value="${companyDetail.companyName }"></form:hidden>
 						</div>
 					</div>
 					</form:form>
@@ -297,27 +266,13 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-twitter"></i></span>
-							</a> <a title="Facebook" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-facebook"></i></span>
-							</a> <a title="Google+" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-google-plus"></i></span>
-							</a> <a title="linkedin" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-linkedin"></i></span>
-							</a> <a title="Pinterest" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-pinterest"></i></span>
-							</a> <a title="Skype" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-skype"></i></span>
-							</a> <a title="Dribble" href="#"> <span
-									class="icon-pentagon wow bounceIn"><i
-										class="fa fa-dribbble"></i></span>
+							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
+							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a title="Pinterest" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
+							</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+							</a> <a title="Dribble" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
 							</a></li>
 						</ul>
 					</div>
@@ -331,8 +286,7 @@
 					</div>
 				</div>
 				<!--/ Row end -->
-				<div id="back-to-top" data-spy="affix" data-offset-top="10"
-					class="back-to-top affix">
+				<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
 					<button class="btn btn-primary" title="Back to Top">
 						<i class="fa fa-angle-double-up"></i>
 					</button>
@@ -354,8 +308,7 @@
 		<!-- Owl Carousel -->
 		<script type="text/javascript" src="resources/js/owl.carousel.js"></script>
 		<!-- PrettyPhoto -->
-		<script type="text/javascript"
-			src="resources/js/jquery.prettyPhoto.js"></script>
+		<script type="text/javascript" src="resources/js/jquery.prettyPhoto.js"></script>
 		<!-- Bxslider -->
 		<script type="text/javascript" src="resources/js/jquery.flexslider.js"></script>
 		<!-- CD Hero slider -->
@@ -370,8 +323,7 @@
 		<!-- Eeasing -->
 		<script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
 		<!-- Counter -->
-		<script type="text/javascript"
-			src="resources/js/jquery.counterup.min.js"></script>
+		<script type="text/javascript" src="resources/js/jquery.counterup.min.js"></script>
 		<!-- Waypoints -->
 		<script type="text/javascript" src="resources/js/waypoints.min.js"></script>
 		<!-- Google Map API Key Source -->

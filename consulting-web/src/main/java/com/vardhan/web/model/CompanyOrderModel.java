@@ -14,7 +14,14 @@ public class CompanyOrderModel {
 	private String pincode;
 	private String message;
 	private int companyId;
+	private String requestedCompanyName;
 	
+	public String getRequestedCompanyName() {
+		return requestedCompanyName;
+	}
+	public void setRequestedCompanyName(String requestedCompanyName) {
+		this.requestedCompanyName = requestedCompanyName;
+	}
 	public int getCompanyId() {
 		return companyId;
 	}

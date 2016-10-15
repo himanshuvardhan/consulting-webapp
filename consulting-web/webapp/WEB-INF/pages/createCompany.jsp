@@ -6,7 +6,7 @@
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-    <title>Consulting</title>
+    <title>Quick Accounting & Consulting</title>
     <meta name="description" content="">	
 	<meta name="author" content="">
 
@@ -99,40 +99,16 @@
 				</div><!--/ Logo end -->
 				<nav class="collapse navbar-collapse clearfix" role="navigation">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="index.htm">Home 1</a></li>
-		                            <li><a href="index-2.html">Home 2</a></li>
-		                            <li><a href="index-3.html">Home 3</a></li>
-		                            <li><a href="index-4.html">Home 4</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="about.html">About Us</a></li>
-		                            <li><a href="service.html">Services</a></li>
-		                            <li><a href="career.html">Career</a></li>
-		                            <li><a href="testimonial.html">Testimonials</a></li>
-		                            <li><a href="faq.html">Faq</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="portfolio-classic.html">Portfolio Classic</a></li>
-		                            <li><a href="portfolio-static.html">Portfolio Static</a></li>
-		                            <li><a href="portfolio-item.html">Portfolio Single</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-	                    <li class="dropdown active">
+						<li><a href="index.htm">Home</a></li>
+							<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+								<div class="dropdown-menu">
+									<ul>
+										<li><a href="createCompany.htm">Create Company</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="loans.htm">Loans</a></li>
+	                    <li class="dropdown">
                        		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                        		<div class="dropdown-menu">
 								<ul>
@@ -217,7 +193,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} Private Limited</span>
+				        <span class="plan-name">${companyName} <br> Private Limited</span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>11,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
 				            <li>DIN for 2 Directors</li>
@@ -240,7 +216,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} Limited Liability Partnership</span>
+				        <span class="plan-name">${companyName}<br> Limited Liability Partnership</span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>7,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
 				            <li>DPIN for 2 Partners</li>
@@ -263,7 +239,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1.4s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} One Person Company</span>
+				        <span class="plan-name">${companyName} <br> One Person Company</span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>10,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
 				            <li>DIN for 1 Director / Owner</li>
@@ -286,7 +262,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1.6s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} Public Limited Company</span>
+				        <span class="plan-name">${companyName} <br> Public Limited Company</span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>39,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
 				            <li>DIN for 3 Directors</li>
@@ -314,7 +290,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} Nidhi Limited Company</span>
+				        <span class="plan-name">${companyName} <br> Nidhi Limited Company</span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>84,999</strong><sub>.00</sub></p>
 				        <ul class="list-unstyled">
 				            <li>DIN for 3 Directors</li>
@@ -337,7 +313,7 @@
 				<!-- plan start -->
 				<div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1s">
 				    <div class="plan text-center">
-				        <span class="plan-name">${companyName} Section 8 Company</small></span>
+				        <span class="plan-name">${companyName} <br> Section 8 Company</small></span>
 				        <p class="plan-price"><sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>25,000</strong><sub>.00</sub>
 				        </p>
 				        <ul class="list-unstyled">

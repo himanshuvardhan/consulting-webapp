@@ -109,7 +109,8 @@ jQuery(function($) {
       navigation : false, // Show next and prev buttons
       slideSpeed : 600,
       pagination:true,
-      singleItem:true
+      singleItem:true,
+      autoHeight : true
  
     });
 
@@ -129,6 +130,15 @@ jQuery(function($) {
     })
     $(".stop").click(function(){
       owl.trigger('owl.stop');
+    })
+    $(".homeloan").click(function(){
+      owl.trigger('owl.goTo', 0);
+    })
+        $(".personalLoan").click(function(){
+      owl.trigger('owl.goTo', 1);
+    })
+        $(".balanceTransfer").click(function(){
+      owl.trigger('owl.goTo', 2);
     })
     
 
