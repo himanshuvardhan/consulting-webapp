@@ -53,6 +53,7 @@ DROP TABLE IF EXISTS `company_request`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `company_request` (
   `company_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_name` varchar(100) NOT NULL,
   `requestor_last_name` varchar(50) DEFAULT NULL,
   `requestor_first_name` varchar(50) DEFAULT NULL,
   `requostor_email` varchar(100) DEFAULT NULL,
@@ -65,7 +66,7 @@ CREATE TABLE `company_request` (
   PRIMARY KEY (`company_request_id`),
   KEY `company_id_foreign_key_idx` (`company_id`),
   CONSTRAINT `company_id_foreign_key` FOREIGN KEY (`company_id`) REFERENCES `companies` (`company_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='Details of company creation ';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Details of company creation ';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,8 +75,65 @@ CREATE TABLE `company_request` (
 
 LOCK TABLES `company_request` WRITE;
 /*!40000 ALTER TABLE `company_request` DISABLE KEYS */;
-INSERT INTO `company_request` VALUES (1,'Himanshu Vardhan',NULL,'himanshuvardhan@gmail.com','9411837388','aaaaaaaa',1,NULL,'2016-08-28 18:42:38','2016-08-28 18:42:37'),(2,'Himanshu Vardhan',NULL,'himanshuvardhan@gmail.com','9411837388','dsdsd',1,NULL,'2016-08-28 18:44:38','2016-08-28 18:44:38'),(3,'Himanshu Vardhan',NULL,'himanshuvardhan@gmail.com','9411837388','aaaaaaaa',1,NULL,'2016-08-28 19:09:11','2016-08-28 19:09:11'),(4,'Himanshu Vardhan',NULL,'himanshuvardhan@gmail.com','9411837388','dds',1,NULL,'2016-08-28 19:10:22','2016-08-28 19:10:22'),(5,'Himanshu Vardhan',NULL,'himanshuvardhan@gmail.com','9411837388','dsds',2,NULL,'2016-08-28 19:12:41','2016-08-28 19:12:41'),(6,'Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','qwertyuiop',6,'create as soon as possible','2016-08-28 19:21:24','2016-08-28 19:21:24'),(7,'Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','aaaaaaaa',3,'<title>BizCraft','2016-08-28 19:29:16','2016-08-28 19:29:16');
+INSERT INTO `company_request` VALUES (6,'aaa','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','qwertyuiop',6,'create as soon as possible','2016-08-28 19:21:24','2016-08-28 19:21:24'),(7,'aaa','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','aaaaaaaa',3,'<title>BizCraft','2016-08-28 19:29:16','2016-08-28 19:29:16'),(8,'MyCompany ','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','aaaaaaaa',2,'fgfgfgfgfg','2016-09-03 18:01:35','2016-09-03 18:01:35'),(9,'Quick Consulting And Acconting ','Khanna','Saurabh','saurabhkhannaca7@gmail.com','9411837388','aaaaaaaa',3,'Please Create as soon as possible','2016-09-03 18:48:56','2016-09-03 18:48:56'),(10,'MyCompany ','Vardhan','Himanshu','himanshuvardhan@gmail.com','9740353403','aaaaaaaa',1,'hjhjh','2016-10-03 20:24:27','2016-10-03 20:24:27');
 /*!40000 ALTER TABLE `company_request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_request`
+--
+
+DROP TABLE IF EXISTS `loan_request`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_request` (
+  `loan_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestor_name` varchar(50) DEFAULT NULL,
+  `requestor_phone_number` varchar(20) DEFAULT NULL,
+  `requestor_email_id` varchar(75) DEFAULT NULL,
+  `requestor_pan_number` varchar(15) DEFAULT NULL,
+  `loan_id` int(11) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`loan_request_id`),
+  KEY `loan_id_foreign_key_idx` (`loan_id`),
+  CONSTRAINT `loan_id_foreign_key` FOREIGN KEY (`loan_id`) REFERENCES `loan_types` (`loan_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Loan request from users';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_request`
+--
+
+LOCK TABLES `loan_request` WRITE;
+/*!40000 ALTER TABLE `loan_request` DISABLE KEYS */;
+INSERT INTO `loan_request` VALUES (1,'Himanshu Vardhan','9740353403','himanshuvardhan@gmail.com','aaaaaaaa',2,'2016-10-15 11:20:09','2016-10-15 11:20:09'),(2,'Himanshu Vardhan','9740353403','himanshuvardhan@gmail.com','aaaaaaaa',1,'2016-10-17 19:10:21','2016-10-17 19:10:21');
+/*!40000 ALTER TABLE `loan_request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_types`
+--
+
+DROP TABLE IF EXISTS `loan_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_types` (
+  `loan_type` varchar(50) DEFAULT NULL,
+  `loan_name` varchar(50) DEFAULT NULL,
+  `loan_id` int(11) NOT NULL,
+  PRIMARY KEY (`loan_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Types of loans offered by platform';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_types`
+--
+
+LOCK TABLES `loan_types` WRITE;
+/*!40000 ALTER TABLE `loan_types` DISABLE KEYS */;
+INSERT INTO `loan_types` VALUES ('Home Loan','Home Loan',1),('Loan Against Property','Loan Against Property',2),('Balance Transfer & Top ups','Balance Transfer & Top ups',3),('Educational Loan','Educational Loan',4),('Term Loan Synidation','Term Loan Synidation',5);
+/*!40000 ALTER TABLE `loan_types` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -87,4 +145,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-28 19:35:21
+-- Dump completed on 2016-10-22 14:06:28
