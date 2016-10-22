@@ -101,9 +101,9 @@
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li class="active"><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
-							<li class="active"><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
@@ -129,7 +129,7 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Book Keeping</h2>
+					<h2>Income Tax</h2>
 				</div>
 			</div>
 			<!-- Subpage title end -->
@@ -141,151 +141,113 @@
 		<section id="main-container" style="padding-bottom: 0px;">
 			<div class="container">
 
-				<!-- Company Profile -->
 				<div class="row">
-					<div class="col-md-12 heading">
-						<span class="title-icon classic pull-left"><i class="fa fa-suitcase"></i></span>
-						<h2 class="title classic">Services We Provide</h2>
+					<div class="col-md-12 heading text-center">
+						<span class="title-icon classic pull-left"><i class="fa fa-comments"></i></span>
+						<h2 class="title classic">The easiest way for e-filing Income Tax Returns in India</h2>
+						<h4>QuickFilling is simple to use and free</h4>
+						<h5>We will import your data automatically and help you file your Income Tax return in minutes</h5>
 					</div>
 				</div>
-				<!-- Title row end -->
-				<div class="row">
-					<div class="col-md-12">
-						<ul>
-							<li>Quick Accounting will manage your data entry & provide timely bank account & credit card reconciliation.</li>
-							<li>We accurately track your revenue & expenses, and provide valuable insights into your business.</li>
-							<li>We produce up-to-date Balance Sheet & Income Statements every month.</li>
-							<li>Quick Accounting can help you easily manage your bill pay, payroll & more! You'll stay compliant & in
-								control.</li>
-							<li>We'll provide you a team of bookkeepers with expertise in your industry. We work with your existing
-								accounting software & tools, but can also help you make the move to newer technologies.</li>
 
-						</ul>
+				<div class="row ">
+					<div class="col-md-1 col-sm-1 wow fadeInDown" data-wow-delay=".5s"></div>
+					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay=".5s">
+						<div class="service-content">
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_ITRV.jpg"
+								alt="" /></span>
+							<p>ITRV - Submission</p>
+							<p>Send us your ITR-V to our office and we will submit to CPC on your behalf.</p>
+						</div>
 					</div>
+					<!--/ End first service -->
+
+					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay=".8s">
+						<div class="service-content">
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_document.jpg"
+								alt="" /></span>
+							<p>Document Management</p>
+							<p>Store all your tax documents at one place and retrieve when needed.</p>
+						</div>
+
+					</div>
+					<!--/ End Second features -->
+					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
+						<div class="service-content">
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_refund.jpg"
+								alt="" /></span>
+							<p>Refund Tracking</p>
+							<p>We will help you in tracking your Refund Status.</p>
+						</div>
+					</div>
+					<!--/ End Third features -->
+
+					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
+						<div class="service-content">
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_history.jpg"
+								alt="" /></span>
+							<p>Tax History</p>
+							<p>Know year wise exact status of your Tax Return as per Income Tax Department.</p>
+						</div>
+					</div>
+					<!--/ End Fourth features -->
+
+					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
+						<div class="service-content">
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_support.jpg"
+								alt="" /></span>
+							<p>Post Filing Support</p>
+							<p>Get any support and assistance on filing related problems.</p>
+						</div>
+					</div>
+					<!--/ End Fifth features -->
 				</div>
-				<div class="gap-40"></div>
-				<!--Isotope filter start -->
-				<section id="main-container" class="portfolio portfolio-box" style="margin-top: -101px;">
-					<div class="row text-center">
-						<div class="isotope-nav" data-isotope-nav="isotope">
+
+				<div class="gap-60"></div>
+
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="faq-box">
+							<h4>ADVANTAGES OF FILING YOUR INCOME TAX RETURN</h4>
+							<p>
 							<ul>
-								<li class="accounting"><a>Accounting</a></li>
-								<li class="whatwedo"><a>What We Do?</a></li>
-								<li class="technologyweuse"><a>Technology We Use</a></li>
+								<li>It becomes your standard income proof</li>
+								<li>You can get the loans sanctioned quickly and easily</li>
+								<li>You can trade in stocks, open bank accounts, get bank credits, make investments etc. and you can do all
+									these with ease if you remain good in the financial institutions books by filing your tax returns.</li>
+								<li>You can claim your refunds for taxes deducted or paid in excess of your tax liabilities.</li>
+								<li>Many foreign countries want to know how financially sound you are before they grant you with a visa. So
+									to prove your financial worth, Income tax returns are must.</li>
+								<li>Not to forget, it is your obligation. The taxes you pay on your income will work towards betterment of
+									our nation.</li>
+								<li>For professionals and business organisations, Income tax returns are a must to become eligible to
+									secure certain tenders.</li>
 							</ul>
+							</p>
 						</div>
 					</div>
-				</section>
-				<!-- Isotope filter end -->
-				<div class="container" style="margin-top: -100px;">
-					<div class="row col-md-12">
-						<!-- Testimonial start-->
-						<div class="testimonial elements">
-							<div class="row">
-								<div id="testimonial-carousel" class="owl-carousel owl-theme testimonial-slide">
-									<div class="item">
-										<div class="row">
-											<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay=".5s">
-												<div class="service-content">
-													<span class="service-image"><img class="img-responsive"
-														src="resources/images/bookkeeping/accounting.jpg" alt="" /></span>
-													<ul>
-														<li><h4>Taxes</h4></li>
-														<li><h4>Data Entry</h4></li>
-														<li><h4>Job Costing</h4></li>
-														<li><h4>Analytics</h4></li>
-														<li><h4>Reporting</h4></li>
-														<li><h4>Reconciliation</h4></li>
-													</ul>
-												</div>
-											</div>
-											<!--/ End first service -->
-
-											<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay=".8s">
-												<div class="service-content">
-													<span class="service-image"><img class="img-responsive"
-														src="resources/images/bookkeeping/expenses.jpg" alt="" /></span>
-													<ul>
-														<li><h4>Expense Management</h4></li>
-														<li><h4>Mileage Tracking</h4></li>
-														<li><h4>Receipt Collection</h4></li>
-														<li><h4>Reconciliation</h4></li>
-													</ul>
-												</div>
-
-											</div>
-											<!--/ End Second features -->
-											<!-- </div>
-										<div class="row "> -->
-											<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="1.1s">
-												<div class="service-content">
-													<span class="service-image"><img class="img-responsive"
-														src="resources/images/bookkeeping/payments.jpg" alt="" /></span>
-													<ul>
-														<li><h4>Bill Pay</h4></li>
-														<li><h4>Payment Processing</h4></li>
-														<li><h4>Merchant Services</h4></li>
-														<li><h4>Prepaid Debit Cards</h4></li>
-														<li><h4>Reconciliation</h4></li>
-													</ul>
-												</div>
-											</div>
-											<!--/ End Third features -->
-
-											<div class="col-md-3 col-sm-3 wow fadeInDown" data-wow-delay="1.1s">
-												<div class="service-content">
-													<span class="service-image"><img class="img-responsive"
-														src="resources/images/bookkeeping/payroll.jpg" alt="" /></span>
-													<ul>
-														<li><h4>Setup</h4></li>
-														<li><h4>Reporting</h4></li>
-														<li><h4>Compliance</h4></li>
-														<li><h4>Reconciliation</h4></li>
-													</ul>
-												</div>
-											</div>
-											<!--/ End Fourth features -->
-										</div>
-										<!-- Content Row end -->
-									</div>
-									<div class="item">
-										<ul>
-											<li><h4>Weekly reconciliation</h4></li>
-											<li><h4>Weekly financials</h4></li>
-											<li><h4>Document collection & storage</h4></li>
-											<li><h4>Accounting software setup</h4></li>
-											<li><h4>Expense management</h4></li>
-											<li><h4>Training</h4></li>
-											<li><h4>Includes accounting & expense management software</h4></li>
-											<li><h4>Payroll reconciliation</h4></li>
-											<li><h4>Job cost allocation</h4></li>
-											<li><h4>Electronic bill payment</h4></li>
-										</ul>
-									</div>
-									<div class="item">
-										<ul>
-											<li><h4>TALLY ERP 9</h4></li>
-											<li><h4>BUSY</h4></li>
-											<li><h4>SAP</h4></li>
-											<li><h4>IDS</h4></li>
-											<li><h4>ORACLE</h4></li>
-											<li><h4>XERO</h4></li>
-											<li><h4>QUICK BOOKS</h4></li>
-											<li><h4>MYOB</h4></li>
-										</ul>
-									</div>
-								</div>
-							</div>
+					<div class="col-md-6 col-sm-6">
+						<div class="faq-box">
+							<h4>DISADVANTAGES OF NOT FILING YOUR INCOME TAX RETURN</h4>
+							<p>
+							<ul>
+								<li>If you don't file your return in time, you will have to pay interest on your tax dues when you file at
+									a later date.</li>
+								<li>If you have incurred losses, you can not carry forward the same to subsequent years if you do not file
+									your return.</li>
+								<li>You could become liable for a penalty or Prosecution by the Income Tax Department if you conceal or
+									fail to disclose your income.</li>
+							</ul>
+							</p>
 						</div>
 					</div>
+					<!-- End col-md-6 -->
 				</div>
 			</div>
 			<!--/ 1st container end -->
 
-
 			<div class="gap-60"></div>
 			<div class="gap-60"></div>
-
 
 			<!-- Footer start -->
 			<section id="copyright" class="copyright angle">
@@ -366,5 +328,6 @@
 			<script type="text/javascript" src="resources/js/main.js"></script>
 	</div>
 	<!-- Body inner end -->
+
 </body>
 </html>

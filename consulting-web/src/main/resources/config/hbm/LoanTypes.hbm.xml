@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.vardhan.data.entity.LoanTypes" table="loan_types">
+	<class name="com.quickasr.data.entity.LoanTypes" table="loan_types">
 		<id name="loanId" type="int">
 			<column name="loan_id" />
 		</id>

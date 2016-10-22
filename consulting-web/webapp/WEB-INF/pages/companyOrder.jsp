@@ -64,7 +64,8 @@
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -74,52 +75,19 @@
 					<!--/ Logo end -->
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="index.htm">Home</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="index.htm">Home 1</a></li>
-										<li><a href="index-2.html">Home 2</a></li>
-										<li><a href="index-3.html">Home 3</a></li>
-										<li><a href="index-4.html">Home 4</a></li>
+										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="service.html">Services</a></li>
-										<li><a href="career.html">Career</a></li>
-										<li><a href="testimonial.html">Testimonials</a></li>
-										<li><a href="faq.html">Faq</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="portfolio-classic.html">Portfolio Classic</a></li>
-										<li><a href="portfolio-static.html">Portfolio Static</a></li>
-										<li><a href="portfolio-item.html">Portfolio Single</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="team.html">Our Team</a></li>
-										<li><a href="about2.html">About Us - 2</a></li>
-										<li><a href="service2.html">Services - 2</a></li>
-										<li><a href="service-single.html">Services Single</a></li>
-										<li><a href="pricing.html">Pricing Table</a></li>
-										<li class="active"><a href="404.html">404 Page</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="blog-rightside.html">Blog with Sidebar</a></li>
-										<li><a href="blog-item.html">Blog Single</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li><a href="loans.htm">Loans</a></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="typography.html">Typography</a></li>
@@ -250,8 +218,10 @@
 							<p>
 								<i>Price</i> : &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>${companyDetail.companyPrice }
 							</p>
-							<form:hidden path="companyId" class="form-control" name="state" id="companyId" value="${companyDetail.companyId }"></form:hidden>
-							<form:hidden path="requestedCompanyName" class="form-control" name="state" id="requestedCompanyName" value="${companyDetail.companyName }"></form:hidden>
+							<form:hidden path="companyId" class="form-control" name="state" id="companyId"
+								value="${companyDetail.companyId }"></form:hidden>
+							<form:hidden path="requestedCompanyName" class="form-control" name="state" id="requestedCompanyName"
+								value="${companyDetail.companyName }"></form:hidden>
 						</div>
 					</div>
 					</form:form>
@@ -266,7 +236,8 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>

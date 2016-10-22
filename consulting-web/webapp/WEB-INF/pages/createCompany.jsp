@@ -74,8 +74,7 @@
 			<button id="preset4" class="btn btn-sm btn-primary"></button>
 			<button id="preset5" class="btn btn-sm btn-primary"></button>
 			<button id="preset6" class="btn btn-sm btn-primary"></button>
-			<br />
-			<br /> <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
+			<br /> <br /> <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
 		</div>
 		<!-- Style switcher end -->
 
@@ -86,7 +85,8 @@
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -97,22 +97,18 @@
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index.htm">Home</a></li>
-							<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
+							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="blog-rightside.html">Blog with Sidebar</a></li>
-										<li><a href="blog-item.html">Blog Single</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="typography.html">Typography</a></li>
@@ -141,10 +137,9 @@
 							<!-- CSRF Token -->
 							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 							<div class="col-md-6 input-group subscribe col-md-offset-3">
-								<input name="companyName" type="text" value="${companyName}" class="form-control " placeholder="Enter Company Name" id="companyName"
-									required=""> <span class="input-group-addon">
-									<button class="btn" id="createCompany" type="submit">Register a Company in India</button>
-									</a>
+								<input name="companyName" type="text" value="${companyName}" class="form-control "
+									placeholder="Enter Company Name" id="companyName" required=""> <span class="input-group-addon">
+									<button class="btn" id="createCompany" type="submit">Register a Company in India</button> </a>
 								</span>
 							</div>
 						</form>
@@ -165,10 +160,10 @@
 					<div class="col-md-12 heading">
 						<span class="title-icon classic pull-left"><i class="fa fa-university"></i></span>
 						<c:if test="${not empty companyName && companyAlreadyExists}">
-							<h2 class="title classic">${companyName} &nbsp; is Not Available</h2>
+							<h2 class="title classic">${companyName}&nbsp; is Not Available</h2>
 						</c:if>
 						<c:if test="${not empty companyName && !companyAlreadyExists}">
-							<h2 class="title classic">${companyName} &nbsp; is available</h2>
+							<h2 class="title classic">${companyName}&nbsp; is available</h2>
 						</c:if>
 						<c:if test="${empty companyName}">
 							<h2 class="title classic">Pricing</h2>
@@ -196,9 +191,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="1">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="1">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -223,9 +218,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="2">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="2">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -250,9 +245,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="3">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="3">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -277,9 +272,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="4">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="4">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -310,9 +305,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="5">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="5">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -336,9 +331,9 @@
 								</ul>
 								<form accept-charset="UTF-8" action="companyOrder.htm" method="post">
 									<!-- CSRF Token -->
-									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input name="companyName"
-										type="hidden" class="form-control " id="companyName" required="" value="${companyName} "> <input name="companyId" type="hidden"
-										class="form-control " id="companyId" required="" value="6">
+									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input
+										name="companyName" type="hidden" class="form-control " id="companyName" required="" value="${companyName} ">
+									<input name="companyId" type="hidden" class="form-control " id="companyId" required="" value="6">
 									<button class="order btn btn-primary" type="submit">Create</button>
 								</form>
 							</div>
@@ -360,7 +355,8 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>

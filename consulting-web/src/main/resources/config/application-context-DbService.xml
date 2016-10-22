@@ -72,7 +72,7 @@
 		</property>
 	</bean>
 
-	<bean id="abstractDaoTarget" class="com.vardhan.data.generic.GenericDaoImpl"
+	<bean id="abstractDaoTarget" class="com.quickasr.data.generic.GenericDaoImpl"
 		abstract="true">
 		<property name="sessionFactory" ref="consultingSessionFactory" />
 	</bean>
@@ -87,41 +87,41 @@
 		<tx:attributes>
 			<tx:method name="get*" read-only="true" propagation="REQUIRED" />
 			<tx:method name="*" propagation="REQUIRED"
-				rollback-for="com.vardhan.base.ApplicationException, java.lang.Exception" />
+				rollback-for="com.quickasr.base.ApplicationException, java.lang.Exception" />
 		</tx:attributes>
 	</tx:advice>
 
 	<aop:config proxy-target-class="true">
 		<aop:pointcut id="txnPointCut"
-			expression="execution(public * com.vardhan.service.*.*(..))" />
+			expression="execution(public * com.quickasr.service.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="txnPointCut" />
 	</aop:config>
 
 	<bean id="companyDao" parent="abstractDaoTarget"
-		class="com.vardhan.data.dao.CompanyDaoImpl">
+		class="com.quickasr.data.dao.CompanyDaoImpl">
 		<constructor-arg>
-			<value>com.vardhan.data.entity.Company</value>
+			<value>com.quickasr.data.entity.Company</value>
 		</constructor-arg>
 	</bean>
 	
 	<bean id="companyRequestDao" parent="abstractDaoTarget"
-		class="com.vardhan.data.dao.CompanyRequestDaoImpl">
+		class="com.quickasr.data.dao.CompanyRequestDaoImpl">
 		<constructor-arg>
-			<value>com.vardhan.data.entity.CompanyRequest</value>
+			<value>com.quickasr.data.entity.CompanyRequest</value>
 		</constructor-arg>
 	</bean>
 	
 	<bean id="loanTypesDao" parent="abstractDaoTarget"
-		class="com.vardhan.data.dao.LoanTypeDaoImpl">
+		class="com.quickasr.data.dao.LoanTypeDaoImpl">
 		<constructor-arg>
-			<value>com.vardhan.data.entity.LoanTypes</value>
+			<value>com.quickasr.data.entity.LoanTypes</value>
 		</constructor-arg>
 	</bean>
 	
 	<bean id="loanRequestDao" parent="abstractDaoTarget"
-		class="com.vardhan.data.dao.LoanRequestDaoImpl">
+		class="com.quickasr.data.dao.LoanRequestDaoImpl">
 		<constructor-arg>
-			<value>com.vardhan.data.entity.LoanRequest</value>
+			<value>com.quickasr.data.entity.LoanRequest</value>
 		</constructor-arg>
 	</bean>
 

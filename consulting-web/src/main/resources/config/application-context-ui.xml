@@ -43,12 +43,12 @@
 	<mvc:annotation-driven
 		content-negotiation-manager="contentNegotiationManager" />
 
-	<context:component-scan base-package="com.vardhan.controller" />
+	<context:component-scan base-package="com.quickasr.controller" />
 
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<mvc:interceptors>
-		<bean class="com.vardhan.util.CsrfRequestInterceptor"></bean>
+		<bean class="com.quickasr.util.CsrfRequestInterceptor"></bean>
 	</mvc:interceptors>
 
 	<mvc:view-controller path="/" view-name="index" />
@@ -62,10 +62,10 @@
 	</bean>
 
 	<!-- Data Value Processor -->
-	<bean name="requestDataValueProcessor" class="com.vardhan.security.CustomRequestDataValueProcessor" />
+	<bean name="requestDataValueProcessor" class="com.quickasr.security.CustomRequestDataValueProcessor" />
 
 	<!-- Create Comapny Manager -->
-	<bean id="createCompanyManager" class="com.vardhan.service.CreateCompanyManager">
+	<bean id="createCompanyManager" class="com.quickasr.service.CreateCompanyManager">
 		<property name="proxyRequired" value="${network.proxyRequired}"></property>
 		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
 		<property name="companyDao" ref="companyDao"></property>
@@ -90,12 +90,12 @@
 		</property>
 	</bean>
 
-	<bean id="emailer" class="com.vardhan.util.Emailer">
+	<bean id="emailer" class="com.quickasr.util.Emailer">
 		<property name="mailSender" ref="mailSender" />
 	</bean>
 	
 	<!-- Loans Manager -->
-	<bean id="loansManager" class="com.vardhan.service.LoansManager">
+	<bean id="loansManager" class="com.quickasr.service.LoansManager">
 		<property name="loanTypesDao" ref="loanTypesDao"></property>
 		<property name="loanRequestDao" ref="loanRequestDao"></property>
 		<property name="emailer" ref="emailer"></property>

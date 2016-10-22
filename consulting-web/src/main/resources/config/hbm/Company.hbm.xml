@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.vardhan.data.entity.Company" table="companies">
+    <class name="com.quickasr.data.entity.Company" table="companies">
         <id name="companyId" type="int">
             <column name="company_id" />
         </id>

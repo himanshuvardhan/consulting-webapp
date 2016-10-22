@@ -83,7 +83,8 @@
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -94,22 +95,18 @@
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown active"><a href="index.htm">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
+							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="blog-rightside.html">Blog with Sidebar</a></li>
-										<li><a href="blog-item.html">Blog Single</a></li>
-									</ul>
-								</div></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="typography.html">Typography</a></li>
@@ -143,8 +140,8 @@
 									<!-- CSRF Token -->
 									<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 									<div class="col-md-6 input-group subscribe col-md-offset-3">
-										<input name="companyName" type="text" class="form-control " placeholder="Enter Company Name" id="companyName" required=""> <span
-											class="input-group-addon">
+										<input name="companyName" type="text" class="form-control " placeholder="Enter Company Name" id="companyName"
+											required=""> <span class="input-group-addon">
 											<button class="btn" id="createCompany" type="submit">Register a Company in India</button> </a>
 										</span>
 									</div>
@@ -176,7 +173,8 @@
 						<div class="cd-half-width">
 							<h2>Your Challenge is Our Progress</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In consequatur cumque natus!</p>
-							<a href="#0" class="cd-btn btn btn-primary white">Start</a> <a href="#0" class="cd-btn btn secondary btn-primary solid">Learn More</a>
+							<a href="#0" class="cd-btn btn btn-primary white">Start</a> <a href="#0"
+								class="cd-btn btn secondary btn-primary solid">Learn More</a>
 						</div> <!-- .cd-half-width -->
 					</li>
 					<li class="cd-bg-video">
@@ -307,8 +305,9 @@
 									<img src="resources/images/portfolio/portfolio1.jpg" alt="">
 									<figcaption>
 										<h3>Startup Business</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg1.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg1.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -321,8 +320,9 @@
 									<img src="resources/images/portfolio/portfolio2.jpg" alt="">
 									<figcaption>
 										<h3>Easy to Lanunch</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg2.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg2.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -335,8 +335,9 @@
 									<img src="resources/images/portfolio/portfolio3.jpg" alt="">
 									<figcaption>
 										<h3>Your Business</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg3.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg3.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -349,8 +350,9 @@
 									<img src="resources/images/portfolio/portfolio4.jpg" alt="">
 									<figcaption>
 										<h3>Prego Match</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg4.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg4.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -363,8 +365,9 @@
 									<img src="resources/images/portfolio/portfolio5.jpg" alt="">
 									<figcaption>
 										<h3>Fashion Brand</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg5.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg5.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -377,8 +380,9 @@
 									<img src="resources/images/portfolio/portfolio6.jpg" alt="">
 									<figcaption>
 										<h3>The Insidage</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg1.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg1.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -391,8 +395,9 @@
 									<img src="resources/images/portfolio/portfolio7.jpg" alt="">
 									<figcaption>
 										<h3>Light Carpet</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg2.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg2.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -405,8 +410,9 @@
 									<img src="resources/images/portfolio/portfolio8.jpg" alt="">
 									<figcaption>
 										<h3>Amazing Keyboard</h3>
-										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a class="view icon-pentagon" data-rel="prettyPhoto"
-											href="resources/images/portfolio/portfolio-bg3.jpg"><i class="fa fa-search"></i></a>
+										<a class="link icon-pentagon" href="portfolio-item.html"><i class="fa fa-link"></i></a> <a
+											class="view icon-pentagon" data-rel="prettyPhoto" href="resources/images/portfolio/portfolio-bg3.jpg"><i
+											class="fa fa-search"></i></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -570,13 +576,14 @@
 		<section id="image-block" class="image-block no-padding">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-6 ts-padding" style="height: 650px; background: url(resources/images/image-block-bg.jpg) 50% 50%/cover no-repeat;"></div>
+					<div class="col-md-6 ts-padding"
+						style="height: 650px; background: url(resources/images/image-block-bg.jpg) 50% 50%/cover no-repeat;"></div>
 					<div class="col-md-6 ts-padding img-block-right">
 						<div class="img-block-head text-center">
 							<h2>Know More About Our Company</h2>
 							<h3>Why Choose Us</h3>
-							<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Proin gravida nibh vel velit
-								auctor Aenean sollicitudin, adipisicing elit sed lorem quis bibendum auctor.</p>
+							<p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+								Proin gravida nibh vel velit auctor Aenean sollicitudin, adipisicing elit sed lorem quis bibendum auctor.</p>
 						</div>
 
 						<div class="gap-30"></div>
@@ -638,9 +645,9 @@
 								<h3>Vosgi Varduhi</h3>
 								<p>Web Designer</p>
 								<div class="team-social">
-									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a> <a class="gplus" href="#"><i
-										class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i
-										class="fa fa-dribbble"></i></a>
+									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i
+										class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
 								</div>
 							</div>
 						</div>
@@ -655,9 +662,9 @@
 								<h3>Robert Aleska</h3>
 								<p>Web Designer</p>
 								<div class="team-social">
-									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a> <a class="gplus" href="#"><i
-										class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i
-										class="fa fa-dribbble"></i></a>
+									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i
+										class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
 								</div>
 							</div>
 						</div>
@@ -672,9 +679,9 @@
 								<h3>Taline Voski</h3>
 								<p>Web Designer</p>
 								<div class="team-social">
-									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a> <a class="gplus" href="#"><i
-										class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i
-										class="fa fa-dribbble"></i></a>
+									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i
+										class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
 								</div>
 							</div>
 						</div>
@@ -689,9 +696,9 @@
 								<h3>Alban Spencer</h3>
 								<p>Web Designer</p>
 								<div class="team-social">
-									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a> <a class="gplus" href="#"><i
-										class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i
-										class="fa fa-dribbble"></i></a>
+									<a class="fb" href="#"><i class="fa fa-facebook"></i></a> <a class="twt" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="gplus" href="#"><i class="fa fa-google-plus"></i></a> <a class="linkdin" href="#"><i
+										class="fa fa-linkedin"></i></a> <a class="dribble" href="#"><i class="fa fa-dribbble"></i></a>
 								</div>
 							</div>
 						</div>
@@ -713,7 +720,8 @@
 						<h2>Are You Ready to Buy This Template!</h2>
 						<h3>Just Click Button and Use Your Own</h3>
 						<p>
-							<a href="#" class="btn btn-primary white">Purchase Now</a> <a href="#" class="btn btn-primary solid">Get In Touch</a>
+							<a href="#" class="btn btn-primary white">Purchase Now</a> <a href="#" class="btn btn-primary solid">Get In
+								Touch</a>
 						</p>
 					</div>
 				</div>
@@ -829,9 +837,9 @@
 								<img src="resources/images/team/testimonial1.jpg" alt="testimonial">
 							</div>
 							<div class="testimonial-content">
-								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still
-									in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose. Lorem Ipsum is that it as
-									opposed to using.</p>
+								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will
+									uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+									accident, sometimes on purpose. Lorem Ipsum is that it as opposed to using.</p>
 								<h3 class="name">
 									Sarah Arevik<span>Chief Executive</span>
 								</h3>
@@ -842,9 +850,9 @@
 								<img src="resources/images/team/testimonial2.jpg" alt="testimonial">
 							</div>
 							<div class="testimonial-content">
-								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still
-									in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose. Lorem Ipsum is that it as
-									opposed to using.</p>
+								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will
+									uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+									accident, sometimes on purpose. Lorem Ipsum is that it as opposed to using.</p>
 								<h3 class="name">
 									Narek Bedros<span>Sr. Manager</span>
 								</h3>
@@ -855,9 +863,9 @@
 								<img src="resources/images/team/testimonial3.jpg" alt="testimonial">
 							</div>
 							<div class="testimonial-content">
-								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still
-									in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose. Lorem Ipsum is that it as
-									opposed to using.</p>
+								<p class="testimonial-text">Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will
+									uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
+									accident, sometimes on purpose. Lorem Ipsum is that it as opposed to using.</p>
 								<h3 class="name">
 									Taline Lucine<span>Sales Manager</span>
 								</h3>
@@ -925,7 +933,8 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>

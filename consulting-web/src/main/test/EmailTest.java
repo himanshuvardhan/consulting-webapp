@@ -1,14 +1,14 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.vardhan.util.Emailer;
+import com.quickasr.util.Emailer;
 
 /**
  * 
  */
 
 /**
- * @author vardhan
+ * @author quickasr
  *
  */
 public class EmailTest {
@@ -19,7 +19,7 @@ public class EmailTest {
 
 		Emailer mm = (Emailer) context.getBean("emailer");
 		try {
-			mm.sendMail("consultingwebapp@gmail.com", "saurabhkhannaca7@gmail.com", "himanshuvardhan@gmail.com", "Testing Email Functionality", "Testing only \n\n Testing email sent on company creation");
+			mm.sendMail("quickasr@gmail.com", "quickasr@gmail.com", "quickasr@gmail.com", "Testing Email Functionality", "Testing only \n\n Testing email sent on company creation");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
