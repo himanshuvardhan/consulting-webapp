@@ -179,6 +179,7 @@ ul.navbar-nav > li.active > a{
 .isotope-nav ul a.active, 
 .isotope-nav ul a:hover{
 	background: #334F96;
+	cursor: pointer;
 }
 
 .isotope-nav ul a.active:after, 

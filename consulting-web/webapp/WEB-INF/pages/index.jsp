@@ -56,6 +56,7 @@
 <body>
 	<!-- CSRF Token -->
 	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+	<input type="hidden" id="styleSwitcherPreset" name="styleSwitcherPreset" value="preset1" />
 
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
@@ -100,17 +101,7 @@
 									</ul>
 								</div></li>
 							<li><a href="loans.htm">Loans</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="team.html">Our Team</a></li>
-										<li><a href="about2.html">About Us - 2</a></li>
-										<li><a href="service2.html">Services - 2</a></li>
-										<li><a href="service-single.html">Services Single</a></li>
-										<li><a href="pricing.html">Pricing Table</a></li>
-										<li><a href="404.html">404 Page</a></li>
-									</ul>
-								</div></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>

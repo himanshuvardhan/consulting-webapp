@@ -7,7 +7,7 @@
 <!-- Basic Page Needs
 	================================================== -->
 <meta charset="utf-8">
-<title>BizCraft - Responsive Html5 Template</title>
+<title>Quick Accounting & Consulting</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -86,32 +86,22 @@
 							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
-							<a href="index.html"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
+							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
 							</a>
 						</div>
 					</div>
 					<!--/ Logo end -->
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.htm">Home</a></li>
+							<li class="dropdown"><a href="index.htm">Home</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li class="dropdown active"><a href="loans.htm">Loans</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-								<div class="dropdown-menu">
-									<ul>
-										<li><a href="team.html">Our Team</a></li>
-										<li><a href="about2.html">About Us - 2</a></li>
-										<li><a href="service2.html">Services - 2</a></li>
-										<li><a href="service-single.html">Services Single</a></li>
-										<li><a href="pricing.html">Pricing Table</a></li>
-										<li><a href="404.html">404 Page</a></li>
-									</ul>
-								</div></li>
+							<li class="active"><a href="loans.htm">Loans</a></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
@@ -138,7 +128,7 @@
 		<!--/ Header end -->
 
 		<div id="banner-area">
-			<img src="resources/images/banner/banner2.jpg" alt="" />
+			<img src="resources/images/banner/banner3.jpg" alt="" />
 			<div class="parallax-overlay"></div>
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
@@ -161,6 +151,8 @@
 							<li class="homeloan"><a>Home Loan</a></li>
 							<li class="personalLoan"><a>Loan Against Property</a></li>
 							<li class="balanceTransfer"><a>Balance Transfer & Top ups</a></li>
+							<li class="educationalLoan"><a>Educational Loan</a></li>
+							<li class="termLoan"><a>Term Loan</a></li>
 						</ul>
 					</div>
 				</div>
@@ -314,6 +306,118 @@
 
 									</div>
 								</div>
+								<div class="item">
+									<div class="testimonial-thumb">
+										<h2>Educational Loan</h2>
+									</div>
+									<div class="testimonial-content">
+										<p>When it comes to all the building blocks that form a complete and successful life, nothing is as important as quality education.
+											However, education in India, at least the commonly perceived "quality education" as imparted by acclaimed and influential educational
+											institutions, is decidedly costly and not easily available to everyone- especially those who deserve it based on merit alone. Thus,
+											education loans are vitally important. A barebones explanation for an education loan is thus, "funds offered by financial institutions to
+											meritorious and/or deserving students so that the latter can pursue their basic/higher education, in India or abroad". Almost all banks in
+											India offer education loans, and the demand for it has remained stable with the Indian student community.</p>
+
+										<li><h4>Why Choose Education Loan?</h4></li>
+										<p>The question should ideally be, why choose an education loan over a personal loan, or the money accumulated in your savings account?
+											The versatility and advantages of education loans are listed below</p>
+
+										<ul>
+											<li><b>Education is Expensive -</b> It's a matter of instant availability. A comprehensive education loan frees you from the task of
+												accumulating sufficient money to fund your son/daughter"s higher education. And, with inflation and shifting prices, can you ever be 100%
+												certain? A good education is expensive and the expenses aren"t changing in a predictable curve. A good education loan scales accordingly
+												and helps you be safe from unexpected surprises.</li>
+											<li><b>Specialised Help -</b> The expenses incurred through a standard study course are many, caution deposits, library fees, building
+												deposits, laboratory fees, etc. With a comprehensive education loan, individual facets of the course can be better addressed without the
+												risk of running out of money. It"s more organized and seamless with an education loan.</li>
+											<li><b>Widely and Easily Available -</b> Comprehensive education loans are a priority product in most banks" arsenal of products and
+												the RBI lists them as part of the priority sector lending of banks. Conforming to some basic requirements and confirming your ability to
+												repay the borrowed amount is all it takes to get on-board.</li>
+											<li><b>Timely Assistance -</b> Often, good intent isn"t backed by good monies. A good education loan offers timely help when it comes
+												to a crucial pillar that promises a successful life- education. Nullifying the worry that accompanies the need to gather up the requisite
+												amount, a full-fledged education loan puts you at ease.</li>
+										</ul>
+
+										<li><h4>Features & Benefits of Education Loans:</h4></li>
+										<p>When it comes to a complete education loan, the features and benefits offered are the designated deal makers. Commonly, the following
+											conveniences are offered as part of the education loan</p>
+										<ul>
+											<li>Universally available. Anyone with a will to study can apply.</li>
+											<li>Education loans are provided to pursue all types of academic courses, in India and abroad. The courses include graduation,
+												post-graduation, vocational courses and other certificate courses.</li>
+											<li>Loan amounts can vary from a minimum of Rs.10 lakhs to a maximum of Rs.15 lakhs. For education abroad, banks will provide loans to
+												the quantum of Rs.20 lakhs.</li>
+											<li>The applicant"s annual family income and the course pursued are primary determinants for the applicable loan amount.</li>
+											<li>Usually, female students are offered discounts and/or lower interest rates when it comes to education loans.</li>
+											<li>Government sponsored subsidy schemes, such as "Central Scheme to provide Interest subsidy (CSIS)" help students from the
+												economically backward sections of society avail the benefits of a robust loan for education.</li>
+											<li>The applicant need not repay the borrowed amount immediately. Post the completion of the course, the repayment tenure can stretch
+												upto 5-7 years.</li>
+											<li>Generally, loans below Rs.4 lakhs do not require a security or guarantor.</li>
+											<p>
+											<h5>Banks, in their individual capacity, will offer a whole suit of exclusive features and benefits. Check the same before zeroing in
+												on the one that best complies with your requirements.</h5>
+											</p>
+										</ul>
+
+										<li><h4>Why Apply for an Education Loan on Quickfillings?</h4></li>
+										<p>Quickfillings is a user friendly portal that is dedicated to the comparison of various banking products, including Education Loans. A
+											helpful resource, Quickfillings allows visitors to better understand this loan, its pros and cons, as well as the various banks that offer
+											them in India. Why Quickfillings? The reasons are as follows</p>
+										<ul>
+											<li><b>100% Hassle Free -</b>Save on time and effort as you ditch legwork and fire up your computer to check out the best education
+												loan options. The process is extremely simple, distraction free and incredibly quick.</li>
+											<li><b>Compare Education Loans -</b>Quickfillings lists almost all the education loans offered by the various banks and other
+												financial institutions in India. The simple comparison option allows you to choose the loan that best suits your limitations and
+												requirements. Plus, detailed information on every available loan option.</li>
+											<li><b>Apply Online -</b>Post the comparison, use the simplistic Quickfillings interface to apply online for your chosen education
+												loan. Know it All- From important details such as education loan eligibility, documentation and the basic terms and conditions, to
+												informational bytes that relate to the latest happenings across the education loan landscape in India, Quickfillings is a treasure trove
+												of helpful information.</li>
+											<li><b>Always With You -</b>Have a query or concern? Quickfillings's brand of superior customer support is always just a phone call,
+												email or chat-box away.</li>
+										</ul>
+
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimonial-thumb">
+										<h2>Term Loan</h2>
+									</div>
+									<div class="testimonial-content">
+										<p>Term loan are provided for acquiring or constructing or installing or establishing capital assets, which will provide returns over a
+											period of time. Term loans will also be repaid in regular payments over a period of time, as the asset generates returns. Term loans are
+											usually provided for acquiring or constructing building and acquiring or installing plant and machinery. Term loans in India are provided
+											for a tenure of anywhere between 3 to 10 years based on the project, projected financials and other factors. The interest rate for the term
+											loan will be based on the credit worthiness of the borrower and is usually a fixed spread over the banks base lending rate</p>
+										<p>Quickfillings can help your business apply and obtain sanction of term loans from banks. Term loans can be availed for both
+											green-field as well as brown-filed projects. Once we obtain an understanding or your business or proposed business, our Financial Experts
+											will then advice you suitably on the proposed quantum of loan, repayment type, repayment tenure and schemes available. Quickfillings can
+											also help you prepare a project report, apply to banks and obtain sanction of term loans for your business.</p>
+
+										<p>loan is a type of loan, which has to be paid in regular installments over time. Term loans are typically sanctioned for a acquiring
+											or constructing or installing capital assets like building, plant and machinery.</p>
+
+										<li><h3>Rate of interest varies between 11% to 12%</h3></li>
+										<li><h4>Bank Loan Syndication</h4></li>
+										<p>Bank Loan Syndication is the process of formulating a credit request, preparing a detailed project report along with the necessary
+											documents, submitting the requests to banks or financial institutions and obtaining sanction & disbursement of credit facilities.</p>
+
+										<li><h4>Loan without Collateral</h4></li>
+										<p>The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) Scheme provides a way for Entrepreneurs to obtain a bank
+											loan of upto Rs.1 Crore without any collateral security</p>
+										<li><h4>Financial Professional</h4></li>
+										<p>A well drafted Detailed Project Report will ensure easy approval of the requested credit facilities. So an experienced Financial
+											Professional with good writing, presentation and financial analysis skill must prepare the Detailed Project Report.</p>
+										<li><h4>Quickfillings Can Help</h4></li>
+										<p>Quickfillings has experience financial professionals who syndicated bank loans for hundreds of business. Our Financial Professionals
+											will provide end-to-end support on the loan syndication process.</p>
+										<p>
+										<li><h4>Processing</h4></li>
+										<p>The processing time for obtaining a bank loan is anywhere between 1 and 3 months. However, the processing time will depend on the
+											information submitted by the promoter, information requested by the bankers and a host of other factors.</p>
+									</div>
+								</div>
 							</div>
 							<!--/ Testimonial carousel end-->
 						</div>
@@ -379,28 +483,32 @@
 												<div class="form-group">
 													<label>Loan Type</label>
 													<form:select class="form-control" path="loanId" name="loanType" id="loanType">
-														<form:options items="${loanTypesMap}" ></form:options>
+														<form:options items="${loanTypesMap}"></form:options>
 													</form:select>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>Name</label> <form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>
+													<label>Name</label>
+													<form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>Phone Number</label> <form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text"></form:input>
+													<label>Phone Number</label>
+													<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>Email Address</label> <form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email"></form:input>
+													<label>Email Address</label>
+													<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label>PAN Number</label> <form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
+													<label>PAN Number</label>
+													<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12 text-right">

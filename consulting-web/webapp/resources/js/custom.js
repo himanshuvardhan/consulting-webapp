@@ -134,10 +134,25 @@ jQuery(function($) {
     $(".homeloan").click(function(){
       owl.trigger('owl.goTo', 0);
     })
-        $(".personalLoan").click(function(){
+    $(".personalLoan").click(function(){
       owl.trigger('owl.goTo', 1);
     })
-        $(".balanceTransfer").click(function(){
+    $(".balanceTransfer").click(function(){
+      owl.trigger('owl.goTo', 2);
+    })
+    $(".educationalLoan").click(function(){
+      owl.trigger('owl.goTo', 3);
+    })
+    $(".termLoan").click(function(){
+      owl.trigger('owl.goTo', 4);
+    })
+    $(".accounting").click(function(){
+      owl.trigger('owl.goTo', 0);
+    })
+    $(".whatwedo").click(function(){
+      owl.trigger('owl.goTo', 1);
+    })
+    $(".technologyweuse").click(function(){
       owl.trigger('owl.goTo', 2);
     })
     

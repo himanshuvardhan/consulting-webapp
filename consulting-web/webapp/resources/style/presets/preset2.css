@@ -180,6 +180,7 @@ ul.navbar-nav > li.active > a{
 .isotope-nav ul a.active, 
 .isotope-nav ul a:hover{
 	background: #81c83c;
+	cursor: pointer;
 }
 
 .isotope-nav ul a.active:after, 
