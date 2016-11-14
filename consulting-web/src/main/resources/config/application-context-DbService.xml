@@ -54,6 +54,8 @@
 				</value>
 				<value>classpath:config/hbm/LoanRequest.hbm.xml
 				</value>
+				<value>classpath:config/hbm/IncomeTaxRequest.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -122,6 +124,13 @@
 		class="com.quickasr.data.dao.LoanRequestDaoImpl">
 		<constructor-arg>
 			<value>com.quickasr.data.entity.LoanRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="incomeTaxRequestDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.IncomeTaxRequestDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.IncomeTaxRequest</value>
 		</constructor-arg>
 	</bean>
 

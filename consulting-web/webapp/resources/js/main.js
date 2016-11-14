@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 	});
 
 });
+
 var computeLoan = function() {
 	var amount = $('#amount').val();
 	var interest_rate = $('#interest_rate').val();
@@ -19,3 +20,67 @@ var computeLoan = function() {
 		$('#monthlyEmi').html('0.0');
 	}
 };
+
+$('#uploadIncomeTaxData').fileupload(
+		{
+			autoUpload : false,
+			dataType : 'json',
+			beforeSend : function(xhr) {
+				xhr.setRequestHeader("Csrf_RQ_PARAM_NAME", $(
+						'#Csrf_RQ_PARAM_NAME').val());
+			},
+			add : function(e, data) {
+				$('#uploadButton').unbind('click');
+				$("#uploadButton").on('click', function() {
+					$('#uploadButton').html("Uploading ....");
+					data.submit();
+				});
+			},
+			success : function(data, xhr) {
+				$("#incomeTaxRequestId").val(data);
+				$('#uploadButton').unbind('click');
+				$("#uploadButton").attr("disabled", true);
+				$('#uploadButton').html("Upload Other Documents");
+				$("span.fileupload-new").html("Select Other Documents");
+				$("#otherDocuments").val(true);
+				$("#uploadButton").css("background-color", "red");
+				$("#uploadButton").css("border-color", "red");
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				$('#uploadButton').unbind('click');
+				$("#uploadButton").attr("disabled", true);
+				$('#uploadButton').html("Upload Form 16");
+				$("span.fileupload-new").html("Select Form 16");
+				$("#uploadButton").css("background-color", "red");
+				$("#uploadButton").css("border-color", "red");
+			},
+			submit : function(e, data) {
+			},
+			done : function(e, data) {
+				$("#incomeTaxRequestId").val(data.result);
+				$('#uploadButton').unbind('click');
+				$("#uploadButton").attr("disabled", true);
+				$('#uploadButton').html("Upload Other Documents");
+				$("span.fileupload-new").html("Select Other Documents");
+				$("#otherDocuments").val(true);
+				$("#uploadButton").css("background-color", "red");
+				$("#uploadButton").css("border-color", "red");
+			},
+			change : function(e, data) {
+				var fileReader = new FileReader();
+				fileReader.onload = function(e) {
+					var int32View = new Uint8Array(e.target.result);
+					// https://en.wikipedia.org/wiki/List_of_file_signatures)
+					if (int32View.length > 2 && int32View[0] == 0x4D
+							&& int32View[1] == 0x5A) {
+						return false;
+					} else {
+
+						$("#uploadButton").attr("disabled", false);
+						$("#uploadButton").css("background-color", "#79e599");
+						$("#uploadButton").css("border-color", "#79e599");
+					}
+				};
+				fileReader.readAsArrayBuffer(data.files[0]);
+			}
+		});

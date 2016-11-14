@@ -43,7 +43,7 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+<link id="style-switch" href="${stylePreset }" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -56,7 +56,6 @@
 <body>
 	<!-- CSRF Token -->
 	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-	<input type="hidden" id="styleSwitcherPreset" name="styleSwitcherPreset" value="preset1" />
 
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
@@ -105,12 +104,11 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>

@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,12 +106,11 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li class="active"><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -278,6 +279,43 @@
 							</div>
 						</div>
 					</div>
+					<br>
+					<form:form id="loan-form" action="applyForBookKeeping.htm" method="post" modelAttribute="bookKeepingOrderModel">
+						<!-- CSRF Token -->
+						<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+						<div class="row col-md-12">
+							<div class="col-md-3">
+								<div class="form-group">
+									<label>Full Name</label>
+									<form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label>Email Id</label>
+									<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email"></form:input>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label>Phone Number</label>
+									<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text"></form:input>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="form-group">
+									<label>Bank Name</label>
+									<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
+								</div>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button class="btn btn-primary solid blank" type="submit">Apply Now</button>
+							</div>
+						</div>
+					</form:form>
 				</div>
 			</div>
 			<!--/ 1st container end -->

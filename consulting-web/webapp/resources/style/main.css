@@ -21,3 +21,24 @@ body {
 .plan .order:hover {
     background: #ee3b24 !important;
 }
+
+#uploadButton {
+	box-shadow: inset 0 0 0 0 #31302B;
+	-webkit-transition: all ease 0.8s;
+	-moz-transition: all ease 0.8s;
+	transition: all ease 1s;
+}
+
+.removeButton{
+	border: none !important;
+	background: none !important;
+}
+#fileNameUploaded{
+	text-decoration: none !important;
+	color: #79797a !important;
+	cursor: default !important;
+}
+span.fileupload-new {
+    color: #57c8f1 !important;
+    text-decoration: underline !important;
+}

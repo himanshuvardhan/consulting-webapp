@@ -5,7 +5,7 @@
 <!-- Basic Page Needs
 	================================================== -->
 <meta charset="utf-8">
-<title>Consilting</title>
+<title>Quick Accounting & Consulting</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -73,7 +73,7 @@
 					<!--/ Logo end -->
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown active"><a href="index.htm">Home</a></li>
+							<li class="dropdown"><a href="index.htm">Home</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
@@ -84,12 +84,11 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>

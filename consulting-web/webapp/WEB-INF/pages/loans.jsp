@@ -105,12 +105,11 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li class="active"><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -334,19 +333,19 @@
 
 										<ul>
 											<li><b>Education is Expensive -</b> It's a matter of instant availability. A comprehensive education
-												loan frees you from the task of accumulating sufficient money to fund your son/daughter"s higher education.
+												loan frees you from the task of accumulating sufficient money to fund your son/daughter's higher education.
 												And, with inflation and shifting prices, can you ever be 100% certain? A good education is expensive and the
-												expenses aren"t changing in a predictable curve. A good education loan scales accordingly and helps you be
+												expenses aren't changing in a predictable curve. A good education loan scales accordingly and helps you be
 												safe from unexpected surprises.</li>
 											<li><b>Specialised Help -</b> The expenses incurred through a standard study course are many, caution
 												deposits, library fees, building deposits, laboratory fees, etc. With a comprehensive education loan,
-												individual facets of the course can be better addressed without the risk of running out of money. It"s more
+												individual facets of the course can be better addressed without the risk of running out of money. It's more
 												organized and seamless with an education loan.</li>
-											<li><b>Widely and Easily Available -</b>Â Comprehensive education loans are a priority product in most
+											<li><b>Widely and Easily Available -</b>A Comprehensive education loans are a priority product in most
 												banks" arsenal of products and the RBI lists them as part of the priority sector lending of banks.
 												Conforming to some basic requirements and confirming your ability to repay the borrowed amount is all it
 												takes to get on-board.</li>
-											<li><b>Timely Assistance -</b>Â Often, good intent isn"t backed by good monies. A good education loan
+											<li><b>Timely Assistance -</b>A Often, good intent isn't backed by good monies. A good education loan
 												offers timely help when it comes to a crucial pillar that promises a successful life- education. Nullifying
 												the worry that accompanies the need to gather up the requisite amount, a full-fledged education loan puts
 												you at ease.</li>
@@ -391,7 +390,7 @@
 												the loan that best suits your limitations and requirements. Plus, detailed information on every available
 												loan option.</li>
 											<li><b>Apply Online -</b>Post the comparison, use the simplistic Quickfillings interface to apply online
-												for your chosen education loan. Know it All-Â From important details such as education loan eligibility,
+												for your chosen education loan. Know it All-A From important details such as education loan eligibility,
 												documentation and the basic terms and conditions, to informational bytes that relate to the latest
 												happenings across the education loan landscape in India, Quickfillings is a treasure trove of helpful
 												information.</li>

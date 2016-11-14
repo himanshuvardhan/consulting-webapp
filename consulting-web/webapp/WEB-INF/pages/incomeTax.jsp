@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +47,11 @@
 <!-- Style Swicther -->
 <link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
 
+<link id="style-switch" href="resources/style/main.css" media="screen" rel="stylesheet" type="text/css">
+
+<link id="style-switch" href="resources/file-uploader/css/jquery.fileupload.css" media="screen" rel="stylesheet"
+	type="text/css">
+
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
       <script src="resources/js/html5shiv.js"></script>
@@ -56,7 +63,7 @@
 <body>
 
 	<!-- CSRF Token -->
-	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+	<%-- <input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> --%>
 
 	<!-- Style switcher start -->
 	<div class="style-switch-wrapper">
@@ -104,12 +111,11 @@
 							<li class="active"><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
 									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -149,7 +155,62 @@
 						<h5>We will import your data automatically and help you file your Income Tax return in minutes</h5>
 					</div>
 				</div>
-
+				<form:form id="uploadIncomeTaxDataForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxData.htm"
+					enctype="multipart/form-data">
+					<div class="row">
+						<div class="col-md-1 col-sm-1"></div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Full Name</label>
+								<form:input path="fullName" class="form-control" name="fullName" id="fullName" type="text"></form:input>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Email Id</label>
+								<form:input path="emailId" class="form-control" name="lastName" id="lastName" type="email"></form:input>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Phone Number</label>
+								<form:input path="phoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" type="text"></form:input>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Bank Name</label>
+								<form:input path="bankName" class="form-control" name="bankName" id="bankName" type="text"></form:input>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>IFSC Code</label>
+								<form:input path="ifscCode" class="form-control" name="ifscCode" id="ifscCode" type="text"></form:input>
+								<form:hidden path="incomeTaxRequestId" id="incomeTaxRequestId" value="${incomeTaxModel.incomeTaxRequestId }"/>
+								<form:hidden path="otherDocuments" id="otherDocuments" value="${incomeTaxModel.otherDocuments }"/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<!-- CSRF Token -->
+							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+							<div class="fileupload fileupload-new" data-provides="fileinput">
+								<span class="btn btn-white btn-file removeButton fileinput-button"> <span class="fileupload-new">Select
+										Form 16 </span> <form:input id="uploadIncomeTaxData" path="files" type="file" class="default" accept=".pdf"></form:input>
+								</span> <span id="fileNameUploaded"></span> <br>
+							</div>
+							<br>
+						</div>
+					</div>
+				</form:form>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<button disabled id="uploadButton" class="btn btn-primary solid blank ">Upload Form 16</button>
+					</div>
+				</div>
+				<div class="gap-40"></div>
 				<div class="row ">
 					<div class="col-md-1 col-sm-1 wow fadeInDown" data-wow-delay=".5s"></div>
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay=".5s">
@@ -292,6 +353,10 @@
 
 			<!-- initialize jQuery Library -->
 			<script type="text/javascript" src="resources/js/jquery.js"></script>
+			<!-- jquery fileUpload -->
+			<script type="text/javascript" language="javascript" src="resources/js/jquery-ui.js"></script>
+			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/jquery.fileupload.js"></script>
+			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/vendor/jquery.ui.widget.js"></script>
 			<!-- Bootstrap jQuery -->
 			<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 			<!-- Style Switcher -->
@@ -318,10 +383,11 @@
 			<!-- Waypoints -->
 			<script type="text/javascript" src="resources/js/waypoints.min.js"></script>
 			<!-- Google Map API Key Source -->
-			<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+			<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 			<!-- For Google Map -->
-			<script type="text/javascript" src="resources/js/gmap3.js"></script>
+			<!-- <script type="text/javascript" src="resources/js/gmap3.js"></script> -->
 			<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
+
 			<!-- Template custom -->
 			<script type="text/javascript" src="resources/js/custom.js"></script>
 

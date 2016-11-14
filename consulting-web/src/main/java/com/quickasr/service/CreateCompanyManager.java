@@ -28,6 +28,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private CompanyDao companyDao;
 	private CompanyRequestDao companyRequestDao;
 	private Emailer emailer;
+	private boolean emailNotificationsEnabled;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -126,8 +127,11 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			companyRequest.setCreatedDt(new Date());
 
 			companyRequestDao.saveOrUpdate(companyRequest);
-								
-			result = sendConfirmationEmail(companyRequest);
+			if(emailNotificationsEnabled){					
+				result = sendConfirmationEmail(companyRequest);
+			}else{
+				result = true;
+			}
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
@@ -188,4 +192,17 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	public void setEmailer(Emailer emailer) {
 		this.emailer = emailer;
 	}
+
+	public boolean isEmailNotificationsEnabled() {
+		return emailNotificationsEnabled;
+	}
+
+	public void setEmailNotificationsEnabled(boolean emailNotificationsEnabled) {
+		this.emailNotificationsEnabled = emailNotificationsEnabled;
+	}
+
+	public Emailer getEmailer() {
+		return emailer;
+	}
+	
 }

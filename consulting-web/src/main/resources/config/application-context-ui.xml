@@ -40,6 +40,9 @@
 		</property>
 	</bean>
 
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
 	<mvc:annotation-driven
 		content-negotiation-manager="contentNegotiationManager" />
 
@@ -71,6 +74,7 @@
 		<property name="companyDao" ref="companyDao"></property>
 		<property name="companyRequestDao" ref="companyRequestDao"></property>
 		<property name="emailer" ref="emailer"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 	</bean>
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -93,11 +97,18 @@
 	<bean id="emailer" class="com.quickasr.util.Emailer">
 		<property name="mailSender" ref="mailSender" />
 	</bean>
-	
+
 	<!-- Loans Manager -->
 	<bean id="loansManager" class="com.quickasr.service.LoansManager">
 		<property name="loanTypesDao" ref="loanTypesDao"></property>
 		<property name="loanRequestDao" ref="loanRequestDao"></property>
 		<property name="emailer" ref="emailer"></property>
+	</bean>
+
+	<!-- Income Tax Manager -->
+	<bean id="incomeTaxManager" class="com.quickasr.service.IncomeTaxManager">
+		<property name="emailer" ref="emailer"></property>
+		<property name="rootPath" value="${application.upload.root.path}"></property>
+		<property name="incomeTaxRequestDao" ref="incomeTaxRequestDao"></property>
 	</bean>
 </beans>

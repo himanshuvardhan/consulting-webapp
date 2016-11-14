@@ -5,7 +5,7 @@
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-    <title>Consilting</title>
+    <title>Quick Accounting & Consulting</title>
     <meta name="description" content="">	
 	<meta name="author" content="">
 
@@ -56,13 +56,14 @@
 <body>
 	<div class="body-inner">
 	<!-- Header start -->
-	<header id="header" class="navbar-fixed-top header" role="banner">
+		<header id="header" class="navbar-fixed-top header" role="banner">
 			<div class="container">
 				<div class="row">
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -73,7 +74,8 @@
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="index.htm">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
@@ -82,11 +84,11 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
+									class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
-										<li><a href="typography.html">Typography</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="importExport.htm">Import/Export</a></li>
 									</ul>
 								</div></li>
 							<li><a href="contact.html">Contact</a></li>
@@ -97,7 +99,8 @@
 				<!--/ Row end -->
 			</div>
 			<!--/ Container end -->
-		</header><!--/ Header end -->
+		</header>
+		<!--/ Header end -->
 
 	<div id="banner-area">
 		<img src="resources/images/banner/banner2.jpg" alt ="" />

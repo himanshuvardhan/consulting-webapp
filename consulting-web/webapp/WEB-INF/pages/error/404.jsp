@@ -5,7 +5,7 @@
 	<!-- Basic Page Needs
 	================================================== -->
 	<meta charset="utf-8">
-    <title>BizCraft - Responsive Html5 Template</title>
+    <title>Quick Accounting & Consulting</title>
     <meta name="description" content="">	
 	<meta name="author" content="">
 
@@ -74,74 +74,28 @@
 				    </div>                   
 				</div><!--/ Logo end -->
 				<nav class="collapse navbar-collapse clearfix" role="navigation">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Home <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="index.htm">Home 1</a></li>
-		                            <li><a href="index-2.html">Home 2</a></li>
-		                            <li><a href="index-3.html">Home 3</a></li>
-		                            <li><a href="index-4.html">Home 4</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="about.html">About Us</a></li>
-		                            <li><a href="service.html">Services</a></li>
-		                            <li><a href="career.html">Career</a></li>
-		                            <li><a href="testimonial.html">Testimonials</a></li>
-		                            <li><a href="faq.html">Faq</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-						<li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                            <li><a href="portfolio-classic.html">Portfolio Classic</a></li>
-		                            <li><a href="portfolio-static.html">Portfolio Static</a></li>
-		                            <li><a href="portfolio-item.html">Portfolio Single</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-	                    <li class="dropdown active">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                           	<li><a href="team.html">Our Team</a></li>
-		                           	<li><a href="about2.html">About Us - 2</a></li>
-		                           	<li><a href="service2.html">Services - 2</a></li>
-		                           	<li><a href="service-single.html">Services Single</a></li>
-		                           	<li><a href="pricing.html">Pricing Table</a></li>
-		                           	<li class="active"><a href="404.html">404 Page</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-	                    <li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                           	 <li><a href="blog-rightside.html">Blog with Sidebar</a></li>
-	                            	<li><a href="blog-item.html">Blog Single</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-	                    <li class="dropdown">
-                       		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <i class="fa fa-angle-down"></i></a>
-                       		<div class="dropdown-menu">
-								<ul>
-		                           	 <li><a href="typography.html">Typography</a></li>
-	                            	<li><a href="elements.html">Elements</a></li>
-		                        </ul>
-	                    	</div>
-	                    </li>
-            			<li><a href="contact.html">Contact</a></li>
-                    </ul>
-				</nav><!--/ Navigation end -->
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown"><a href="index.htm">Home</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
+									class="fa fa-angle-down"></i></a>
+								<div class="dropdown-menu">
+									<ul>
+										<li><a href="createCompany.htm">Create Company</a></li>
+									</ul>
+								</div></li>
+							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li><a href="loans.htm">Loans</a></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
+									class="fa fa-angle-down"></i></a>
+								<div class="dropdown-menu">
+									<ul>
+										<li><a href="importExport.htm">Import/Export</a></li>
+									</ul>
+								</div></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav><!--/ Navigation end -->
 			</div><!--/ Row end -->
 		</div><!--/ Container end -->
 	</header><!--/ Header end -->
