@@ -6,13 +6,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.quickasr.base.ApplicationException;
+import com.quickasr.data.dao.ApplicationConfigDao;
 import com.quickasr.data.dao.IncomeTaxRequestDao;
+import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.IncomeTaxRequest;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.IncomeTaxModel;
@@ -23,6 +26,8 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	private Emailer emailer;
 	private String rootPath;
 	private IncomeTaxRequestDao incomeTaxRequestDao;
+	private boolean emailNotificationsEnabled;
+	private ApplicationConfigDao applicationConfigDao;
 
 	@Override
 	public boolean validateIncomeTaxForm(IncomeTaxModel incomeTaxModel) throws ApplicationException {
@@ -37,7 +42,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 				result = true;
 			}
 		} catch (ApplicationException e) {
-			throw e;
+			throw new ApplicationException("Error Validating Form", e);
 		} catch (Exception e) {
 			result = false;
 		}
@@ -75,7 +80,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 				}
 			}
 		} catch (Exception e) {
-
+			throw new ApplicationException("Error Uploading File", e);
 		}
 		return result;
 	}
@@ -95,8 +100,30 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 
 			result = incomeTaxRequestDao.create(incomeTaxRequest);
 
-		} catch (Exception e) {
+			if (emailNotificationsEnabled) {
+				sendConfirmationEmail(incomeTaxRequest);
+			}
 
+		} catch (Exception e) {
+			throw new ApplicationException("Error Applying for income tax", e);
+		}
+		return result;
+	}
+
+	private boolean sendConfirmationEmail(IncomeTaxRequest incomeTaxRequest) throws ApplicationException {
+		logger.debug("sendConfirmationEmail() is executed", "quickasr");
+		boolean result = false;
+		try {
+			String body = "Hi " + incomeTaxRequest.getRequestorFullName()
+					+ "\n Your order have been placed for the following \n" + "Service : Income Tax Filling" + "\n"
+					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "\n" + "Request Time : " + new Date()
+					+ "\n";
+
+			emailer.sendMail("quickconsulting@gmail.com", incomeTaxRequest.getRequestorEmailId(), "",
+					"BookKeeping Order Confirmation", body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException("Error Sending Email", e);
 		}
 		return result;
 	}
@@ -109,9 +136,24 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			incomeTaxRequest = incomeTaxRequestDao.read(incomeTaxModel.getIncomeTaxRequestId());
 
 		} catch (Exception e) {
-
+			throw new ApplicationException("Error getting income tax data", e);
 		}
 		return incomeTaxRequest.getRequestorEmailId();
+	}
+
+	@Override
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
+
+		try {
+			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", stylePreset);
+			if (stylePresetList.size() > 0) {
+				return stylePresetList.get(0).getConfigValue();
+			} else {
+				return "preset1.css";
+			}
+		} catch (Exception e) {
+			return "preset1.css";
+		}
 	}
 
 	public Emailer getEmailer() {
@@ -136,6 +178,22 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 
 	public void setIncomeTaxRequestDao(IncomeTaxRequestDao incomeTaxRequestDao) {
 		this.incomeTaxRequestDao = incomeTaxRequestDao;
+	}
+
+	public boolean isEmailNotificationsEnabled() {
+		return emailNotificationsEnabled;
+	}
+
+	public void setEmailNotificationsEnabled(boolean emailNotificationsEnabled) {
+		this.emailNotificationsEnabled = emailNotificationsEnabled;
+	}
+
+	public ApplicationConfigDao getApplicationConfigDao() {
+		return applicationConfigDao;
+	}
+
+	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
+		this.applicationConfigDao = applicationConfigDao;
 	}
 
 }

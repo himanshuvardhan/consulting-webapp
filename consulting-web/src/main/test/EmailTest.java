@@ -13,6 +13,7 @@ import com.quickasr.util.Emailer;
  */
 public class EmailTest {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("classpath:config/application-context.xml");

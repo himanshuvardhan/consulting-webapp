@@ -7,6 +7,7 @@ public class ApplicationException extends Exception{
 	private static final long serialVersionUID = 1L;
 	private final String errorCode;
 	private String errorMsg;
+	@SuppressWarnings("unused")
 	private String stackTrace;
 	public Exception originalException;
 	

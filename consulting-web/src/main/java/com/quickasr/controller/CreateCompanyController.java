@@ -3,7 +3,6 @@ package com.quickasr.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +32,11 @@ public class CreateCompanyController {
 		List<CompanyModel> companyList = new ArrayList<CompanyModel>();
 		try {
 			companyList = createCompanyManager.getAvailableCompany();
-			
-		} catch (ApplicationException ape) {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
 
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 		model.addAttribute("companyAlreadyExists", false);
 		return new ModelAndView("createCompany", "companyList", companyList);
@@ -47,8 +48,10 @@ public class CreateCompanyController {
 		boolean result = true;
 		try {
 			result = createCompanyManager.checkCompanyStatus(companyName);
-		} catch (Exception e) {
-			e.printStackTrace();
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 		model.addAttribute("companyName", companyName);
 		model.addAttribute("companyAlreadyExists", result);
@@ -64,8 +67,8 @@ public class CreateCompanyController {
 			companyModel = createCompanyManager.getAvailableCompanyById(companyId);
 			companyModel.setCompanyType(companyModel.getCompanyName());
 			companyModel.setCompanyName(companyName);
-		} catch (Exception e) {
-
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 		model.addAttribute("companyName", companyName);
 		model.addAttribute("companyDetail", companyModel);
@@ -76,8 +79,8 @@ public class CreateCompanyController {
 	public String confirmCompanyOrder(@ModelAttribute CompanyOrderModel companyOrderModel, Model model) {
 		try {
 			createCompanyManager.requestCompanyOrder(companyOrderModel);
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 
 		return "redirect:/companySuccess.htm";

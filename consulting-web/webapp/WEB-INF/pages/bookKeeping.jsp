@@ -45,7 +45,7 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+<link id="style-switch" href="${stylePreset }" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -304,7 +304,7 @@
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
-									<label>Bank Name</label>
+									<label>Pan Number</label>
 									<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
 								</div>
 							</div>

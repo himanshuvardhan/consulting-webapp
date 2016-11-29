@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.quickasr.data.entity.BookKeepingRequest" table="book_keeping_request">
+        <id name="bookKeepingRequestId" type="int">
+            <column name="book_keeping_request_id" />
+            <generator class="native"/>
+        </id>
+        <property name="requestorFullName" type="string">
+            <column name="requestor_full_name" length="100" not-null="true" />
+        </property>
+        <property name="requestorPhoneNumber" type="string">
+            <column name="requestor_phone_number" length="100" not-null="true" />
+        </property>
+        <property name="requestorEmailId" type="string">
+            <column name="requestor_email_id" length="100" not-null="true" />
+        </property>
+        <property name="requestorPanNo" type="string">
+            <column name="requestor_pan_number" length="100" not-null="true" />
+        </property>
+		<property name="createdDt" type="timestamp">
+			<column length="250" name="created_dt" />
+		</property>
+		<property name="updatedDt" type="timestamp">
+			<column length="250" name="updated_dt" />
+		</property>
+    </class>
+</hibernate-mapping>

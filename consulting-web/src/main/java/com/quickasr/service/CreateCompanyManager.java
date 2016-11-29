@@ -12,8 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.quickasr.base.ApplicationException;
+import com.quickasr.data.dao.ApplicationConfigDao;
 import com.quickasr.data.dao.CompanyDao;
 import com.quickasr.data.dao.CompanyRequestDao;
+import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.Company;
 import com.quickasr.data.entity.CompanyRequest;
 import com.quickasr.util.Emailer;
@@ -29,6 +31,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private CompanyRequestDao companyRequestDao;
 	private Emailer emailer;
 	private boolean emailNotificationsEnabled;
+	private ApplicationConfigDao applicationConfigDao;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -57,7 +60,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 				return false;
 			}
 		} catch (Exception e) {
-			throw new ApplicationException("101", e);
+			throw new ApplicationException("Error Checking Company Status", e);
 		}
 		return true;
 	}
@@ -82,7 +85,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 				}
 			}
 		} catch (Exception e) {
-			throw new ApplicationException("101", e);
+			throw new ApplicationException("Error getting available companies", e);
 		}
 		return companyList;
 	}
@@ -102,7 +105,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 				companyModel.setUpdatedDt(company.getUpdatedDt());
 			}
 		} catch (Exception e) {
-			throw new ApplicationException("101", e);
+			throw new ApplicationException("Error getting available country by id", e);
 		}
 		return companyModel;
 	}
@@ -127,32 +130,32 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			companyRequest.setCreatedDt(new Date());
 
 			companyRequestDao.saveOrUpdate(companyRequest);
-			if(emailNotificationsEnabled){					
+			if (emailNotificationsEnabled) {
 				result = sendConfirmationEmail(companyRequest);
-			}else{
+			} else {
 				result = true;
 			}
 		} catch (Exception e) {
-			throw new ApplicationException(e);
+			throw new ApplicationException("Error requesting company creation", e);
 		}
 
 		return result;
 	}
 
-	private boolean sendConfirmationEmail(CompanyRequest companyRequest)
-			throws ApplicationException {
+	private boolean sendConfirmationEmail(CompanyRequest companyRequest) throws ApplicationException {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + companyRequest.getRequestorFirstName() + "\n Your order have been placed for the following \n" +
-					"Company Name : " + companyRequest.getRequestedCompanyName() +"\n"+
-							"Request Id : " + companyRequest.getCompanyRequestId() + "\n"+
-								"Request Time : " + new Date()+"\n";
-			
-			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), "", "Company Order Confirmation", body);
+			String body = "Hi " + companyRequest.getRequestorFirstName()
+					+ "\n Your order have been placed for the following \n" + "Company Name : "
+					+ companyRequest.getRequestedCompanyName() + "\n" + "Request Id : "
+					+ companyRequest.getCompanyRequestId() + "\n" + "Request Time : " + new Date() + "\n";
+
+			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), "",
+					"Company Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
-			throw new ApplicationException(e);
+			throw new ApplicationException("Error Sending Email", e);
 		}
 		return result;
 	}
@@ -204,5 +207,28 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	public Emailer getEmailer() {
 		return emailer;
 	}
-	
+
+	public ApplicationConfigDao getApplicationConfigDao() {
+		return applicationConfigDao;
+	}
+
+	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
+		this.applicationConfigDao = applicationConfigDao;
+	}
+
+	@Override
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
+
+		try {
+			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", stylePreset);
+			if (stylePresetList.size() > 0) {
+				return stylePresetList.get(0).getConfigValue();
+			} else {
+				return "preset1.css";
+			}
+		} catch (Exception e) {
+			return "preset1.css";
+		}
+	}
+
 }

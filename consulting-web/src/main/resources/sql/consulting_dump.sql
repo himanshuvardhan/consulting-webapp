@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.14, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.22, for Win64 (x86_64)
 --
 -- Host: localhost    Database: consulting
 -- ------------------------------------------------------
--- Server version	5.7.14-log
+-- Server version	5.6.22-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,60 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `application_config`
+--
+
+DROP TABLE IF EXISTS `application_config`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `application_config` (
+  `config_id` int(11) NOT NULL,
+  `config_name` varchar(45) DEFAULT NULL,
+  `config_value` varchar(45) DEFAULT NULL,
+  `config_categ` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`config_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `application_config`
+--
+
+LOCK TABLES `application_config` WRITE;
+/*!40000 ALTER TABLE `application_config` DISABLE KEYS */;
+INSERT INTO `application_config` VALUES (1,'application_style','preset4.css','UI');
+/*!40000 ALTER TABLE `application_config` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `book_keeping_request`
+--
+
+DROP TABLE IF EXISTS `book_keeping_request`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `book_keeping_request` (
+  `book_keeping_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestor_full_name` varchar(50) DEFAULT NULL,
+  `requestor_phone_number` varchar(15) DEFAULT NULL,
+  `requestor_email_id` varchar(75) DEFAULT NULL,
+  `requestor_pan_number` varchar(20) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`book_keeping_request_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `book_keeping_request`
+--
+
+LOCK TABLES `book_keeping_request` WRITE;
+/*!40000 ALTER TABLE `book_keeping_request` DISABLE KEYS */;
+/*!40000 ALTER TABLE `book_keeping_request` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `companies`
@@ -66,7 +120,7 @@ CREATE TABLE `company_request` (
   PRIMARY KEY (`company_request_id`),
   KEY `company_id_foreign_key_idx` (`company_id`),
   CONSTRAINT `company_id_foreign_key` FOREIGN KEY (`company_id`) REFERENCES `companies` (`company_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Details of company creation ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Details of company creation ';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,8 +129,64 @@ CREATE TABLE `company_request` (
 
 LOCK TABLES `company_request` WRITE;
 /*!40000 ALTER TABLE `company_request` DISABLE KEYS */;
-INSERT INTO `company_request` VALUES (6,'aaa','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','qwertyuiop',6,'create as soon as possible','2016-08-28 19:21:24','2016-08-28 19:21:24'),(7,'aaa','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','aaaaaaaa',3,'<title>BizCraft','2016-08-28 19:29:16','2016-08-28 19:29:16'),(8,'MyCompany ','Vardhan','Himanshu','himanshuvardhan@gmail.com','9411837388','aaaaaaaa',2,'fgfgfgfgfg','2016-09-03 18:01:35','2016-09-03 18:01:35'),(9,'Quick Consulting And Acconting ','Khanna','Saurabh','saurabhkhannaca7@gmail.com','9411837388','aaaaaaaa',3,'Please Create as soon as possible','2016-09-03 18:48:56','2016-09-03 18:48:56'),(10,'MyCompany ','Vardhan','Himanshu','himanshuvardhan@gmail.com','9740353403','aaaaaaaa',1,'hjhjh','2016-10-03 20:24:27','2016-10-03 20:24:27');
 /*!40000 ALTER TABLE `company_request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `import_export_request`
+--
+
+DROP TABLE IF EXISTS `import_export_request`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `import_export_request` (
+  `import_export_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestor_full_name` varchar(50) DEFAULT NULL,
+  `requestor_phone_number` varchar(15) DEFAULT NULL,
+  `requestor_email_id` varchar(50) DEFAULT NULL,
+  `requestor_pan_number` varchar(15) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`import_export_request_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `import_export_request`
+--
+
+LOCK TABLES `import_export_request` WRITE;
+/*!40000 ALTER TABLE `import_export_request` DISABLE KEYS */;
+/*!40000 ALTER TABLE `import_export_request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `income_tax_request`
+--
+
+DROP TABLE IF EXISTS `income_tax_request`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `income_tax_request` (
+  `income_tax_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestor_full_name` varchar(100) DEFAULT NULL,
+  `requestor_email_id` varchar(100) DEFAULT NULL,
+  `requestor_phone_number` varchar(30) DEFAULT NULL,
+  `requestor_bank_name` varchar(45) DEFAULT NULL,
+  `requestor_ifsc_code` varchar(45) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`income_tax_request_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `income_tax_request`
+--
+
+LOCK TABLES `income_tax_request` WRITE;
+/*!40000 ALTER TABLE `income_tax_request` DISABLE KEYS */;
+/*!40000 ALTER TABLE `income_tax_request` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -98,7 +208,7 @@ CREATE TABLE `loan_request` (
   PRIMARY KEY (`loan_request_id`),
   KEY `loan_id_foreign_key_idx` (`loan_id`),
   CONSTRAINT `loan_id_foreign_key` FOREIGN KEY (`loan_id`) REFERENCES `loan_types` (`loan_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Loan request from users';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Loan request from users';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +217,6 @@ CREATE TABLE `loan_request` (
 
 LOCK TABLES `loan_request` WRITE;
 /*!40000 ALTER TABLE `loan_request` DISABLE KEYS */;
-INSERT INTO `loan_request` VALUES (1,'Himanshu Vardhan','9740353403','himanshuvardhan@gmail.com','aaaaaaaa',2,'2016-10-15 11:20:09','2016-10-15 11:20:09'),(2,'Himanshu Vardhan','9740353403','himanshuvardhan@gmail.com','aaaaaaaa',1,'2016-10-17 19:10:21','2016-10-17 19:10:21');
 /*!40000 ALTER TABLE `loan_request` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,4 +254,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-22 14:06:28
+-- Dump completed on 2016-11-29 14:43:07

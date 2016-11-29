@@ -2,10 +2,17 @@ package com.quickasr.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.quickasr.base.ApplicationException;
+import com.quickasr.service.BookKeepingManager;
 
 /**
  * @author quickasr
@@ -15,12 +22,19 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	@Autowired
+	private BookKeepingManager bookKeepingManager;
 
 	@RequestMapping("/index")
 	public ModelAndView home(Model model) {
 		logger.debug("home() is executed", "quickasr");
 
-		model.addAttribute("stylePreset","resources/style/presets/preset2.css");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return new ModelAndView("index");
 	}
 
@@ -28,8 +42,31 @@ public class HomeController {
 	public ModelAndView index(Model model) {
 		logger.debug("index() is executed", "quickasr");
 
-		model.addAttribute("stylePreset","resources/style/presets/preset2.css");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return new ModelAndView("index");
+	}
+
+	@RequestMapping(value = "/updateStyle", method = RequestMethod.POST)
+	public @ResponseBody String updateStyle(@RequestParam(name = "presetStyle", required = true) String presetStyle) {
+		try {
+			bookKeepingManager.updateApplicationStylePreset(presetStyle);
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return "success";
+	}
+
+	public BookKeepingManager getBookKeepingManager() {
+		return bookKeepingManager;
+	}
+
+	public void setBookKeepingManager(BookKeepingManager bookKeepingManager) {
+		this.bookKeepingManager = bookKeepingManager;
 	}
 
 }

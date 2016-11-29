@@ -11,4 +11,6 @@ public interface ILoansManager {
 	public List<LoanTypeModel> getLoanTypes() throws ApplicationException;
 
 	public boolean applyForLoan(LoanOrderModel loanOrderModel) throws ApplicationException;
+
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException;
 }

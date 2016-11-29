@@ -36,8 +36,10 @@ public class LoansController {
 			for (LoanTypeModel loanTypeModel : loanTypes) {
 				loanTypesMap.put(String.valueOf(loanTypeModel.getLoanId()), loanTypeModel.getLoanName());
 			}
+			
+			model.addAttribute("stylePreset", "resources/style/presets/"+loansManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-
+			logger.error(e.getErrorCode());
 		}
 		model.addAttribute("loanTypesMap", loanTypesMap);
 		return new ModelAndView("loans", "loanOrderModel", new LoanOrderModel());
@@ -48,8 +50,8 @@ public class LoansController {
 		logger.debug("applyForLoan(loanOrderModel, model) is executed", "quickasr");
 		try {
 			loansManager.applyForLoan(loanOrderModel);
-		} catch (Exception e) {
-			
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 		return "redirect:/loanSuccess.htm";
 	}

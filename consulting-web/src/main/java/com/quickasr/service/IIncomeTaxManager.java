@@ -9,5 +9,6 @@ public interface IIncomeTaxManager {
 	public boolean validateIncomeTaxForm(IncomeTaxModel incomeTaxModel) throws ApplicationException;
 	public int requestIncomeTaxFilling(IncomeTaxModel incomeTaxModel) throws ApplicationException;
 	public String getIncomeTaxFilling(IncomeTaxModel incomeTaxModel) throws ApplicationException;
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException;
 
 }

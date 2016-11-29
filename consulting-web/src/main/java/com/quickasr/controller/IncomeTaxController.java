@@ -28,8 +28,14 @@ public class IncomeTaxController {
 	private IIncomeTaxManager incomeTaxManager;
 
 	@RequestMapping(value = "/incomeTax", method = RequestMethod.GET)
-	public ModelAndView incomeTax(ModelMap modelMap) {
+	public ModelAndView incomeTax(ModelMap modelMap, Model model) {
 		logger.debug("incomeTax() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset", "resources/style/presets/"+incomeTaxManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		
 		modelMap.addAttribute("incomeTaxModel", new IncomeTaxModel());
 		return new ModelAndView("incomeTax");
 	}
@@ -49,8 +55,8 @@ public class IncomeTaxController {
 				incomeTaxModel.setEmailId(incomeTaxManager.getIncomeTaxFilling(incomeTaxModel));
 				incomeTaxManager.uploadForm16(incomeTaxModel);
 			}
-		} catch (Exception e) {
-
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
 		}
 		modelMap.addAttribute("incomeTaxModel", incomeTaxModel);
 		return result;

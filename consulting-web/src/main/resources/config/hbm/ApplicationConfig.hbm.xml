@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.quickasr.data.entity.ApplicationConfig" table="application_config">
+        <id name="applicationConfigId" type="int">
+            <column name="config_id" />
+            <generator class="native"/>
+        </id>
+        <property name="configName" type="string">
+            <column name="config_name" length="100" not-null="true" />
+        </property>
+        <property name="configValue" type="string">
+            <column name="config_value" length="100" not-null="true" />
+        </property>
+        <property name="configCateg" type="string">
+            <column name="config_categ" length="100" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -56,6 +56,12 @@
 				</value>
 				<value>classpath:config/hbm/IncomeTaxRequest.hbm.xml
 				</value>
+				<value>classpath:config/hbm/BookKeepingRequest.hbm.xml
+				</value>
+				<value>classpath:config/hbm/ImportExportRequest.hbm.xml
+				</value>
+				<value>classpath:config/hbm/ApplicationConfig.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -131,6 +137,27 @@
 		class="com.quickasr.data.dao.IncomeTaxRequestDaoImpl">
 		<constructor-arg>
 			<value>com.quickasr.data.entity.IncomeTaxRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="bookKeepingRequestDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.BookKeepingRequestDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.BookKeepingRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="importExportRequestDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.ImportExportRequestDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.ImportExportRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="applicationConfigDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.ApplicationConfigDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.ApplicationConfig</value>
 		</constructor-arg>
 	</bean>
 

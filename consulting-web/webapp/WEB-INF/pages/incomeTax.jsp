@@ -45,7 +45,7 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
-<link id="style-switch" href="resources/style/presets/preset3.css" media="screen" rel="stylesheet" type="text/css">
+<link id="style-switch" href="${stylePreset }" media="screen" rel="stylesheet" type="text/css">
 
 <link id="style-switch" href="resources/style/main.css" media="screen" rel="stylesheet" type="text/css">
 

@@ -1,1 +1,1 @@
-mysqldump --user=root --password=root consulting > D:\consulting_dump.sql
+mysqldump -u root -p consulting > D:\consulting.sql

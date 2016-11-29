@@ -67,16 +67,6 @@
 	<!-- Data Value Processor -->
 	<bean name="requestDataValueProcessor" class="com.quickasr.security.CustomRequestDataValueProcessor" />
 
-	<!-- Create Comapny Manager -->
-	<bean id="createCompanyManager" class="com.quickasr.service.CreateCompanyManager">
-		<property name="proxyRequired" value="${network.proxyRequired}"></property>
-		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
-		<property name="companyDao" ref="companyDao"></property>
-		<property name="companyRequestDao" ref="companyRequestDao"></property>
-		<property name="emailer" ref="emailer"></property>
-		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
-	</bean>
-
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
@@ -98,11 +88,24 @@
 		<property name="mailSender" ref="mailSender" />
 	</bean>
 
+	<!-- Create Comapny Manager -->
+	<bean id="createCompanyManager" class="com.quickasr.service.CreateCompanyManager">
+		<property name="proxyRequired" value="${network.proxyRequired}"></property>
+		<property name="comapnyAvailabilityURL" value="${network.company.availability.url}"></property>
+		<property name="companyDao" ref="companyDao"></property>
+		<property name="companyRequestDao" ref="companyRequestDao"></property>
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="emailer" ref="emailer"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+	</bean>
+
 	<!-- Loans Manager -->
 	<bean id="loansManager" class="com.quickasr.service.LoansManager">
 		<property name="loanTypesDao" ref="loanTypesDao"></property>
 		<property name="loanRequestDao" ref="loanRequestDao"></property>
 		<property name="emailer" ref="emailer"></property>
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 	</bean>
 
 	<!-- Income Tax Manager -->
@@ -110,5 +113,23 @@
 		<property name="emailer" ref="emailer"></property>
 		<property name="rootPath" value="${application.upload.root.path}"></property>
 		<property name="incomeTaxRequestDao" ref="incomeTaxRequestDao"></property>
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+	</bean>
+
+	<!-- BookKeeping Manager -->
+	<bean id="bookKeepingManager" class="com.quickasr.service.BookKeepingManager">
+		<property name="emailer" ref="emailer"></property>
+		<property name="bookKeepingRequestDao" ref="bookKeepingRequestDao"></property>
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+	</bean>
+
+	<!-- ImportExport Manager -->
+	<bean id="importExportManager" class="com.quickasr.service.ImportExportManager">
+		<property name="emailer" ref="emailer"></property>
+		<property name="importExportRequestDao" ref="importExportRequestDao"></property>
+		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 	</bean>
 </beans>

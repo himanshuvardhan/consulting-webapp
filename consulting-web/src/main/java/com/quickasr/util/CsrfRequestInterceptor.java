@@ -6,15 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class CsrfRequestInterceptor extends HandlerInterceptorAdapter {
-
-	private static final Logger logger = LoggerFactory.getLogger(CsrfRequestInterceptor.class);
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException, Exception {
@@ -36,7 +32,6 @@ public class CsrfRequestInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-		// Set the CSRF token in the session.
 		if (request.getSession() != null) {
 			request.setAttribute("Csrf_RQ_PARAM_NAME", CsrfTokenGenerator.getTokenForSession(request.getSession(false)));
 		}

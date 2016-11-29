@@ -12,5 +12,6 @@ public interface ICreateCompanyManager {
 	public List<CompanyModel> getAvailableCompany() throws ApplicationException;
 	public CompanyModel getAvailableCompanyById(int companyId) throws ApplicationException;
 	public boolean requestCompanyOrder(CompanyOrderModel companyOrderModel) throws ApplicationException;
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException;
 
 }
