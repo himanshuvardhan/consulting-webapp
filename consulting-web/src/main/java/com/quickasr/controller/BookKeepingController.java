@@ -46,8 +46,13 @@ public class BookKeepingController {
 	}
 
 	@RequestMapping(value = "/bookKeepingSuccess", method = RequestMethod.GET)
-	public String bookKeepingSuccess() {
-
+	public String bookKeepingSuccess(Model model) {
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		}  catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return "bookKeepingSuccess";
 	}
 

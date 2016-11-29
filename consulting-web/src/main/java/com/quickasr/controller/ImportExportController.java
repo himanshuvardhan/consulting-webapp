@@ -43,8 +43,12 @@ public class ImportExportController {
 	}
 	
 	@RequestMapping(value = "/importExportSuccess", method = RequestMethod.GET)
-	public String importExportSuccess() {
-
+	public String importExportSuccess(Model model) {
+		try {
+			model.addAttribute("stylePreset", "resources/style/presets/"+importExportManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return "importExportSuccess";
 	}
 

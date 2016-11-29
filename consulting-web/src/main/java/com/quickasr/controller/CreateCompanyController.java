@@ -67,6 +67,8 @@ public class CreateCompanyController {
 			companyModel = createCompanyManager.getAvailableCompanyById(companyId);
 			companyModel.setCompanyType(companyModel.getCompanyName());
 			companyModel.setCompanyName(companyName);
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}
@@ -88,7 +90,12 @@ public class CreateCompanyController {
 
 	@RequestMapping(value = "/companySuccess", method = RequestMethod.GET)
 	public String companySuccess(@ModelAttribute CompanyOrderModel companyOrderModel, Model model) {
-
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
+		}  catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return "companySuccess";
 	}
 

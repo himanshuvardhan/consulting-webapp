@@ -58,7 +58,11 @@ public class LoansController {
 
 	@RequestMapping(value = "/loanSuccess", method = RequestMethod.GET)
 	public String loanSuccess(@ModelAttribute LoanOrderModel loanOrderModel, Model model) {
-
+		try {
+			model.addAttribute("stylePreset", "resources/style/presets/"+loansManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
 		return "loanSuccess";
 	}
 
