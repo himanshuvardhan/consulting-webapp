@@ -12,26 +12,25 @@ import com.quickasr.data.dao.BookKeepingRequestDao;
 import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.BookKeepingRequest;
 import com.quickasr.util.Emailer;
-import com.quickasr.web.model.BookKeepingOrderModel;
+import com.quickasr.web.model.ServiceRegistrationModel;
 
-public class BookKeepingManager implements IBookKeepingManager {
+public class RegistrationServiceManager implements IRegistrationServiceManager {
 
 	private static final Logger logger = LoggerFactory.getLogger(CreateCompanyManager.class);
 	private Emailer emailer;
 	private BookKeepingRequestDao bookKeepingRequestDao;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
-	private String bccAddress;
 
 	@Override
-	public void applyForBookKeeping(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException {
+	public void applyForRegistrationService(ServiceRegistrationModel serviceRegistrationModel) throws ApplicationException {
 		logger.debug("applyForBookKeeping() is executed", "quickasr");
 		try {
 			BookKeepingRequest bookKeepingRequest = new BookKeepingRequest();
-			bookKeepingRequest.setRequestorEmailId(bookKeepingOrderModel.getEmailId());
-			bookKeepingRequest.setRequestorFullName(bookKeepingOrderModel.getName());
-			bookKeepingRequest.setRequestorPhoneNumber(bookKeepingOrderModel.getPhoneNumber());
-			bookKeepingRequest.setRequestorPanNo(bookKeepingOrderModel.getPanNumber());
+			bookKeepingRequest.setRequestorEmailId(serviceRegistrationModel.getEmailId());
+			bookKeepingRequest.setRequestorFullName(serviceRegistrationModel.getName());
+			bookKeepingRequest.setRequestorPhoneNumber(serviceRegistrationModel.getPhoneNumber());
+			bookKeepingRequest.setRequestorPanNo(serviceRegistrationModel.getPanNumber());
 			bookKeepingRequest.setCreatedDt(new Date());
 			bookKeepingRequest.setUpdatedDt(new Date());
 			bookKeepingRequestDao.saveOrUpdate(bookKeepingRequest);
@@ -48,11 +47,11 @@ public class BookKeepingManager implements IBookKeepingManager {
 		boolean result = false;
 		try {
 			String body = "Hi " + bookKeepingRequest.getRequestorFullName()
-					+ "\n Your order have been placed for the following \n" + "Service : BookKeeping" + "\n"
+					+ "\n Your order have been placed for the following \n" + "Service : Registration" + "\n"
 					+ "Request Id : " + bookKeepingRequest.getBookKeepingRequestId() + "\n" + "Request Time : "
 					+ new Date() + "\n";
 
-			emailer.sendMail("quickconsulting@gmail.com", bookKeepingRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail("quickconsulting@gmail.com", bookKeepingRequest.getRequestorEmailId(), "",
 					"BookKeeping Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -76,20 +75,6 @@ public class BookKeepingManager implements IBookKeepingManager {
 		}
 	}
 	
-	@Override
-	public void updateApplicationStylePreset(String stylePreset) throws ApplicationException {
-
-		try {
-			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", "application_style");
-			for (ApplicationConfig applicationConfig : stylePresetList) {
-				applicationConfig.setConfigValue(stylePreset);
-				applicationConfigDao.saveOrUpdate(applicationConfig);
-			}
-		} catch (Exception e) {
-			throw new ApplicationException("Error updating application style", e);
-		}
-	}
-
 	public BookKeepingRequestDao getBookKeepingRequestDao() {
 		return bookKeepingRequestDao;
 	}
@@ -120,14 +105,6 @@ public class BookKeepingManager implements IBookKeepingManager {
 
 	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
 		this.applicationConfigDao = applicationConfigDao;
-	}
-
-	public String getBccAddress() {
-		return bccAddress;
-	}
-
-	public void setBccAddress(String bccAddress) {
-		this.bccAddress = bccAddress;
 	}
 
 }

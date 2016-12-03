@@ -108,7 +108,7 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Company Creation Successsfull</h2>
+					<h2>Registration Request Successsfull</h2>
 					<ul class="breadcrumb">
 						<li>Home</li>
 						<li>Pages</li>
@@ -129,7 +129,7 @@
 						<strong>SUCCESS</strong>
 					</div>
 					<div class="error-message">
-						<h3>Company Creation Request Successfull</h3>
+						<h3>Registration Request Successsfull</h3>
 					</div>
 					<div class="error-body">
 						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i

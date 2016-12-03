@@ -84,8 +84,7 @@
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -96,8 +95,7 @@
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="index.htm">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
-									class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
@@ -106,14 +104,16 @@
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
-									class="fa fa-angle-down"></i></a>
+							<li><a href="importExport.htm">Import/Export</a></li>
+							<li><a href="serviceRegistration.htm">Registration</a></li>
+							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="importExport.htm">Import/Export</a></li>
+										<li><a href="serviceRegistration.htm">Registration</a></li>
 									</ul>
-								</div></li>
-							<li><a href="contact.html">Contact</a></li>
+								</div></li> -->
+							<li><a href="contact.htm">Contact</a></li>
 						</ul>
 					</nav>
 					<!--/ Navigation end -->
@@ -152,14 +152,12 @@
 				<!-- Title row end -->
 				<div class="row">
 					<div class="col-md-12">
-						<p>Import Export (IE) Code is a registration required for persons importing or exporting goods and services
-							from India. IE Code is issued by the Directorate General of Foreign Trade (DGFT), Ministry of Commerce and
-							Industries, Government of India. IE Codes when issued can be used by the entity throughout its existence and
-							doesn't require any renewal or filing. Therefore, it is recommended for most organizations to obtain IE Code,
-							irrespective of if they need it at the moment.</p>
-						<p>IE Code application must be made to the Directorate General of Foreign Trade along with the necessary
-							supporting documents. Once, the application is submitted, DGFT will issue the IE Code for the entity in 15 - 20
-							working days or less.</p>
+						<p>Import Export (IE) Code is a registration required for persons importing or exporting goods and services from India. IE Code is issued by
+							the Directorate General of Foreign Trade (DGFT), Ministry of Commerce and Industries, Government of India. IE Codes when issued can be used by
+							the entity throughout its existence and doesn't require any renewal or filing. Therefore, it is recommended for most organizations to obtain IE
+							Code, irrespective of if they need it at the moment.</p>
+						<p>IE Code application must be made to the Directorate General of Foreign Trade along with the necessary supporting documents. Once, the
+							application is submitted, DGFT will issue the IE Code for the entity in 15 - 20 working days or less.</p>
 					</div>
 				</div>
 
@@ -168,35 +166,33 @@
 						<div class="container">
 							<div class="testimonial-content">
 								<li><h4>Importers Require IE Code</h4>
-									<p>All Importers who import goods into India require an IE Code. The IE Code must be quoted while clearing
-										customs. Also, banks require the importers IE Code while sending money abroad.</p>
+									<p>All Importers who import goods into India require an IE Code. The IE Code must be quoted while clearing customs. Also, banks require
+										the importers IE Code while sending money abroad.</p>
 							</div>
 							<div class="testimonial-content">
 								<li><h4>Exporters Require IE Code</h4>
-									<p>All Exporters who export goods or services from India require an IE Code. The IE Code must be quoted
-										while sending shipments. And banks require the exporters IE Code while receiving money from abroad.</p>
+									<p>All Exporters who export goods or services from India require an IE Code. The IE Code must be quoted while sending shipments. And
+										banks require the exporters IE Code while receiving money from abroad.</p>
 							</div>
 							<div class="testimonial-content">
 								<li><h4>Lifetime - NO Renewal</h4>
-									<p>IE Code is issued for the lifetime of the entity and requires no renewal. So once a IE Code is obtained,
-										it can be used by that entity for all its import or export transactions without any further hassles.</p>
+									<p>IE Code is issued for the lifetime of the entity and requires no renewal. So once a IE Code is obtained, it can be used by that entity
+										for all its import or export transactions without any further hassles.</p>
 							</div>
 							<div class="testimonial-content">
 								<li><h4>No Return Filing</h4>
-									<p>IE Code does not require the filing of any return. Once, an IE Code is issued there are no further
-										procedures required to maintain validity of the IE Code. Even if import or export transactions occur, there
-										are no filings required to DGFT.</p>
+									<p>IE Code does not require the filing of any return. Once, an IE Code is issued there are no further procedures required to maintain
+										validity of the IE Code. Even if import or export transactions occur, there are no filings required to DGFT.</p>
 							</div>
 							<div class="testimonial-content">
 								<li><h4>Proprietors can have IE Code</h4>
-									<p>Even individuals who are proprietors of a business can obtain IE Code in their name. It is not necessary
-										to incorporate a business entity for obtaining IE Code.</p>
+									<p>Even individuals who are proprietors of a business can obtain IE Code in their name. It is not necessary to incorporate a business
+										entity for obtaining IE Code.</p>
 							</div>
 							<div class="testimonial-content">
 								<li><h4>Quick Processing</h4>
-									<p>IE Code can easily be obtained from DGFT within 10-15 working days after submission of the application
-										along with all the necessary information. It is not necessary to show proof of any import or export to obtain
-										IE Code.</p>
+									<p>IE Code can easily be obtained from DGFT within 10-15 working days after submission of the application along with all the necessary
+										information. It is not necessary to show proof of any import or export to obtain IE Code.</p>
 							</div>
 						</div>
 					</div>
@@ -210,8 +206,7 @@
 									</h4>
 								</div>
 								<div id="collapseTwo" class="panel-collapse collapse in">
-									<form:form id="loan-form" action="applyForImportExport.htm" method="post"
-										modelAttribute="importExportOrderModel">
+									<form:form id="loan-form" action="applyForImportExport.htm" method="post" modelAttribute="importExportOrderModel">
 										<!-- CSRF Token -->
 										<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 										<div class="panel-body">
@@ -268,14 +263,11 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<ul class="footer-social unstyled">
-								<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i
-											class="fa fa-twitter"></i></span>
+								<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
 								</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 								</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 								</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-								</a> <a title="Pinterest" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
 								</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
-								</a> <a title="Dribble" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
 								</a></li>
 							</ul>
 						</div>
@@ -284,7 +276,7 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="copyright-info">
-								&copy; Copyright 2015 Craft. <span>All Rights Reserved</span>
+								&copy; Copyright 2016 Quick Accounting & Consulting. <span>All Rights Reserved</span>
 							</div>
 						</div>
 					</div>

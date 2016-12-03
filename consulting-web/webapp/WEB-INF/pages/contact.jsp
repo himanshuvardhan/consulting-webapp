@@ -54,6 +54,10 @@
 </head>
 
 <body>
+
+	<!-- CSRF Token -->
+	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+
 	<div class="body-inner">
 		<!-- Header start -->
 		<header id="header" class="navbar-fixed-top header" role="banner">
@@ -65,7 +69,7 @@
 							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
-							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
+							<a href="index.html"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
 							</a>
 						</div>
 					</div>
@@ -81,7 +85,7 @@
 								</div></li>
 							<li><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
-							<li><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li class="active"><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
 							<li><a href="serviceRegistration.htm">Registration</a></li>
 							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
@@ -108,11 +112,10 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Company Creation Successsfull</h2>
+					<h2>Contact Us</h2>
 					<ul class="breadcrumb">
 						<li>Home</li>
-						<li>Pages</li>
-						<li><a href="index.htm"> Success</a></li>
+						<li><a href="#"> Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -124,19 +127,61 @@
 
 		<section id="main-container">
 			<div class="container">
-				<div class="error-page text-center">
-					<div class="error-code">
-						<strong>SUCCESS</strong>
+
+				<div class="row">
+					<div class="col-md-7">
+						<form id="contact-form" action="contact-form.php" method="post" role="form">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Name</label> <input class="form-control" name="name" id="name" placeholder="" type="text" required>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Email</label> <input class="form-control" name="email" id="email" placeholder="" type="email" required>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label>Subject</label> <input class="form-control" name="subject" id="subject" placeholder="" required>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Message</label>
+								<textarea class="form-control" name="message" id="message" placeholder="" rows="10" required></textarea>
+							</div>
+							<div class="text-right">
+								<br>
+								<button class="btn btn-primary solid blank" type="submit">Send Message</button>
+							</div>
+						</form>
 					</div>
-					<div class="error-message">
-						<h3>Company Creation Request Successfull</h3>
-					</div>
-					<div class="error-body">
-						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
-							class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
+					<div class="col-md-5">
+						<div class="contact-info">
+							<h3>Contact Details</h3>
+							<p>QUICK ACCOUNTING IS ONE STOP SOLUTION FOR NEWBIE STARTUP , MSMEs & BUSINESS CORPORATES IN INDIA AS WELL AS ACROSS GLOBE</p>
+							<br>
+							<p>
+								<i class="fa fa-home info"></i> 1102 Saint Marys, Junction City, KS
+							</p>
+							<p>
+								<i class="fa fa-phone info"></i> +(785) 238-4131
+							</p>
+							<p>
+								<i class="fa fa-envelope-o info"></i> info@bizcraft.com
+							</p>
+							<p>
+								<i class="fa fa-globe info"></i> www.bizcraft.com
+							</p>
+						</div>
 					</div>
 				</div>
+
 			</div>
+			<!--/ container end -->
+
 		</section>
 		<!--/ Main container end -->
 

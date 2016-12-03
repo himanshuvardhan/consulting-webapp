@@ -49,8 +49,7 @@
 
 <link id="style-switch" href="resources/style/main.css" media="screen" rel="stylesheet" type="text/css">
 
-<link id="style-switch" href="resources/file-uploader/css/jquery.fileupload.css" media="screen" rel="stylesheet"
-	type="text/css">
+<link id="style-switch" href="resources/file-uploader/css/jquery.fileupload.css" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -89,8 +88,7 @@
 					<!-- Logo start -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-								class="icon-bar"></span>
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
 							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
@@ -101,8 +99,7 @@
 					<nav class="collapse navbar-collapse clearfix" role="navigation">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="dropdown"><a href="index.htm">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i
-									class="fa fa-angle-down"></i></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="createCompany.htm">Create Company</a></li>
@@ -111,14 +108,16 @@
 							<li class="active"><a href="incomeTax.htm">Income Tax</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i
-									class="fa fa-angle-down"></i></a>
+							<li><a href="importExport.htm">Import/Export</a></li>
+							<li><a href="serviceRegistration.htm">Registration</a></li>
+							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
 										<li><a href="importExport.htm">Import/Export</a></li>
+										<li><a href="serviceRegistration.htm">Registration</a></li>
 									</ul>
-								</div></li>
-							<li><a href="contact.html">Contact</a></li>
+								</div></li> -->
+							<li><a href="contact.htm">Contact</a></li>
 						</ul>
 					</nav>
 					<!--/ Navigation end -->
@@ -155,8 +154,7 @@
 						<h5>We will import your data automatically and help you file your Income Tax return in minutes</h5>
 					</div>
 				</div>
-				<form:form id="uploadIncomeTaxDataForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxData.htm"
-					enctype="multipart/form-data">
+				<form:form id="uploadIncomeTaxDataForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxData.htm" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-md-1 col-sm-1"></div>
 						<div class="col-md-2">
@@ -187,8 +185,8 @@
 							<div class="form-group">
 								<label>IFSC Code</label>
 								<form:input path="ifscCode" class="form-control" name="ifscCode" id="ifscCode" type="text"></form:input>
-								<form:hidden path="incomeTaxRequestId" id="incomeTaxRequestId" value="${incomeTaxModel.incomeTaxRequestId }"/>
-								<form:hidden path="otherDocuments" id="otherDocuments" value="${incomeTaxModel.otherDocuments }"/>
+								<form:hidden path="incomeTaxRequestId" id="incomeTaxRequestId" value="${incomeTaxModel.incomeTaxRequestId }" />
+								<form:hidden path="otherDocuments" id="otherDocuments" value="${incomeTaxModel.otherDocuments }" />
 							</div>
 						</div>
 					</div>
@@ -197,8 +195,8 @@
 							<!-- CSRF Token -->
 							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 							<div class="fileupload fileupload-new" data-provides="fileinput">
-								<span class="btn btn-white btn-file removeButton fileinput-button"> <span class="fileupload-new">Select
-										Form 16 </span> <form:input id="uploadIncomeTaxData" path="files" type="file" class="default" accept=".pdf"></form:input>
+								<span class="btn btn-white btn-file removeButton fileinput-button"> <span class="fileupload-new">Select Form 16 </span> <form:input
+										id="uploadIncomeTaxData" path="files" type="file" class="default" accept=".pdf"></form:input>
 								</span> <span id="fileNameUploaded"></span> <br>
 							</div>
 							<br>
@@ -215,8 +213,7 @@
 					<div class="col-md-1 col-sm-1 wow fadeInDown" data-wow-delay=".5s"></div>
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay=".5s">
 						<div class="service-content">
-							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_ITRV.jpg"
-								alt="" /></span>
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_ITRV.jpg" alt="" /></span>
 							<p>ITRV - Submission</p>
 							<p>Send us your ITR-V to our office and we will submit to CPC on your behalf.</p>
 						</div>
@@ -225,8 +222,7 @@
 
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay=".8s">
 						<div class="service-content">
-							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_document.jpg"
-								alt="" /></span>
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_document.jpg" alt="" /></span>
 							<p>Document Management</p>
 							<p>Store all your tax documents at one place and retrieve when needed.</p>
 						</div>
@@ -235,8 +231,7 @@
 					<!--/ End Second features -->
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
 						<div class="service-content">
-							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_refund.jpg"
-								alt="" /></span>
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_refund.jpg" alt="" /></span>
 							<p>Refund Tracking</p>
 							<p>We will help you in tracking your Refund Status.</p>
 						</div>
@@ -245,8 +240,7 @@
 
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
 						<div class="service-content">
-							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_history.jpg"
-								alt="" /></span>
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_history.jpg" alt="" /></span>
 							<p>Tax History</p>
 							<p>Know year wise exact status of your Tax Return as per Income Tax Department.</p>
 						</div>
@@ -255,8 +249,7 @@
 
 					<div class="col-md-2 col-sm-2 wow fadeInDown" data-wow-delay="1.1s">
 						<div class="service-content">
-							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_support.jpg"
-								alt="" /></span>
+							<span class="service-image"><img class="img-responsive" src="resources/images/incometax/icon_support.jpg" alt="" /></span>
 							<p>Post Filing Support</p>
 							<p>Get any support and assistance on filing related problems.</p>
 						</div>
@@ -274,15 +267,13 @@
 							<ul>
 								<li>It becomes your standard income proof</li>
 								<li>You can get the loans sanctioned quickly and easily</li>
-								<li>You can trade in stocks, open bank accounts, get bank credits, make investments etc. and you can do all
-									these with ease if you remain good in the financial institutions books by filing your tax returns.</li>
+								<li>You can trade in stocks, open bank accounts, get bank credits, make investments etc. and you can do all these with ease if you remain
+									good in the financial institutions books by filing your tax returns.</li>
 								<li>You can claim your refunds for taxes deducted or paid in excess of your tax liabilities.</li>
-								<li>Many foreign countries want to know how financially sound you are before they grant you with a visa. So
-									to prove your financial worth, Income tax returns are must.</li>
-								<li>Not to forget, it is your obligation. The taxes you pay on your income will work towards betterment of
-									our nation.</li>
-								<li>For professionals and business organisations, Income tax returns are a must to become eligible to
-									secure certain tenders.</li>
+								<li>Many foreign countries want to know how financially sound you are before they grant you with a visa. So to prove your financial
+									worth, Income tax returns are must.</li>
+								<li>Not to forget, it is your obligation. The taxes you pay on your income will work towards betterment of our nation.</li>
+								<li>For professionals and business organisations, Income tax returns are a must to become eligible to secure certain tenders.</li>
 							</ul>
 							</p>
 						</div>
@@ -292,12 +283,9 @@
 							<h4>DISADVANTAGES OF NOT FILING YOUR INCOME TAX RETURN</h4>
 							<p>
 							<ul>
-								<li>If you don't file your return in time, you will have to pay interest on your tax dues when you file at
-									a later date.</li>
-								<li>If you have incurred losses, you can not carry forward the same to subsequent years if you do not file
-									your return.</li>
-								<li>You could become liable for a penalty or Prosecution by the Income Tax Department if you conceal or
-									fail to disclose your income.</li>
+								<li>If you don't file your return in time, you will have to pay interest on your tax dues when you file at a later date.</li>
+								<li>If you have incurred losses, you can not carry forward the same to subsequent years if you do not file your return.</li>
+								<li>You could become liable for a penalty or Prosecution by the Income Tax Department if you conceal or fail to disclose your income.</li>
 							</ul>
 							</p>
 						</div>
@@ -316,14 +304,11 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<ul class="footer-social unstyled">
-								<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i
-											class="fa fa-twitter"></i></span>
+								<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
 								</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 								</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 								</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-								</a> <a title="Pinterest" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-pinterest"></i></span>
 								</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
-								</a> <a title="Dribble" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-dribbble"></i></span>
 								</a></li>
 							</ul>
 						</div>
@@ -332,7 +317,7 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="copyright-info">
-								&copy; Copyright 2015 Craft. <span>All Rights Reserved</span>
+								&copy; Copyright 2016 Quick Accounting & Consulting. <span>All Rights Reserved</span>
 							</div>
 						</div>
 					</div>

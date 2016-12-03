@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
 	uploadVideo($('.cd-hero-slider'));
 
 	//change visible slide
-	$('.cd-slider-nav li').on('click', function(event){
+	/*$('.cd-slider-nav li').on('click', function(event){
 		event.preventDefault();
 		var selectedItem = $(this);
 		if(!selectedItem.hasClass('selected')) {
@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 
 			updateNavigationMarker(selectedPosition+1);
 		}
-	});
+	});*/
 
 	function nextSlide(container, pagination, n){
 		var visibleSlide = container.find('.selected'),

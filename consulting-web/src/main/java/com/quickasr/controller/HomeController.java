@@ -61,6 +61,19 @@ public class HomeController {
 		return "success";
 	}
 
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+	public ModelAndView contact(Model model) {
+		logger.debug("contact() is executed", "quickasr");
+
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return new ModelAndView("contact");
+	}
+
 	public BookKeepingManager getBookKeepingManager() {
 		return bookKeepingManager;
 	}
