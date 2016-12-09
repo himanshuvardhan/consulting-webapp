@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.quickasr.base.ApplicationException;
 import com.quickasr.service.BookKeepingManager;
+import com.quickasr.web.model.BookKeepingOrderModel;
+import com.quickasr.web.model.ContactModel;
 
 /**
  * @author quickasr
@@ -73,7 +76,32 @@ public class HomeController {
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}
-		return new ModelAndView("contact");
+		return new ModelAndView("contact", "contactModel", new ContactModel());
+	}
+
+	@RequestMapping(value = "/contactQuery", method = RequestMethod.POST)
+	public String contactQuery(@ModelAttribute ContactModel contactModel, Model model) {
+		logger.debug("contact() is executed", "quickasr");
+
+		try {
+			bookKeepingManager.submitUserQuery(contactModel);
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+
+		return "redirect:/contactSuccess.htm";
+	}
+
+	@RequestMapping(value = "/contactSuccess", method = RequestMethod.GET)
+	public ModelAndView contactSuccess(Model model) {
+		logger.debug("contact() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return new ModelAndView("contactSuccess");
 	}
 
 	public BookKeepingManager getBookKeepingManager() {

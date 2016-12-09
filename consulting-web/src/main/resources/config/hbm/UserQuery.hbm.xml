@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.quickasr.data.entity.UserQuery" table="user_query">
+		<id name="queryId" type="int">
+			<column name="query_id" />
+			<generator class="native"/>
+		</id>
+		<property name="fullName" type="string">
+			<column name="full_name" length="100" not-null="true" />
+		</property>
+		<property name="querySubject" type="string">
+			<column name="subject" length="100" not-null="true" />
+		</property>
+		<property name="queryMessage" type="string">
+			<column name="message" length="3000" not-null="true" />
+		</property>
+		<property name="userEmailId" type="string">
+			<column name="email_id" length="100" not-null="true" />
+		</property>
+		<property name="createdDt" type="timestamp">
+			<column length="250" name="created_dt" />
+		</property>
+		<property name="updatedDt" type="timestamp">
+			<column length="250" name="updated_dt" />
+		</property>
+	</class>
+</hibernate-mapping>

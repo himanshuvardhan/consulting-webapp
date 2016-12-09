@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.quickasr.base.ApplicationException;
 import com.quickasr.web.model.BookKeepingOrderModel;
+import com.quickasr.web.model.ContactModel;
 
 public interface IBookKeepingManager {
 	
@@ -14,5 +15,7 @@ public interface IBookKeepingManager {
 	public void updateApplicationStylePreset(String stylePreset) throws ApplicationException;
 
 	public Map<String, String> getUIMetric() throws ApplicationException;
+
+	public void submitUserQuery(ContactModel contactModel) throws ApplicationException;
 
 }

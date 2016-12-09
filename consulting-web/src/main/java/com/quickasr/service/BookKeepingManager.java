@@ -11,10 +11,13 @@ import org.slf4j.LoggerFactory;
 import com.quickasr.base.ApplicationException;
 import com.quickasr.data.dao.ApplicationConfigDao;
 import com.quickasr.data.dao.BookKeepingRequestDao;
+import com.quickasr.data.dao.UserQueryDao;
 import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.BookKeepingRequest;
+import com.quickasr.data.entity.UserQuery;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.BookKeepingOrderModel;
+import com.quickasr.web.model.ContactModel;
 
 public class BookKeepingManager implements IBookKeepingManager {
 
@@ -24,6 +27,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
+	private UserQueryDao userQueryDao;
 
 	@Override
 	public void applyForBookKeeping(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException {
@@ -63,6 +67,23 @@ public class BookKeepingManager implements IBookKeepingManager {
 		return result;
 	}
 
+	private boolean sendQueryConfirmationEmail(UserQuery userQuery) throws ApplicationException {
+		logger.debug("sendConfirmationEmail() is executed", "quickasr");
+		boolean result = false;
+		try {
+			String body = "Hi " + userQuery.getFullName() + "\nYour Query has been submitted successfully \n"
+					+ "Request Id : " + userQuery.getQueryId() + "\n"
+					+ "Request Time : " + new Date() + "\n";
+
+			emailer.sendMail("quickconsulting@gmail.com", userQuery.getUserEmailId(), getBccAddress(),
+					"BookKeeping Order Confirmation", body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException("Error Sending Email", e);
+		}
+		return result;
+	}
+
 	@Override
 	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
 
@@ -77,12 +98,13 @@ public class BookKeepingManager implements IBookKeepingManager {
 			return "preset1.css";
 		}
 	}
-	
+
 	@Override
 	public void updateApplicationStylePreset(String stylePreset) throws ApplicationException {
 
 		try {
-			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", "application_style");
+			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name",
+					"application_style");
 			for (ApplicationConfig applicationConfig : stylePresetList) {
 				applicationConfig.setConfigValue(stylePreset);
 				applicationConfigDao.saveOrUpdate(applicationConfig);
@@ -91,7 +113,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 			throw new ApplicationException("Error updating application style", e);
 		}
 	}
-	
+
 	@Override
 	public Map<String, String> getUIMetric() throws ApplicationException {
 		Map<String, String> metricMap = new HashMap<String, String>();
@@ -106,6 +128,26 @@ public class BookKeepingManager implements IBookKeepingManager {
 			throw new ApplicationException("Error updating application style", e);
 		}
 		return metricMap;
+	}
+
+	@Override
+	public void submitUserQuery(ContactModel contactModel) throws ApplicationException {
+		logger.debug("applyForBookKeeping() is executed", "quickasr");
+		try {
+			UserQuery userQuery = new UserQuery();
+			userQuery.setQueryMessage(contactModel.getQueryMessage());
+			userQuery.setQuerySubject(contactModel.getQuerySubject());
+			userQuery.setUserEmailId(contactModel.getEmailId());
+			userQuery.setFullName(contactModel.getFullName());
+			userQuery.setCreatedDt(new Date());
+			userQuery.setUpdatedDt(new Date());
+			userQueryDao.saveOrUpdate(userQuery);
+			if (emailNotificationsEnabled) {
+				sendQueryConfirmationEmail(userQuery);
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Error applying for bookkeeping", e);
+		}
 	}
 
 	public BookKeepingRequestDao getBookKeepingRequestDao() {
@@ -146,6 +188,14 @@ public class BookKeepingManager implements IBookKeepingManager {
 
 	public void setBccAddress(String bccAddress) {
 		this.bccAddress = bccAddress;
+	}
+
+	public UserQueryDao getUserQueryDao() {
+		return userQueryDao;
+	}
+
+	public void setUserQueryDao(UserQueryDao userQueryDao) {
+		this.userQueryDao = userQueryDao;
 	}
 
 }

@@ -66,6 +66,8 @@
 				</value>
 				<value>classpath:config/hbm/RegistrationServiceRequest.hbm.xml
 				</value>
+				<value>classpath:config/hbm/UserQuery.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -176,6 +178,13 @@
 		class="com.quickasr.data.dao.RegistrationServiceRequestDaoImpl">
 		<constructor-arg>
 			<value>com.quickasr.data.entity.RegistrationServiceRequest</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="userQueryDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.UserQueryDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.UserQuery</value>
 		</constructor-arg>
 	</bean>
 

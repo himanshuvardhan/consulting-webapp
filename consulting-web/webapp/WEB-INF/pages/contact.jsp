@@ -1,3 +1,5 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +60,22 @@
 	<!-- CSRF Token -->
 	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 
+	<!-- Style switcher start -->
+	<div class="style-switch-wrapper">
+		<div class="style-switch-button">
+			<i class="fa fa-sliders"></i>
+		</div>
+		<h3>Style Options</h3>
+		<button id="preset1" class="btn btn-sm btn-primary"></button>
+		<button id="preset2" class="btn btn-sm btn-primary"></button>
+		<button id="preset3" class="btn btn-sm btn-primary"></button>
+		<button id="preset4" class="btn btn-sm btn-primary"></button>
+		<button id="preset5" class="btn btn-sm btn-primary"></button>
+		<button id="preset6" class="btn btn-sm btn-primary"></button>
+		<br /> <br /> <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
+	</div>
+	<!-- Style switcher end -->
+
 	<div class="body-inner">
 		<!-- Header start -->
 		<header id="header" class="navbar-fixed-top header" role="banner">
@@ -85,7 +103,7 @@
 								</div></li>
 							<li><a href="incomeTax.htm">Income Tax Returns</a></li>
 							<li><a href="loans.htm">Loans</a></li>
-							<li ><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
 							<li><a href="serviceRegistration.htm">Registration</a></li>
 							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
@@ -130,33 +148,38 @@
 
 				<div class="row">
 					<div class="col-md-7">
-						<form id="contact-form" action="contact-form.php" method="post" role="form">
+						<form:form id="loan-form" action="contactQuery.htm" method="post" modelAttribute="contactModel">
+							<!-- CSRF Token -->
+							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Name</label> <input class="form-control" name="name" id="name" placeholder="" type="text" required>
+										<label>Name</label>
+										<form:input class="form-control" name="name" id="name" path="fullName" placeholder="" type="text" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Email</label> <input class="form-control" name="email" id="email" placeholder="" type="email" required>
+										<label>Email</label>
+										<form:input class="form-control" name="email" id="email" path="emailId" placeholder="" type="email" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Subject</label> <input class="form-control" name="subject" id="subject" placeholder="" required>
+										<label>Subject</label>
+										<form:input class="form-control" name="subject" id="subject" path="querySubject" placeholder="" required="required"></form:input>
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Message</label>
-								<textarea class="form-control" name="message" id="message" placeholder="" rows="10" required></textarea>
+								<form:textarea class="form-control" name="message" id="message" path="queryMessage" placeholder="" rows="10" required="required"></form:textarea>
 							</div>
 							<div class="text-right">
 								<br>
 								<button class="btn btn-primary solid blank" type="submit">Send Message</button>
 							</div>
-						</form>
+						</form:form>
 					</div>
 					<div class="col-md-5">
 						<div class="contact-info">
@@ -207,7 +230,7 @@
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
 							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
 									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-							</a> <a target="_blank" title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
 					</div>
