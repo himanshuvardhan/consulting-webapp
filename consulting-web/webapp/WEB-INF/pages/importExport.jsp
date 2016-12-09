@@ -212,6 +212,9 @@
 										<div class="panel-body">
 											<div class="row">
 												<div class="col-md-12">
+													<li><p>Starting At Rs.3,499 only(All Inclusive)</p></li>
+												</div>
+												<div class="col-md-12">
 													<div class="form-group">
 														<label>Name</label>
 														<form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>

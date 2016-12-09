@@ -96,6 +96,11 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			incomeTaxRequest.setRequestorFullName(incomeTaxModel.getFullName());
 			incomeTaxRequest.setRequestorIfscCode(incomeTaxModel.getIfscCode());
 			incomeTaxRequest.setRequestorPhoneNumber(incomeTaxModel.getPhoneNumber());
+			if (incomeTaxModel.isCorporateUser()) {
+				incomeTaxRequest.setUserType("corporate_user");
+			} else {
+				incomeTaxRequest.setUserType("individual_user");
+			}
 			incomeTaxRequest.setUpdatedDt(new Date());
 			incomeTaxRequest.setCreatedDt(new Date());
 
@@ -115,13 +120,17 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + incomeTaxRequest.getRequestorFullName()
+			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + "\n Thanks  for choosing us.\n"
 					+ "\n Your order have been placed for the following \n" + "Service : Income Tax Filling" + "\n"
 					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "\n" + "Request Time : " + new Date()
-					+ "\n";
+					+ "\n We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance "
+					+ "consultants platform for SME businesses, Individual Investors and Retail Business Group. "
+					+ "As of today, we have helped over 200 business owners in regard of their finance and accounting solutions."
+					+ " \n Have a great day. Quick Accounting Team"
+					+ "\n For any queries please contact us on 0183-5060470";
 
 			emailer.sendMail("quickconsulting@gmail.com", incomeTaxRequest.getRequestorEmailId(), getBccAddress(),
-					"BookKeeping Order Confirmation", body);
+					"Income Tax Return Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Error Sending Email", e);

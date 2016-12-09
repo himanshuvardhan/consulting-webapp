@@ -15,7 +15,14 @@ public class IncomeTaxModel {
 	private int incomeTaxRequestId;
 	private List<MultipartFile> files;
 	private boolean otherDocuments;
+	private boolean corporateUser;
 	
+	public boolean isCorporateUser() {
+		return corporateUser;
+	}
+	public void setCorporateUser(boolean corporateUser) {
+		this.corporateUser = corporateUser;
+	}
 	public String getBankAccount() {
 		return bankAccount;
 	}

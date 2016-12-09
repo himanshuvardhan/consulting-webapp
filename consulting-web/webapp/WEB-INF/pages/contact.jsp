@@ -184,7 +184,7 @@
 					<div class="col-md-5">
 						<div class="contact-info">
 							<h3>Contact Details</h3>
-							<p>QUICK ACCOUNTING IS ONE STOP SOLUTION FOR NEWBIE STARTUP , MSMEs & BUSINESS CORPORATES IN INDIA AS WELL AS ACROSS GLOBE</p>
+							<p>QUICK ACCOUNTING</p>
 							<br>
 							<p>
 								<i class="fa fa-home info"></i> 2nd floor ,Opp Uppal Hospital, Rani ka Bagh, Amritsar, Punjab.

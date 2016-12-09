@@ -129,7 +129,7 @@
 						<strong>SUCCESS</strong>
 					</div>
 					<div class="error-message">
-						<h3>Loan Request Successfull</h3>
+						<h3>Loan Request Successful</h3>
 					</div>
 					<div class="error-body">
 						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i

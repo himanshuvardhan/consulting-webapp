@@ -174,9 +174,9 @@
 											<li>To buy or acquire residential property, etc.</li>
 										</ul>
 										</p>
-										<h6 class="name">Advices given by our loan experts help you in avoiding hassles that you may face by applying for those loans that do
+										<p >Advices given by our loan experts help you in avoiding hassles that you may face by applying for those loans that do
 											not fulfill your requirements. We include all the essential details in our checklist that lets you have absolutely convenient experience in
-											finalizing your loan deal with bank or financial institution. We include details regarding:</h6>
+											finalizing your loan deal with bank or financial institution. We include details regarding:</p>
 										<li><h4>Interest Rates</h4>
 											<ul>
 												<li>Variable Interest Rate Home Loan: In this interest rate increases or decreases in accordance with the rates in the markets</li>

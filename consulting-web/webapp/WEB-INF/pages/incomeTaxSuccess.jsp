@@ -156,7 +156,7 @@
 						<strong>SUCCESS</strong>
 					</div>
 					<div class="error-message">
-						<h3>Income Tax Request Successfull</h3>
+						<h3>Income Tax Request Successful</h3>
 					</div>
 					<form:form id="uploadIncomeTaxDataOtherForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxDataOther.htm"
 						enctype="multipart/form-data">

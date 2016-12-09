@@ -217,6 +217,7 @@
 							<p>
 								<i>Price</i> : &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>${companyDetail.companyPrice }
 							</p>
+							<p><i>Money Back Gurantee<i></p>
 							<form:hidden path="companyId" class="form-control" name="state" id="companyId" value="${companyDetail.companyId }"></form:hidden>
 							<form:hidden path="requestedCompanyName" class="form-control" name="state" id="requestedCompanyName" value="${companyDetail.companyName }"></form:hidden>
 						</div>

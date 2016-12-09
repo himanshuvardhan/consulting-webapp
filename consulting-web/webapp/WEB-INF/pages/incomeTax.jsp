@@ -197,6 +197,12 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 text-center">
+								<form:radiobutton  value="false" path="corporateUser"/><label>&nbsp;&nbsp;Individual <i class="fa fa-rupee"></i>  189/return</label>&nbsp;&nbsp;&nbsp;
+								<form:radiobutton  value="true" path="corporateUser"/><label>&nbsp;&nbsp;Corporate Employee <i class="fa fa-rupee"></i>  89/Return</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
 							<!-- CSRF Token -->
 							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 							<div class="fileupload fileupload-new" data-provides="fileinput">
