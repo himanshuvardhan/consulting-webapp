@@ -2,7 +2,9 @@ package com.quickasr.service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jsoup.Connection.Method;
 import org.jsoup.Jsoup;
@@ -32,6 +34,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private Emailer emailer;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
+	private String bccAddress;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -88,6 +91,23 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			throw new ApplicationException("Error getting available companies", e);
 		}
 		return companyList;
+	}
+	
+	@Override
+	public Map<String, String> getCompanyPrices() throws ApplicationException {
+		logger.debug("getAvailableCompany(String) is executed", "quickasr");
+		Map<String, String> companyPriceMap = new HashMap<String, String>();
+		try {
+			if (companyDao != null) {
+				List<Company> list = companyDao.findAll();
+				for (Company company : list) {
+					companyPriceMap.put(String.valueOf(company.getCompanyId()), String.format("%.0f", company.getCompanyPrice()));
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Error getting available companies", e);
+		}
+		return companyPriceMap;
 	}
 
 	@Override
@@ -151,13 +171,28 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 					+ companyRequest.getRequestedCompanyName() + "\n" + "Request Id : "
 					+ companyRequest.getCompanyRequestId() + "\n" + "Request Time : " + new Date() + "\n";
 
-			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), "",
+			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), getBccAddress(),
 					"Company Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Error Sending Email", e);
 		}
 		return result;
+	}
+	
+	@Override
+	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
+
+		try {
+			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", stylePreset);
+			if (stylePresetList.size() > 0) {
+				return stylePresetList.get(0).getConfigValue();
+			} else {
+				return "preset1.css";
+			}
+		} catch (Exception e) {
+			return "preset1.css";
+		}
 	}
 
 	public boolean isProxyRequired() {
@@ -216,19 +251,12 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		this.applicationConfigDao = applicationConfigDao;
 	}
 
-	@Override
-	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
+	public String getBccAddress() {
+		return bccAddress;
+	}
 
-		try {
-			List<ApplicationConfig> stylePresetList = applicationConfigDao.findByName("config_name", stylePreset);
-			if (stylePresetList.size() > 0) {
-				return stylePresetList.get(0).getConfigValue();
-			} else {
-				return "preset1.css";
-			}
-		} catch (Exception e) {
-			return "preset1.css";
-		}
+	public void setBccAddress(String bccAddress) {
+		this.bccAddress = bccAddress;
 	}
 
 }

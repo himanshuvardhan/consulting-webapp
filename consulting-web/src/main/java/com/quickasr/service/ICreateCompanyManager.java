@@ -1,6 +1,7 @@
 package com.quickasr.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.quickasr.base.ApplicationException;
 import com.quickasr.web.model.CompanyModel;
@@ -13,5 +14,6 @@ public interface ICreateCompanyManager {
 	public CompanyModel getAvailableCompanyById(int companyId) throws ApplicationException;
 	public boolean requestCompanyOrder(CompanyOrderModel companyOrderModel) throws ApplicationException;
 	public String getApplicationStylePreset(String stylePreset) throws ApplicationException;
+	public Map<String, String> getCompanyPrices() throws ApplicationException;
 
 }

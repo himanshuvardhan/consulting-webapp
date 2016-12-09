@@ -21,6 +21,7 @@ public class ImportExportManager implements IImportExportManager {
 	private ImportExportDao importExportRequestDao;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
+	private String bccAddress;
 
 	@Override
 	public void applyForImportExport(ImportExportOrderModel importExportOrderModel) throws ApplicationException {
@@ -66,7 +67,7 @@ public class ImportExportManager implements IImportExportManager {
 					+ "Request Id : " + importExportRequest.getImportExportRequestId() + "\n" + "Request Time : "
 					+ new Date() + "\n";
 
-			emailer.sendMail("quickasr@gmail.com", importExportRequest.getRequestorEmailId(), "",
+			emailer.sendMail("quickasr@gmail.com", importExportRequest.getRequestorEmailId(), getBccAddress(),
 					"Import/Export Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -107,4 +108,11 @@ public class ImportExportManager implements IImportExportManager {
 		this.applicationConfigDao = applicationConfigDao;
 	}
 
+	public void setBccAddress(String bccAddress) {
+		this.bccAddress = bccAddress;
+	}
+
+	public String getBccAddress() {
+		return bccAddress;
+	}
 }

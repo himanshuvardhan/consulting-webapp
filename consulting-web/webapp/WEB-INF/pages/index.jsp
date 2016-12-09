@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +100,7 @@
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li><a href="incomeTax.htm">Income Tax Returns</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
@@ -235,7 +236,7 @@
 					<div class="facts one col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-user"></i></span>
 						<div class="facts-num">
-							<span class="counter">1200</span>
+							<span class="counter"><c:out value="${metricMap['ENTERPRENEUR_SERVED']}"/></span>
 						</div>
 						<h3>Enterpreneur Served</h3>
 					</div>
@@ -243,7 +244,7 @@
 					<div class="facts two col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-institution"></i></span>
 						<div class="facts-num">
-							<span class="counter">1277</span>
+							<span class="counter"><c:out value="${metricMap['PROFESSIONAL_NETWORK']}"/></span>
 						</div>
 						<h3>Professional Network</h3>
 					</div>
@@ -251,7 +252,7 @@
 					<div class="facts three col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-suitcase"></i></span>
 						<div class="facts-num">
-							<span class="counter">869</span>
+							<span class="counter"><c:out value="${metricMap['GEOGRAPHIES']}"/></span>
 						</div>
 						<h3>Geographies</h3>
 					</div>
@@ -259,7 +260,7 @@
 					<div class="facts four col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-trophy"></i></span>
 						<div class="facts-num">
-							<span class="counter">76</span>
+							<span class="counter"><c:out value="${metricMap['TEAM_STRENGTH']}"/></span>
 						</div>
 						<h3>Team Strength</h3>
 					</div>
@@ -339,11 +340,11 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-							</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
 					</div>

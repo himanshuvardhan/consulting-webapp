@@ -34,7 +34,7 @@ public class CreateCompanyController {
 			companyList = createCompanyManager.getAvailableCompany();
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
-
+			model.addAttribute("price", createCompanyManager.getCompanyPrices());
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}
@@ -50,6 +50,7 @@ public class CreateCompanyController {
 			result = createCompanyManager.checkCompanyStatus(companyName);
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("price", createCompanyManager.getCompanyPrices());
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}

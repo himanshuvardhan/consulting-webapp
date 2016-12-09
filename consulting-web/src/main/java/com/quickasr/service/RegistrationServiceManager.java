@@ -21,6 +21,7 @@ public class RegistrationServiceManager implements IRegistrationServiceManager {
 	private BookKeepingRequestDao bookKeepingRequestDao;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
+	private String bccAddress;
 
 	@Override
 	public void applyForRegistrationService(ServiceRegistrationModel serviceRegistrationModel) throws ApplicationException {
@@ -51,7 +52,7 @@ public class RegistrationServiceManager implements IRegistrationServiceManager {
 					+ "Request Id : " + bookKeepingRequest.getBookKeepingRequestId() + "\n" + "Request Time : "
 					+ new Date() + "\n";
 
-			emailer.sendMail("quickconsulting@gmail.com", bookKeepingRequest.getRequestorEmailId(), "",
+			emailer.sendMail("quickconsulting@gmail.com", bookKeepingRequest.getRequestorEmailId(), getBccAddress(),
 					"BookKeeping Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -107,4 +108,11 @@ public class RegistrationServiceManager implements IRegistrationServiceManager {
 		this.applicationConfigDao = applicationConfigDao;
 	}
 
+	public String getBccAddress() {
+		return bccAddress;
+	}
+
+	public void setBccAddress(String bccAddress) {
+		this.bccAddress = bccAddress;
+	}
 }

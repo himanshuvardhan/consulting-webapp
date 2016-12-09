@@ -26,6 +26,7 @@ public class LoansManager implements ILoansManager {
 	private LoanRequestDao loanRequestDao;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
+	private String bccAddress;
 
 	@Override
 	public List<LoanTypeModel> getLoanTypes() throws ApplicationException {
@@ -100,7 +101,7 @@ public class LoansManager implements ILoansManager {
 					+ "Loan Type : " + loanRequest.getLoanTypes().getLoanName() + "\n" + "Request Id : "
 					+ loanRequest.getLoanRequestId() + "\n" + "Request Time : " + new Date() + "\n";
 
-			emailer.sendMail("quickasr@gmail.com", loanRequest.getRequestorEmailId(), "", "Loan Order Confirmation",
+			emailer.sendMail("quickasr@gmail.com", loanRequest.getRequestorEmailId(), getBccAddress(), "Loan Order Confirmation",
 					body);
 			result = true;
 		} catch (Exception e) {
@@ -148,5 +149,14 @@ public class LoansManager implements ILoansManager {
 	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
 		this.applicationConfigDao = applicationConfigDao;
 	}
+
+	public String getBccAddress() {
+		return bccAddress;
+	}
+
+	public void setBccAddress(String bccAddress) {
+		this.bccAddress = bccAddress;
+	}
+	
 
 }

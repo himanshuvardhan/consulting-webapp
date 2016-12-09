@@ -1,7 +1,9 @@
 package com.quickasr.service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,6 +90,22 @@ public class BookKeepingManager implements IBookKeepingManager {
 		} catch (Exception e) {
 			throw new ApplicationException("Error updating application style", e);
 		}
+	}
+	
+	@Override
+	public Map<String, String> getUIMetric() throws ApplicationException {
+		Map<String, String> metricMap = new HashMap<String, String>();
+		try {
+			List<ApplicationConfig> uiMetric = applicationConfigDao.findByName("config_categ", "UI_METRIC");
+			if (uiMetric.size() > 0) {
+				for (ApplicationConfig applicationConfig : uiMetric) {
+					metricMap.put(applicationConfig.getConfigName(), applicationConfig.getConfigValue());
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Error updating application style", e);
+		}
+		return metricMap;
 	}
 
 	public BookKeepingRequestDao getBookKeepingRequestDao() {

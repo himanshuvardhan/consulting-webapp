@@ -83,9 +83,9 @@
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li><a href="incomeTax.htm">Income Tax Returns</a></li>
 							<li><a href="loans.htm">Loans</a></li>
-							<li class="active"><a href="bookKeeping.htm">Book Keeping</a></li>
+							<li ><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
 							<li><a href="serviceRegistration.htm">Registration</a></li>
 							<!-- <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
@@ -95,7 +95,7 @@
 										<li><a href="serviceRegistration.htm">Registration</a></li>
 									</ul>
 								</div></li> -->
-							<li><a href="contact.htm">Contact</a></li>
+							<li class="active"><a href="contact.htm">Contact</a></li>
 						</ul>
 					</nav>
 					<!--/ Navigation end -->
@@ -164,10 +164,19 @@
 							<p>QUICK ACCOUNTING IS ONE STOP SOLUTION FOR NEWBIE STARTUP , MSMEs & BUSINESS CORPORATES IN INDIA AS WELL AS ACROSS GLOBE</p>
 							<br>
 							<p>
-								<i class="fa fa-home info"></i> 1102 Saint Marys, Junction City, KS
+								<i class="fa fa-home info"></i> 2nd floor ,Opp Uppal Hospital, Rani ka Bagh, Amritsar, Punjab.
 							</p>
 							<p>
-								<i class="fa fa-phone info"></i> +(785) 238-4131
+								<i class="fa fa-home info"></i> C-18/9,Udyog Vihar Gurgaon Haryana.
+							</p>
+							<p>
+								<i class="fa fa-phone info"></i> Office - 0183-5060470
+							</p>
+							<p>
+								<i class="fa fa-mobile info"></i> Executive - 9592390558
+							</p>
+							<p>
+								<i class="fa fa-mobile info"></i> Manager - 9855832330, 7087107632
 							</p>
 							<p>
 								<i class="fa fa-envelope-o info"></i> info@bizcraft.com
@@ -175,6 +184,7 @@
 							<p>
 								<i class="fa fa-globe info"></i> www.bizcraft.com
 							</p>
+							<p>Upcoming Office- Chandigarh</p>
 						</div>
 					</div>
 				</div>
@@ -191,11 +201,13 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-							</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
+							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
 					</div>

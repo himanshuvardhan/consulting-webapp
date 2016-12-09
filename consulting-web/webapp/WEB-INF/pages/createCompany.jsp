@@ -102,7 +102,7 @@
 										<li><a href="createCompany.htm">Create Company</a></li>
 									</ul>
 								</div></li>
-							<li><a href="incomeTax.htm">Income Tax</a></li>
+							<li><a href="incomeTax.htm">Income Tax Returns</a></li>
 							<li><a href="loans.htm">Loans</a></li>
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
@@ -178,7 +178,7 @@
 								<span class="plan-name">${companyName} <br> Private Limited
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>11,999</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><c:out value="${price['1']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 2 Directors</li>
@@ -205,7 +205,7 @@
 								<span class="plan-name">${companyName}<br> Limited Liability Partnership
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>7,999</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['2']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DPIN for 2 Partners</li>
@@ -232,7 +232,7 @@
 								<span class="plan-name">${companyName} <br> One Person Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>10,999</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['3']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 1 Director / Owner</li>
@@ -259,7 +259,7 @@
 								<span class="plan-name">${companyName} <br> Public Limited Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>39,999</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['4']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 3 Directors</li>
@@ -292,7 +292,7 @@
 								<span class="plan-name">${companyName} <br> Nidhi Limited Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>84,999</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['5']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 3 Directors</li>
@@ -318,7 +318,7 @@
 							<div class="plan text-center">
 								<span class="plan-name">${companyName} <br> Section 8 Company</small></span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong>25,000</strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['6']}"/></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 2 Directors</li>
@@ -354,11 +354,11 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a title="Twitter" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
-							</a> <a title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
-							</a> <a title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a title="linkedin" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
-							</a> <a title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
+							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="Skype" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
 					</div>

@@ -32,6 +32,7 @@ public class HomeController {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("metricMap", bookKeepingManager.getUIMetric());
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}
@@ -45,6 +46,7 @@ public class HomeController {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("metricMap", bookKeepingManager.getUIMetric());
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}

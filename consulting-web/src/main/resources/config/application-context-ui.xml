@@ -97,6 +97,7 @@
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
 		<property name="emailer" ref="emailer"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>
 
 	<!-- Loans Manager -->
@@ -106,6 +107,7 @@
 		<property name="emailer" ref="emailer"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>
 
 	<!-- Income Tax Manager -->
@@ -115,6 +117,7 @@
 		<property name="incomeTaxRequestDao" ref="incomeTaxRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>
 
 	<!-- BookKeeping Manager -->
@@ -132,6 +135,7 @@
 		<property name="importExportRequestDao" ref="importExportRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>
 	
 	<!-- BookKeeping Manager -->
@@ -140,5 +144,6 @@
 		<property name="bookKeepingRequestDao" ref="bookKeepingRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
+		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>
 </beans>

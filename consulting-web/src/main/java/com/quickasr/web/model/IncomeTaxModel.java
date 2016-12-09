@@ -11,10 +11,17 @@ public class IncomeTaxModel {
 	private String bankName;
 	private String ifscCode;
 	private String emailId;
+	private String bankAccount;
 	private int incomeTaxRequestId;
 	private List<MultipartFile> files;
 	private boolean otherDocuments;
 	
+	public String getBankAccount() {
+		return bankAccount;
+	}
+	public void setBankAccount(String bankAccount) {
+		this.bankAccount = bankAccount;
+	}
 	public int getIncomeTaxRequestId() {
 		return incomeTaxRequestId;
 	}

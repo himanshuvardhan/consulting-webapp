@@ -20,22 +20,4 @@ jQuery(document).ready(function($) {
 	}else{
 		$("button.order").removeAttr("disabled");
 	}
-	
-/*	$("#createCompany").on("click", function(){
-        $.ajax({
-            beforeSend: function() {
-            },
-            complete: function() {
-            },
-            type: "POST",
-            url: "createCompany.htm",
-            traditional: true,
-            dataType: "json",
-            success: function(response) {
-            },
-            error: function(xhr, status, error) {
-            }
-        });
-	});*/
-
 });
