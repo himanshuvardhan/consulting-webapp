@@ -141,8 +141,9 @@
 	<!-- BookKeeping Manager -->
 	<bean id="registrationServiceManager" class="com.quickasr.service.RegistrationServiceManager">
 		<property name="emailer" ref="emailer"></property>
-		<property name="bookKeepingRequestDao" ref="bookKeepingRequestDao"></property>
+		<property name="registrationServiceRequestDao" ref="registrationServiceRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="registrationServiceTypeDao" ref="registrationServiceTypeDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 		<property name="bccAddress" value="${notification.sender.email}"></property>
 	</bean>

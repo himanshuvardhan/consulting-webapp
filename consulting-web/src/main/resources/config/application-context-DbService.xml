@@ -62,6 +62,10 @@
 				</value>
 				<value>classpath:config/hbm/ApplicationConfig.hbm.xml
 				</value>
+				<value>classpath:config/hbm/RegistrationServiceTypes.hbm.xml
+				</value>
+				<value>classpath:config/hbm/RegistrationServiceRequest.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -158,6 +162,20 @@
 		class="com.quickasr.data.dao.ApplicationConfigDaoImpl">
 		<constructor-arg>
 			<value>com.quickasr.data.entity.ApplicationConfig</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="registrationServiceTypeDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.RegistrationServiceTypeDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.RegistrationServiceType</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="registrationServiceRequestDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.RegistrationServiceRequestDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.RegistrationServiceRequest</value>
 		</constructor-arg>
 	</bean>
 

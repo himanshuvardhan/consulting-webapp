@@ -31,22 +31,9 @@ public class RegistrationServiceController {
 		logger.debug("serviceRegistration() is executed", "quickasr");
 		Map<String, String> serviceMap = new LinkedHashMap<String, String>();
 		try {
-
-			serviceMap.put("1", "FSSAI Food License");
-			serviceMap.put("2", "IEC Registration");
-			serviceMap.put("3", "Trade License");
-			serviceMap.put("4", "ISO Registration");
-			serviceMap.put("5", "Digital Signature (DSC)");
-			serviceMap.put("6", "Employee State Insurance (ESI) Registration");
-			serviceMap.put("7", "Employees Provident Fund");
-
-			serviceMap.put("8", "Service Tax Registration");
-			serviceMap.put("9", "Sales Tax Registration");
-			serviceMap.put("10", "Professional Tax Registration");
-			serviceMap.put("11", "Excise Tax Registration");
-
-			model.addAttribute("stylePreset",
-					"resources/style/presets/" + registrationServiceManager.getApplicationStylePreset("application_style"));
+			serviceMap = registrationServiceManager.getRegistrationServiceTypes();
+			model.addAttribute("stylePreset", "resources/style/presets/"
+					+ registrationServiceManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}
@@ -57,20 +44,22 @@ public class RegistrationServiceController {
 	@RequestMapping(value = "/applyForServiceRegistration", method = RequestMethod.POST)
 	public String applyForServiceRegistration(@ModelAttribute ServiceRegistrationModel serviceRegistrationModel,
 			Model model) {
-		logger.debug("applyForBookKeeping(bookKeepingOrderModel, model) is executed", "quickasr");
-		/*
-		 * try {
-		 * 
-		 * } catch (ApplicationException e) { logger.error(e.getErrorCode()); }
-		 */
+		logger.debug("applyForServiceRegistration(serviceRegistrationModel, model) is executed", "quickasr");
+
+		try {
+			registrationServiceManager.applyForRegistrationService(serviceRegistrationModel);
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+
 		return "redirect:/serviceRegistrationSuccess.htm";
 	}
 
 	@RequestMapping(value = "/serviceRegistrationSuccess", method = RequestMethod.GET)
 	public String serviceRegistrationSuccess(Model model) {
 		try {
-			model.addAttribute("stylePreset",
-					"resources/style/presets/" + registrationServiceManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("stylePreset", "resources/style/presets/"
+					+ registrationServiceManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		}

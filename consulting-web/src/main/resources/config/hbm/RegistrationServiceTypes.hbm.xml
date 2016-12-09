@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.quickasr.data.entity.RegistrationServiceType" table="registration_service_type">
+		<id name="serviceId" type="int">
+			<column name="service_id" />
+		</id>
+		<property name="serviceName" type="string">
+			<column name="service_name" length="100" not-null="true" />
+		</property>
+		<property name="serviceType" type="string">
+			<column name="service_type" length="100" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
