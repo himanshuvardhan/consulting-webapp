@@ -22,6 +22,7 @@ public class ImportExportManager implements IImportExportManager {
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
+	private String fromAddress;
 
 	@Override
 	public void applyForImportExport(ImportExportOrderModel importExportOrderModel) throws ApplicationException {
@@ -75,7 +76,7 @@ public class ImportExportManager implements IImportExportManager {
 							+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 							+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickasr@gmail.com", importExportRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), importExportRequest.getRequestorEmailId(), getBccAddress(),
 					"Import/Export Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -123,4 +124,13 @@ public class ImportExportManager implements IImportExportManager {
 	public String getBccAddress() {
 		return bccAddress;
 	}
+
+	public String getFromAddress() {
+		return fromAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
+	}
+	
 }

@@ -28,6 +28,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
 	private UserQueryDao userQueryDao;
+	private String fromAddress;
 
 	@Override
 	public void applyForBookKeeping(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException {
@@ -66,7 +67,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickconsulting@gmail.com", bookKeepingRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), bookKeepingRequest.getRequestorEmailId(), getBccAddress(),
 					"BookKeeping Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -90,7 +91,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickconsulting@gmail.com", userQuery.getUserEmailId(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), userQuery.getUserEmailId(), getBccAddress(),
 					"BookKeeping Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -212,5 +213,14 @@ public class BookKeepingManager implements IBookKeepingManager {
 	public void setUserQueryDao(UserQueryDao userQueryDao) {
 		this.userQueryDao = userQueryDao;
 	}
+
+	public String getFromAddress() {
+		return fromAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
+	}
+	
 
 }

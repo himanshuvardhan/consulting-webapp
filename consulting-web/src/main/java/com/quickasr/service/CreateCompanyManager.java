@@ -35,6 +35,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
+	private String fromAddress;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -180,7 +181,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), companyRequest.getRequestorEmail(), getBccAddress(),
 					"Company Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -267,5 +268,14 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	public void setBccAddress(String bccAddress) {
 		this.bccAddress = bccAddress;
 	}
+
+	public String getFromAddress() {
+		return fromAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
+	}
+	
 
 }

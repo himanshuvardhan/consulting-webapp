@@ -29,6 +29,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
+	private String fromAddress;
 
 	@Override
 	public boolean validateIncomeTaxForm(IncomeTaxModel incomeTaxModel) throws ApplicationException {
@@ -133,7 +134,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickconsulting@gmail.com", incomeTaxRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), incomeTaxRequest.getRequestorEmailId(), getBccAddress(),
 					"Income Tax Return Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -216,6 +217,14 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 
 	public void setBccAddress(String bccAddress) {
 		this.bccAddress = bccAddress;
+	}
+
+	public String getFromAddress() {
+		return fromAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
 	}
 
 }

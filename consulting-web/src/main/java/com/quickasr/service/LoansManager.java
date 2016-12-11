@@ -27,6 +27,7 @@ public class LoansManager implements ILoansManager {
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
+	private String fromAddress;
 
 	@Override
 	public List<LoanTypeModel> getLoanTypes() throws ApplicationException {
@@ -109,7 +110,7 @@ public class LoansManager implements ILoansManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickasr@gmail.com", loanRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail(getFromAddress(), loanRequest.getRequestorEmailId(), getBccAddress(),
 					"Loan Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -165,5 +166,14 @@ public class LoansManager implements ILoansManager {
 	public void setBccAddress(String bccAddress) {
 		this.bccAddress = bccAddress;
 	}
+
+	public String getFromAddress() {
+		return fromAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
+	}
+	
 
 }
