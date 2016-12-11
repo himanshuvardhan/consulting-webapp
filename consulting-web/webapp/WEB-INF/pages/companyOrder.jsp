@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,10 +218,35 @@
 							<p>
 								<i>Price</i> : &nbsp; <i class="fa fa-inr" aria-hidden="true"></i>${companyDetail.companyPrice }
 							</p>
-							<p><i>Money Back Gurantee<i></p>
+							<p>
+								<i>Money Back Gurantee<i>
+							</p>
 							<form:hidden path="companyId" class="form-control" name="state" id="companyId" value="${companyDetail.companyId }"></form:hidden>
 							<form:hidden path="requestedCompanyName" class="form-control" name="state" id="requestedCompanyName" value="${companyDetail.companyName }"></form:hidden>
 						</div>
+						<c:if test="${companyDetail.companyId  == 1}">
+							<div>
+								<p>Company Cost Breakdown</p>
+								<ul>
+									<li>Company Name Search : Free</li>
+									<li>Consultancy on Registration and Name availability : Free</li>
+									<li>Government Fees : <i class="fa fa-inr" aria-hidden="true"></i> 5400
+									</li>
+									<li>Stamp Duty (for 1 Lakh Authorised Share Capital) : <i class="fa fa-inr" aria-hidden="true"></i> 1500
+									</li>
+									<li>Documents Notarization Cost : <i class="fa fa-inr" aria-hidden="true"></i> 500
+									</li>
+									<li>Professional Fees : <i class="fa fa-inr" aria-hidden="true"></i> 2799
+									</li>
+									<li>Service Tax : <i class="fa fa-inr" aria-hidden="true"></i> 800
+									</li>
+									<li>Total Cost : <i class="fa fa-inr" aria-hidden="true"> </i>12999
+									</li>
+									<li>Stamp duty Extra for States(MOA&AOA) : Punjab,Kerala,Madhya Pradesh</li>
+									<li>(In case of NRI/Foreign Directors,Charges are extra)</li>
+								</ul>
+							</div>
+						</c:if>
 					</div>
 					</form:form>
 				</div>
@@ -234,10 +260,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
