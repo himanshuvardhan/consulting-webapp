@@ -92,7 +92,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		}
 		return companyList;
 	}
-	
+
 	@Override
 	public Map<String, String> getCompanyPrices() throws ApplicationException {
 		logger.debug("getAvailableCompany(String) is executed", "quickasr");
@@ -101,7 +101,8 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			if (companyDao != null) {
 				List<Company> list = companyDao.findAll();
 				for (Company company : list) {
-					companyPriceMap.put(String.valueOf(company.getCompanyId()), String.format("%.0f", company.getCompanyPrice()));
+					companyPriceMap.put(String.valueOf(company.getCompanyId()),
+							String.format("%.0f", company.getCompanyPrice()));
 				}
 			}
 		} catch (Exception e) {
@@ -166,10 +167,18 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + companyRequest.getRequestorFirstName()
-					+ "\n Your order have been placed for the following \n" + "Company Name : "
-					+ companyRequest.getRequestedCompanyName() + "\n" + "Request Id : "
-					+ companyRequest.getCompanyRequestId() + "\n" + "Request Time : " + new Date() + "\n";
+			String body = "Hi " + companyRequest.getRequestorFirstName() + ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "<br> Your order have been placed for the following <br>" + "Company Name : "
+					+ companyRequest.getRequestedCompanyName() + "<br>" + "Request Id : "
+					+ companyRequest.getCompanyRequestId() + "<br>" + "Request Time : " + new Date() + "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail("quickconsulting@gmail.com", companyRequest.getRequestorEmail(), getBccAddress(),
 					"Company Order Confirmation", body);
@@ -179,7 +188,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		}
 		return result;
 	}
-	
+
 	@Override
 	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
 

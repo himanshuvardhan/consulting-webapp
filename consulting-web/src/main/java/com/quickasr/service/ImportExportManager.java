@@ -62,10 +62,18 @@ public class ImportExportManager implements IImportExportManager {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + importExportRequest.getRequestorFullName()
-					+ "\nYour order have been placed for the following \n" + "Service : Import/Export" + "\n"
-					+ "Request Id : " + importExportRequest.getImportExportRequestId() + "\n" + "Request Time : "
-					+ new Date() + "\n";
+			String body = "Hi " + importExportRequest.getRequestorFullName()+ ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "Your order have been placed for the following <br>" + "Service : Import/Export" + "<br>"
+					+ "Request Id : " + importExportRequest.getImportExportRequestId() + "<br>" + "Request Time : "
+					+ new Date() + "<br><br>"
+							+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants " + "<br>"
+							+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  " + "<br>"
+							+ "helped over 200 business owners in regard of their finance and accounting solutions. " + "<br><br>"
+							+ "<b>Have a great day.</b>" + "<br>"
+							+ "<b>Quick Accounting Team</b>" + "<br>"
+							+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+							+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail("quickasr@gmail.com", importExportRequest.getRequestorEmailId(), getBccAddress(),
 					"Import/Export Order Confirmation", body);

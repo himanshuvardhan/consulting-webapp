@@ -73,11 +73,19 @@ public class RegistrationServiceManager implements IRegistrationServiceManager {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + registrationServiceRequest.getRequestorFullName()
-					+ "\n Your order have been placed for the following \n" + "Service : Registration" + "\n"
-					+ "Request Id : " + registrationServiceRequest.getRegistrationServiceRequestId() + "\n"
+			String body = "Hi " + registrationServiceRequest.getRequestorFullName()+ ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "Your order have been placed for the following <br>" + "Service : Registration" + "<br>"
+					+ "Request Id : " + registrationServiceRequest.getRegistrationServiceRequestId() + "<br>"
 					+ "Service Type : " + registrationServiceRequest.getRegistrationServiceType().getServiceName()
-					+ "\n" + "Request Time : " + new Date() + "\n";
+					+ "<br>" + "Request Time : " + new Date() + "<br><br>"
+							+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants " + "<br>"
+							+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  " + "<br>"
+							+ "helped over 200 business owners in regard of their finance and accounting solutions. " + "<br><br>"
+							+ "<b>Have a great day.</b>" + "<br>"
+							+ "<b>Quick Accounting Team</b>" + "<br>"
+							+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+							+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail("quickconsulting@gmail.com", registrationServiceRequest.getRequestorEmailId(),
 					getBccAddress(), "BookKeeping Order Confirmation", body);

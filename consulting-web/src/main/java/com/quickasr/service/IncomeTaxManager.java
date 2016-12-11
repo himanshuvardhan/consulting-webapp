@@ -120,14 +120,18 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		logger.debug("sendConfirmationEmail() is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + "\n Thanks  for choosing us.\n"
-					+ "\n Your order have been placed for the following \n" + "Service : Income Tax Filling" + "\n"
-					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "\n" + "Request Time : " + new Date()
-					+ "\n We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance "
-					+ "consultants platform for SME businesses, Individual Investors and Retail Business Group. "
-					+ "As of today, we have helped over 200 business owners in regard of their finance and accounting solutions."
-					+ " \n Have a great day. Quick Accounting Team"
-					+ "\n For any queries please contact us on 0183-5060470";
+			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "Your order have been placed for the following <br>" + "Service : Income Tax Filling" + "<br>"
+					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "<br>" + "Request Time : " + new Date()
+					+ "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail("quickconsulting@gmail.com", incomeTaxRequest.getRequestorEmailId(), getBccAddress(),
 					"Income Tax Return Order Confirmation", body);

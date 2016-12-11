@@ -77,7 +77,7 @@ public class LoansManager implements ILoansManager {
 		return result;
 
 	}
-	
+
 	@Override
 	public String getApplicationStylePreset(String stylePreset) throws ApplicationException {
 
@@ -97,12 +97,20 @@ public class LoansManager implements ILoansManager {
 		logger.debug("sendConfirmationEmail(loanRequest) is executed", "quickasr");
 		boolean result = false;
 		try {
-			String body = "Hi " + loanRequest.getRequestorName() + "\n Your order have been placed for the following \n"
-					+ "Loan Type : " + loanRequest.getLoanTypes().getLoanName() + "\n" + "Request Id : "
-					+ loanRequest.getLoanRequestId() + "\n" + "Request Time : " + new Date() + "\n";
+			String body = "Hi " + loanRequest.getRequestorName() + ",<br><br>" + "<b>Thanks for choosing us.</b>"
+					+ "<br><br>" + "Your order have been placed for the following <br>" + "Loan Type : "
+					+ loanRequest.getLoanTypes().getLoanName() + "<br>" + "Request Id : " + loanRequest.getLoanRequestId()
+					+ "<br>" + "Request Time : " + new Date() + "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail("quickasr@gmail.com", loanRequest.getRequestorEmailId(), getBccAddress(), "Loan Order Confirmation",
-					body);
+			emailer.sendMail("quickasr@gmail.com", loanRequest.getRequestorEmailId(), getBccAddress(),
+					"Loan Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Error Sending Email", e);
@@ -157,6 +165,5 @@ public class LoansManager implements ILoansManager {
 	public void setBccAddress(String bccAddress) {
 		this.bccAddress = bccAddress;
 	}
-	
 
 }

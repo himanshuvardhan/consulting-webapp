@@ -12,4 +12,5 @@ public class ExceptionHandlerController {
 		System.out.println("custom error handler");
 		return path + "/404";
 	}
+	
 }
