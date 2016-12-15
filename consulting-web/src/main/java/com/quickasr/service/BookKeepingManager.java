@@ -11,9 +11,11 @@ import org.slf4j.LoggerFactory;
 import com.quickasr.base.ApplicationException;
 import com.quickasr.data.dao.ApplicationConfigDao;
 import com.quickasr.data.dao.BookKeepingRequestDao;
+import com.quickasr.data.dao.GSTRequestDao;
 import com.quickasr.data.dao.UserQueryDao;
 import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.BookKeepingRequest;
+import com.quickasr.data.entity.GSTRequest;
 import com.quickasr.data.entity.UserQuery;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.BookKeepingOrderModel;
@@ -21,7 +23,7 @@ import com.quickasr.web.model.ContactModel;
 
 public class BookKeepingManager implements IBookKeepingManager {
 
-	private static final Logger logger = LoggerFactory.getLogger(CreateCompanyManager.class);
+	private static final Logger logger = LoggerFactory.getLogger(BookKeepingManager.class);
 	private Emailer emailer;
 	private BookKeepingRequestDao bookKeepingRequestDao;
 	private boolean emailNotificationsEnabled;
@@ -29,6 +31,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 	private String bccAddress;
 	private UserQueryDao userQueryDao;
 	private String fromAddress;
+	private GSTRequestDao gstRequestDao;
 
 	@Override
 	public void applyForBookKeeping(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException {
@@ -92,7 +95,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail(getFromAddress(), userQuery.getUserEmailId(), getBccAddress(),
-					"BookKeeping Order Confirmation", body);
+					"User Query", body);
 			result = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Error Sending Email", e);
@@ -148,7 +151,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 
 	@Override
 	public void submitUserQuery(ContactModel contactModel) throws ApplicationException {
-		logger.debug("applyForBookKeeping() is executed", "quickasr");
+		logger.debug("submitUserQuery() is executed", "quickasr");
 		try {
 			UserQuery userQuery = new UserQuery();
 			userQuery.setQueryMessage(contactModel.getQueryMessage());
@@ -162,8 +165,55 @@ public class BookKeepingManager implements IBookKeepingManager {
 				sendQueryConfirmationEmail(userQuery);
 			}
 		} catch (Exception e) {
-			throw new ApplicationException("Error applying for bookkeeping", e);
+			throw new ApplicationException("Error submitting query", e);
 		}
+	}
+	
+	
+	@Override
+	public void applyForGST(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException {
+		logger.debug("applyForGST() is executed", "quickasr");
+		try {
+			GSTRequest gstRequest = new GSTRequest();
+			gstRequest.setRequestorEmailId(bookKeepingOrderModel.getEmailId());
+			gstRequest.setRequestorFullName(bookKeepingOrderModel.getName());
+			gstRequest.setRequestorPhoneNumber(bookKeepingOrderModel.getPhoneNumber());
+			gstRequest.setRequestorPanNo(bookKeepingOrderModel.getPanNumber());
+			gstRequest.setCreatedDt(new Date());
+			gstRequest.setUpdatedDt(new Date());
+			gstRequestDao.saveOrUpdate(gstRequest);
+			if (emailNotificationsEnabled) {
+				sendGSTConfirmationEmail(gstRequest);
+			}
+		} catch (Exception e) {
+			throw new ApplicationException("Error applying for GST", e);
+		}
+	}
+	
+	private boolean sendGSTConfirmationEmail(GSTRequest gstRequest) throws ApplicationException {
+		logger.debug("sendConfirmationEmail() is executed", "quickasr");
+		boolean result = false;
+		try {
+			String body = "Hi " + gstRequest.getRequestorFullName() + ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "Your order have been placed for the following <br>" + "Service : GST" + "\n"
+					+ "Request Id : " + gstRequest.getGstRequestId() + "<br>" + "Request Time : "
+					+ new Date() + "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
+
+			emailer.sendMail(getFromAddress(), gstRequest.getRequestorEmailId(), getBccAddress(),
+					"GST Order Confirmation", body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException("Error Sending Email", e);
+		}
+		return result;
 	}
 
 	public BookKeepingRequestDao getBookKeepingRequestDao() {
@@ -176,6 +226,14 @@ public class BookKeepingManager implements IBookKeepingManager {
 
 	public Emailer getEmailer() {
 		return emailer;
+	}
+
+	public GSTRequestDao getGstRequestDao() {
+		return gstRequestDao;
+	}
+
+	public void setGstRequestDao(GSTRequestDao gstRequestDao) {
+		this.gstRequestDao = gstRequestDao;
 	}
 
 	public void setEmailer(Emailer emailer) {

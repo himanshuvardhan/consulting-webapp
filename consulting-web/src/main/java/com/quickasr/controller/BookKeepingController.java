@@ -55,6 +55,41 @@ public class BookKeepingController {
 		}
 		return "bookKeepingSuccess";
 	}
+	
+	
+	@RequestMapping(value = "/gst", method = RequestMethod.GET)
+	public ModelAndView gst(Model model) throws ApplicationException {
+		logger.debug("bookKeeping() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return new ModelAndView("gst", "bookKeepingOrderModel", new BookKeepingOrderModel());
+	}
+	
+	@RequestMapping(value = "/applyForGST", method = RequestMethod.POST)
+	public String applyForGST(@ModelAttribute BookKeepingOrderModel bookKeepingOrderModel, Model model) {
+		logger.debug("applyForBookKeeping(bookKeepingOrderModel, model) is executed", "quickasr");
+		try {
+			bookKeepingManager.applyForGST(bookKeepingOrderModel);
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return "redirect:/gstSuccess.htm";
+	}
+	
+	@RequestMapping(value = "/gstSuccess", method = RequestMethod.GET)
+	public String gstSuccess(Model model) {
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		}  catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+		}
+		return "gstSuccess";
+	}
 
 	public IBookKeepingManager getBookKeepingManager() {
 		return bookKeepingManager;

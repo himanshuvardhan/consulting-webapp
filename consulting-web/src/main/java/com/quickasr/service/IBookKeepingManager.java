@@ -18,4 +18,6 @@ public interface IBookKeepingManager {
 
 	public void submitUserQuery(ContactModel contactModel) throws ApplicationException;
 
+	public void applyForGST(BookKeepingOrderModel bookKeepingOrderModel) throws ApplicationException;
+
 }

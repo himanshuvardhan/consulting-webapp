@@ -128,6 +128,7 @@
 		<property name="emailer" ref="emailer"></property>
 		<property name="bookKeepingRequestDao" ref="bookKeepingRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="gstRequestDao" ref="gstRequestDao"></property>
 		<property name="userQueryDao" ref="userQueryDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 		<property name="bccAddress" value="${notification.sender.email}"></property>

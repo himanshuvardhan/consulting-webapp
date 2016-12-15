@@ -37,7 +37,7 @@ CREATE TABLE `application_config` (
 
 LOCK TABLES `application_config` WRITE;
 /*!40000 ALTER TABLE `application_config` DISABLE KEYS */;
-INSERT INTO `application_config` VALUES (1,'application_style','preset2.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC');
+INSERT INTO `application_config` VALUES (1,'application_style','preset5.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC');
 /*!40000 ALTER TABLE `application_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +130,34 @@ CREATE TABLE `company_request` (
 LOCK TABLES `company_request` WRITE;
 /*!40000 ALTER TABLE `company_request` DISABLE KEYS */;
 /*!40000 ALTER TABLE `company_request` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gst_request`
+--
+
+DROP TABLE IF EXISTS `gst_request`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gst_request` (
+  `gst_request_id` int(11) NOT NULL AUTO_INCREMENT,
+  `requestor_full_name` varchar(50) DEFAULT NULL,
+  `requestor_phone_number` varchar(15) DEFAULT NULL,
+  `requestor_email_id` varchar(75) DEFAULT NULL,
+  `requestor_pan_number` varchar(20) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`gst_request_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gst_request`
+--
+
+LOCK TABLES `gst_request` WRITE;
+/*!40000 ALTER TABLE `gst_request` DISABLE KEYS */;
+/*!40000 ALTER TABLE `gst_request` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -339,4 +367,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-11 21:36:16
+-- Dump completed on 2016-12-15 21:31:31

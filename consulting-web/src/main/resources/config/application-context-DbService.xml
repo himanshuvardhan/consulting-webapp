@@ -68,6 +68,8 @@
 				</value>
 				<value>classpath:config/hbm/UserQuery.hbm.xml
 				</value>
+				<value>classpath:config/hbm/GSTRequest.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -185,6 +187,13 @@
 		class="com.quickasr.data.dao.UserQueryDaoImpl">
 		<constructor-arg>
 			<value>com.quickasr.data.entity.UserQuery</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="gstRequestDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.GSTRequestDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.GSTRequest</value>
 		</constructor-arg>
 	</bean>
 

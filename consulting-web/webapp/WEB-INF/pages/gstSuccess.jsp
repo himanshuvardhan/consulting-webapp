@@ -1,5 +1,3 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,26 +54,6 @@
 </head>
 
 <body>
-
-	<!-- CSRF Token -->
-	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br /> <br /> <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
 	<div class="body-inner">
 		<!-- Header start -->
 		<header id="header" class="navbar-fixed-top header" role="banner">
@@ -87,7 +65,7 @@
 							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand navbar-bg">
-							<a href="index.html"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
+							<a href="index.htm"> <img class="img-responsive" src="resources/images/logo.png" alt="logo">
 							</a>
 						</div>
 					</div>
@@ -114,7 +92,7 @@
 										<li><a href="serviceRegistration.htm">Registration</a></li>
 									</ul>
 								</div></li> -->
-							<li class="active"><a href="contact.htm">Contact</a></li>
+							<li><a href="contact.htm">Contact</a></li>
 						</ul>
 					</nav>
 					<!--/ Navigation end -->
@@ -131,10 +109,11 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Contact Us</h2>
+					<h2>GST Request Successsfull</h2>
 					<ul class="breadcrumb">
 						<li>Home</li>
-						<li><a href="#"> Contact</a></li>
+						<li>Pages</li>
+						<li><a href="index.htm"> Success</a></li>
 					</ul>
 				</div>
 			</div>
@@ -146,76 +125,19 @@
 
 		<section id="main-container">
 			<div class="container">
-
-				<div class="row">
-					<div class="col-md-7">
-						<form:form id="loan-form" action="contactQuery.htm" method="post" modelAttribute="contactModel">
-							<!-- CSRF Token -->
-							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-							<div class="row">
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Name</label>
-										<form:input class="form-control" name="name" id="name" path="fullName" placeholder="" type="text" required="required"></form:input>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Email</label>
-										<form:input class="form-control" name="email" id="email" path="emailId" placeholder="" type="email" required="required"></form:input>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="form-group">
-										<label>Subject</label>
-										<form:input class="form-control" name="subject" id="subject" path="querySubject" placeholder="" required="required"></form:input>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<label>Message</label>
-								<form:textarea class="form-control" name="message" id="message" path="queryMessage" placeholder="" rows="10" required="required"></form:textarea>
-							</div>
-							<div class="text-right">
-								<br>
-								<button class="btn btn-primary solid blank" type="submit">Send Message</button>
-							</div>
-						</form:form>
+				<div class="error-page text-center">
+					<div class="error-code">
+						<strong>SUCCESS</strong>
 					</div>
-					<div class="col-md-5">
-						<div class="contact-info">
-							<h3>Contact Details</h3>
-							<p>QUICK ACCOUNTING</p>
-							<br>
-							<p>
-								<i class="fa fa-home info"></i> 2nd floor ,Opp Uppal Hospital, Rani ka Bagh, Amritsar, Punjab.
-							</p>
-							<p>
-								<i class="fa fa-home info"></i> C-18/9,Udyog Vihar Gurgaon Haryana.
-							</p>
-							<p>
-								<i class="fa fa-phone info"></i> Office - 0183-5060470
-							</p>
-							<p>
-								<i class="fa fa-mobile info"></i> Executive - 9592390558
-							</p>
-							<p>
-								<i class="fa fa-mobile info"></i> Manager - 9855832330, 7087107632
-							</p>
-							<p>
-								<i class="fa fa-envelope-o info"></i> info@bizcraft.com
-							</p>
-							<p>
-								<i class="fa fa-globe info"></i> www.bizcraft.com
-							</p>
-							<p>Upcoming Office- Chandigarh</p>
-						</div>
+					<div class="error-message">
+						<h3>GST Request Successsfull</h3>
+					</div>
+					<div class="error-body">
+						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
+							class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
 					</div>
 				</div>
-
 			</div>
-			<!--/ container end -->
-
 		</section>
 		<!--/ Main container end -->
 
@@ -225,12 +147,10 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
-										class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
-									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>

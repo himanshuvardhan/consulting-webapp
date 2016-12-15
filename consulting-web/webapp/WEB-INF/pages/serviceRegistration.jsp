@@ -106,6 +106,7 @@
 							<li><a href="bookKeeping.htm">Book Keeping</a></li>
 							<li><a href="importExport.htm">Import/Export</a></li>
 							<li class="active"><a href="serviceRegistration.htm">Registration</a></li>
+							<li><a href="gst.htm">GST</a></li>
 							<!-- <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Services<i class="fa fa-angle-down"></i></a>
 								<div class="dropdown-menu">
 									<ul>
