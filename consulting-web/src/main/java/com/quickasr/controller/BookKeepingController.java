@@ -59,7 +59,7 @@ public class BookKeepingController {
 	
 	@RequestMapping(value = "/gst", method = RequestMethod.GET)
 	public ModelAndView gst(Model model) throws ApplicationException {
-		logger.debug("bookKeeping() is executed", "quickasr");
+		logger.debug("gst() is executed", "quickasr");
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
@@ -71,7 +71,7 @@ public class BookKeepingController {
 	
 	@RequestMapping(value = "/applyForGST", method = RequestMethod.POST)
 	public String applyForGST(@ModelAttribute BookKeepingOrderModel bookKeepingOrderModel, Model model) {
-		logger.debug("applyForBookKeeping(bookKeepingOrderModel, model) is executed", "quickasr");
+		logger.debug("applyForGST(bookKeepingOrderModel, model) is executed", "quickasr");
 		try {
 			bookKeepingManager.applyForGST(bookKeepingOrderModel);
 		} catch (ApplicationException e) {

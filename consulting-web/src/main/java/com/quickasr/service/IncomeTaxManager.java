@@ -56,12 +56,13 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		boolean result = true;
 		try {
 
-			String fileLocation = this.rootPath + "tax_documents\\" + incomeTaxModel.getEmailId() + "\\";
+			String fileLocation = this.rootPath + "tax_documents/" + incomeTaxModel.getEmailId() + "/";
 
 			Path path = Paths.get(fileLocation);
 			if (!Files.exists(path)) {
 				try {
-					Files.createDirectories(path);
+					logger.debug("uploadForm16() is executed path:" + path, "quickasr");
+					Files.createDirectory(path);
 				} catch (IOException e) {
 					throw e;
 				}
@@ -73,6 +74,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 				String fileNameToCreate = fileLocation + fileName;
 				File destinationFile = null;
 				try {
+					logger.debug("uploadForm16() is executed tranfering:" + fileNameToCreate, "quickasr");
 					destinationFile = new File(fileNameToCreate);
 					multipartFile.transferTo(destinationFile);
 					multipartFile = null;
