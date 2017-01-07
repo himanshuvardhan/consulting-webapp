@@ -14,9 +14,13 @@ public class CsrfRequestInterceptor extends HandlerInterceptorAdapter {
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException, Exception {
-		if (!StringUtils.containsIgnoreCase(request.getPathInfo(), ".htm") && !StringUtils.equalsIgnoreCase("POST", request.getMethod())) {
+		if (!StringUtils.containsIgnoreCase(request.getPathInfo(), ".htm") && !StringUtils.equalsIgnoreCase("POST", request.getMethod()) 
+				) {
 			return true;
-		} else {
+		}else if(StringUtils.containsIgnoreCase(request.getRequestURI(), "paymentSuccess") || StringUtils.containsIgnoreCase(request.getRequestURI(), "paymentFailure")){
+			return true;
+		}
+			else {
 			String sesToken = CsrfTokenGenerator.getTokenForSession(request.getSession(false));
 			String reqToken = CsrfTokenGenerator.getTokenFromRequest(request);
 			if (StringUtils.equals(sesToken, reqToken)) {

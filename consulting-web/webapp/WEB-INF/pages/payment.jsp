@@ -1,5 +1,4 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,26 +55,6 @@
 </head>
 
 <body>
-
-	<!-- CSRF Token -->
-	<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-
-	<!-- Style switcher start -->
-	<div class="style-switch-wrapper">
-		<div class="style-switch-button">
-			<i class="fa fa-sliders"></i>
-		</div>
-		<h3>Style Options</h3>
-		<button id="preset1" class="btn btn-sm btn-primary"></button>
-		<button id="preset2" class="btn btn-sm btn-primary"></button>
-		<button id="preset3" class="btn btn-sm btn-primary"></button>
-		<button id="preset4" class="btn btn-sm btn-primary"></button>
-		<button id="preset5" class="btn btn-sm btn-primary"></button>
-		<button id="preset6" class="btn btn-sm btn-primary"></button>
-		<br /> <br /> <a class="btn btn-sm btn-primary close-styler pull-right">Close X</a>
-	</div>
-	<!-- Style switcher end -->
-
 	<div class="body-inner">
 		<!-- Header start -->
 		<header id="header" class="navbar-fixed-top header" role="banner">
@@ -114,7 +93,7 @@
 										<li><a href="serviceRegistration.htm">Registration</a></li>
 									</ul>
 								</div></li> -->
-							<li class="active"><a href="contact.htm">Contact</a></li>
+							<li><a href="contact.htm">Contact</a></li>
 						</ul>
 					</nav>
 					<!--/ Navigation end -->
@@ -131,91 +110,74 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Contact Us</h2>
+					<h2>Payment</h2>
 					<ul class="breadcrumb">
 						<li>Home</li>
-						<li><a href="#"> Contact</a></li>
+						<li>Pages</li>
+						<li><a href="index.htm">Payment</a></li>
 					</ul>
 				</div>
 			</div>
 			<!-- Subpage title end -->
 		</div>
 		<!-- Banner area end -->
-
 		<!-- Main container start -->
-
 		<section id="main-container">
 			<div class="container">
-
 				<div class="row">
-					<div class="col-md-7">
-						<form:form id="loan-form" action="contactQuery.htm" method="post" modelAttribute="contactModel">
-							<!-- CSRF Token -->
-							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+					<form id="payuform" action="${payUMoneyModel.baseUrl }/_payment" name="payuform" method=POST>
+						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Name</label>
-										<form:input class="form-control" name="name" id="name" path="fullName" placeholder="" type="text" required="required"></form:input>
+										<h4>First Name</h4>
+										<p>${payUMoneyModel.firstName }</p>
+										<input type="hidden" name="firstname" id="firstname" value="${payUMoneyModel.firstName }" />
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Email</label>
-										<form:input class="form-control" name="email" id="email" path="emailId" placeholder="" type="email" required="required"></form:input>
+										<h4>Email</h4>
+										<p>${payUMoneyModel.email }</p>
+										<input type="hidden" name="email" id="email" value="${payUMoneyModel.email }" />
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
-										<label>Subject</label>
-										<form:input class="form-control" name="subject" id="subject" path="querySubject" placeholder="" required="required"></form:input>
+										<h4>Amount</h4>
+										<p>${payUMoneyModel.amount }</p>
+										<input type="hidden" name="amount" value="${payUMoneyModel.amount }" />
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<label>Message</label>
-								<form:textarea class="form-control" name="message" id="message" path="queryMessage" placeholder="" rows="10" required="required"></form:textarea>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<h4>Phone</h4>
+										<p>${payUMoneyModel.phone }</p>
+										<input type="hidden" name="phone" value="${payUMoneyModel.phone }">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<h4>Service</h4>
+										<p>${payUMoneyModel.productInfo }</p>
+										<input type="hidden" name="productinfo" value="${payUMoneyModel.productInfo }">
+									</div>
+								</div>
 							</div>
 							<div class="text-right">
 								<br>
-								<button class="btn btn-primary solid blank" type="submit">Send Message</button>
+								<button class="btn btn-primary solid blank" type="submit">Make Payment</button>
 							</div>
-						</form:form>
-					</div>
-					<div class="col-md-5">
-						<div class="contact-info">
-							<h3>Contact Details</h3>
-							<p>QUICK ACCOUNTING</p>
-							<br>
-							<!-- <p>
-								<i class="fa fa-home info"></i> 2nd floor ,Opp Uppal Hospital, Rani ka Bagh, Amritsar, Punjab.
-							</p> -->
-							<!-- <p>
-								<i class="fa fa-home info"></i> C-18/9,Udyog Vihar Gurgaon Haryana.
-							</p> -->
-							<!-- <p>
-								<i class="fa fa-phone info"></i> Office - 0183-5060470
-							</p> -->
-							<p>
-								<i class="fa fa-mobile info"></i> Executive - 9592390558
-							</p>
-							<p>
-								<i class="fa fa-mobile info"></i> Manager - 9855832330, 7087107632
-							</p>
-							<!-- <p>
-								<i class="fa fa-envelope-o info"></i> info@bizcraft.com
-							</p> -->
-							<!-- <p>
-								<i class="fa fa-globe info"></i> www.bizcraft.com
-							</p> -->
-							<p>Upcoming Office- Chandigarh</p>
 						</div>
-					</div>
+						<input type="hidden" name="key" value="${payUMoneyModel.key }"> <input type="hidden" name="hash" value="${payUMoneyModel.hash}">
+						<input type="hidden" name="txnid" value="${payUMoneyModel.txnid }"> <input type="hidden" name="surl" size="64"
+							value="${payUMoneyModel.successURI }"> <input type="hidden" name="furl" value="${payUMoneyModel.failureURI }" size="64"> <input
+							type="hidden" name="service_provider" value="${payUMoneyModel.serviceProvider }" />
+					</form>
 				</div>
-
 			</div>
-			<!--/ container end -->
-
 		</section>
 		<!--/ Main container end -->
 

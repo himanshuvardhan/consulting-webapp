@@ -70,8 +70,8 @@
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
-		<property name="username" value="consultingwebapp@gmail.com" />
-		<property name="password" value="swordfish123" />
+		<property name="username" value="quickasr@gmail.com" />
+		<property name="password" value="Krishna786" />
 		<property name="protocol" value="smtp"></property>
 
 		<property name="javaMailProperties">
@@ -121,6 +121,10 @@
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 		<property name="bccAddress" value="${notification.sender.email}"></property>
 		<property name="fromAddress" value="${notification.from.email}"></property>
+		<property name="sUrl" value="${application.paymentsuccess.url}"></property>
+		<property name="fUrl" value="${application.paymentfailure.url}"></property>
+		<property name="baseUrl" value="${application.payment.base.url}"></property>
+		<property name="serviceProvider" value="${application.payment.service.provider}"></property>
 	</bean>
 
 	<!-- BookKeeping Manager -->

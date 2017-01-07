@@ -137,13 +137,13 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>First Name</label>
-										<form:input path="firstName" class="form-control" name="firstName" id="firstName" type="text"></form:input>
+										<form:input path="firstName" class="form-control" name="firstName" id="firstName" type="text" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Last Name</label>
-										<form:input path="lastName" class="form-control" name="lastName" id="lastName" type="text"></form:input>
+										<form:input path="lastName" class="form-control" name="lastName" id="lastName" type="text" required="required"></form:input>
 									</div>
 								</div>
 							</div>
@@ -152,19 +152,19 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Mobile Number</label>
-										<form:input path="phoneNumber" class="form-control" name="phoneno" id="phoneno" type="text"></form:input>
+										<form:input path="phoneNumber" class="form-control" name="phoneno" id="phoneno" type="text" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Email</label>
-										<form:input path="email" class="form-control" name="email" id="email" type="email"></form:input>
+										<form:input path="email" class="form-control" name="email" id="email" type="email" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>PAN Number</label>
-										<form:input path="panNumber" class="form-control" name="panNumber" id="panNumber" typy="text"></form:input>
+										<form:input path="panNumber" class="form-control" name="panNumber" id="panNumber" typy="text" required="required"></form:input>
 									</div>
 								</div>
 							</div>
@@ -173,7 +173,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>Address</label>
-										<form:input path="address" class="form-control" name="address" id="address" type="text"></form:input>
+										<form:input path="address" class="form-control" name="address" id="address" type="text" required="required"></form:input>
 									</div>
 								</div>
 							</div>
@@ -181,26 +181,26 @@
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>City</label>
-										<form:input path="city" class="form-control" name="city" id="city" type="text"></form:input>
+										<form:input path="city" class="form-control" name="city" id="city" type="text" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>State</label>
-										<form:input path="state" class="form-control" name="state" id="state" type="text"></form:input>
+										<form:input path="state" class="form-control" name="state" id="state" type="text" required="required"></form:input>
 									</div>
 								</div>
 								<div class="col-md-4">
 									<div class="form-group">
 										<label>Pincode</label>
-										<form:input path="pincode" class="form-control" type="text" name="pincode" id="pincode"></form:input>
+										<form:input path="pincode" class="form-control" type="text" name="pincode" id="pincode" required="required"></form:input>
 									</div>
 								</div>
 							</div>
 							<hr>
 							<div class="form-group">
 								<label>Message</label>
-								<form:textarea class="form-control" path="message" name="message" id="message" rows="10"></form:textarea>
+								<form:textarea class="form-control" path="message" name="message" id="message" rows="10" required="required"></form:textarea>
 							</div>
 							<div class="text-right">
 								<br>

@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -190,7 +190,11 @@
 							<div class="service-content text-center">
 								<span class="service-icon icon-pentagon"><i class="fa fa-rocket"></i></span>
 								<h3>Pvt Company</h3>
-								<p>It is flexible and has limited liability. Greater capital contribution and greater stability. Possibility to grow big and expand</p>
+								<ul class="text-left">
+									<li>It is flexible and has limited liability.</li>
+									<li>Greater capital contribution and greater stability.</li>
+									<li>Possibility to grow big and expand</li>
+								</ul>
 							</div>
 						</div>
 						<!--/ End first service -->
@@ -199,7 +203,10 @@
 							<div class="service-content text-center">
 								<span class="service-icon icon-pentagon"><i class="fa fa-rupee"></i></span>
 								<h3>Fund Requirement</h3>
-								<p>Fulfill Working Capital Needs. Social Purpose</p>
+								<ul class="text-left">
+									<li>Fulfill Working Capital Needs.</li>
+									<li>Social Purpose</li>
+								</ul>
 							</div>
 
 						</div>
@@ -209,7 +216,10 @@
 							<div class="service-content text-center">
 								<span class="service-icon icon-pentagon"><i class="fa fa-percent"></i></span>
 								<h3>Tax Return Compliances</h3>
-								<p>Mandatory Compliance. Tax Planning</p>
+								<ul class="text-left">
+									<li>Mandatory Compliance.</li>
+									<li>Tax Planning</li>
+								</ul>
 							</div>
 						</div>
 						<!--/ End Third service -->
@@ -218,7 +228,10 @@
 							<div class="service-content text-center">
 								<span class="service-icon icon-pentagon"><i class="fa fa-book"></i></span>
 								<h3>Bookkeeping</h3>
-								<p>Business Requirement. Professional Team</p>
+								<ul class="text-left">
+								<li>Business Requirement.</li>
+								<li>Professional Team</li>
+								</ul>
 							</div>
 						</div>
 						<!--/ End 4th service -->
@@ -237,15 +250,15 @@
 					<div class="facts one col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-user"></i></span>
 						<div class="facts-num">
-							<span class="counter"><c:out value="${metricMap['ENTERPRENEUR_SERVED']}"/></span>
+							<span class="counter"><c:out value="${metricMap['ENTERPRENEUR_SERVED']}" /></span>
 						</div>
-						<h3>Enterpreneur Served</h3>
+						<h3>Entrepreneur Served</h3>
 					</div>
 
 					<div class="facts two col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-institution"></i></span>
 						<div class="facts-num">
-							<span class="counter"><c:out value="${metricMap['PROFESSIONAL_NETWORK']}"/></span>
+							<span class="counter"><c:out value="${metricMap['PROFESSIONAL_NETWORK']}" /></span>
 						</div>
 						<h3>Professional Network</h3>
 					</div>
@@ -253,7 +266,7 @@
 					<div class="facts three col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-suitcase"></i></span>
 						<div class="facts-num">
-							<span class="counter"><c:out value="${metricMap['GEOGRAPHIES']}"/></span>
+							<span class="counter"><c:out value="${metricMap['GEOGRAPHIES']}" /></span>
 						</div>
 						<h3>Geographies</h3>
 					</div>
@@ -261,7 +274,7 @@
 					<div class="facts four col-md-3 col-sm-6">
 						<span class="facts-icon"><i class="fa fa-trophy"></i></span>
 						<div class="facts-num">
-							<span class="counter"><c:out value="${metricMap['TEAM_STRENGTH']}"/></span>
+							<span class="counter"><c:out value="${metricMap['TEAM_STRENGTH']}" /></span>
 						</div>
 						<h3>Team Strength</h3>
 					</div>
@@ -300,8 +313,10 @@
 							<li>Innovative solutions tailored to their requirements</li>
 							<li>Visits to their premises at a time to suit them.</li>
 						</ul>
-						<p>Please <a href="contact.htm">contact us</a> for further information and advice.</p>
-					<!-- 
+						<p>
+							Please <a href="contact.htm">contact us</a> for further information and advice.
+						</p>
+						<!-- 
 						<div class="image-block-content">
 							<span class="feature-icon pull-left"><i class="fa fa-bicycle"></i></span>
 							<div class="feature-content">
@@ -329,7 +344,7 @@
 						</div>
 						/ End 1st block -->
 
-						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -341,10 +356,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>

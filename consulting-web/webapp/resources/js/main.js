@@ -5,6 +5,9 @@ jQuery(document).ready(function($) {
 			"Csrf_RQ_PARAM_NAME" : $('#Csrf_RQ_PARAM_NAME').val()
 		});
 	});
+	
+	$("#uploadButton").css("background-color", "red");
+	$("#uploadButton").css("border-color", "red");
 
 });
 
@@ -19,6 +22,28 @@ var computeLoan = function() {
 	} else {
 		$('#monthlyEmi').html('0.0');
 	}
+};
+
+var initializePayment = function(){
+	
+	$.ajax({
+	    type: 'POST',
+	    url: 'payMoney.htm',
+	    dataType: "json",
+	    traditional : true,
+	    data: { 
+	        'incomeTaxRequestIdForPayment': $("#incomeTaxRequestIdForPayment").val()
+	    },
+	    success: function(response){
+	    	alert(response);
+	        $("#payUMoneyForm").html(response);
+	    },
+	    error: function(response){
+	    	alert(response);
+	        $("#payUMoneyForm").html(response);
+	    }
+	});
+	
 };
 
 $('#uploadIncomeTaxData').fileupload(
@@ -38,6 +63,7 @@ $('#uploadIncomeTaxData').fileupload(
 			},
 			success : function(data, xhr) {
 				$("#incomeTaxRequestId").val(data);
+				$("#incomeTaxRequestIdForPayment").val(data);
 				$('#uploadButton').unbind('click');
 				$("#uploadButton").attr("disabled", true);
 				$('#uploadButton').html("Upload Other Documents");
@@ -45,6 +71,7 @@ $('#uploadIncomeTaxData').fileupload(
 				$("#otherDocuments").val(true);
 				$("#uploadButton").css("background-color", "red");
 				$("#uploadButton").css("border-color", "red");
+				$("#successErrorMessage").html("File Uploaded Successfuly");
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
 				$('#uploadButton').unbind('click');
@@ -58,6 +85,7 @@ $('#uploadIncomeTaxData').fileupload(
 			},
 			done : function(e, data) {
 				$("#incomeTaxRequestId").val(data.result);
+				$("#incomeTaxRequestIdForPayment").val(data.result);
 				$('#uploadButton').unbind('click');
 				$("#uploadButton").attr("disabled", true);
 				$('#uploadButton').html("Upload Other Documents");
@@ -77,8 +105,8 @@ $('#uploadIncomeTaxData').fileupload(
 					} else {
 
 						$("#uploadButton").attr("disabled", false);
-						$("#uploadButton").css("background-color", "#79e599");
-						$("#uploadButton").css("border-color", "#79e599");
+						$("#uploadButton").css("background-color", "#81c83c");
+						$("#uploadButton").css("border-color", "#81c83c");
 					}
 				};
 				fileReader.readAsArrayBuffer(data.files[0]);

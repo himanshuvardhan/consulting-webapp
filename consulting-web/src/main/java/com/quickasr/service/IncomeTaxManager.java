@@ -6,7 +6,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.ServletException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +23,7 @@ import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.IncomeTaxRequest;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.IncomeTaxModel;
+import com.quickasr.web.model.PayUMoneyModel;
 
 public class IncomeTaxManager implements IIncomeTaxManager {
 
@@ -30,6 +35,11 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
 	private String fromAddress;
+	
+	private String serviceProvider;
+	private String baseUrl;
+	private String fUrl;
+	private String sUrl;
 
 	@Override
 	public boolean validateIncomeTaxForm(IncomeTaxModel incomeTaxModel) throws ApplicationException {
@@ -146,16 +156,16 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	}
 
 	@Override
-	public String getIncomeTaxFilling(IncomeTaxModel incomeTaxModel) throws ApplicationException {
+	public IncomeTaxRequest getIncomeTaxFilling(int incomeTaxRequestId) throws ApplicationException {
 		IncomeTaxRequest incomeTaxRequest = new IncomeTaxRequest();
 		try {
 
-			incomeTaxRequest = incomeTaxRequestDao.read(incomeTaxModel.getIncomeTaxRequestId());
+			incomeTaxRequest = incomeTaxRequestDao.read(incomeTaxRequestId);
 
 		} catch (Exception e) {
 			throw new ApplicationException("Error getting income tax data", e);
 		}
-		return incomeTaxRequest.getRequestorEmailId();
+		return incomeTaxRequest;
 	}
 
 	@Override
@@ -227,6 +237,100 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 
 	public void setFromAddress(String fromAddress) {
 		this.fromAddress = fromAddress;
+	}
+
+	public String getServiceProvider() {
+		return serviceProvider;
+	}
+
+	public void setServiceProvider(String serviceProvider) {
+		this.serviceProvider = serviceProvider;
+	}
+
+	public String getBaseUrl() {
+		return baseUrl;
+	}
+
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
+
+	public String getfUrl() {
+		return fUrl;
+	}
+
+	public void setfUrl(String fUrl) {
+		this.fUrl = fUrl;
+	}
+
+	public String getsUrl() {
+		return sUrl;
+	}
+
+	public void setsUrl(String sUrl) {
+		this.sUrl = sUrl;
+	}
+
+	@Override
+	public PayUMoneyModel generatePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
+		PayUMoneyAPI payUMoneyAPI = new PayUMoneyAPI();
+		Map<String, String> values = new HashMap<String, String>();
+		try {
+			
+			if(payUMoneyModel.getUserType().equalsIgnoreCase("individual_user")){
+				payUMoneyModel.setAmount(applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_INDIVIDULA").getConfigValue());
+			}else{
+				payUMoneyModel.setAmount(applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_CORPORATE").getConfigValue());
+			}
+			payUMoneyModel.setProductInfo(String.valueOf("Income Tax Return"));
+			payUMoneyModel.setFailureURI(String.valueOf(fUrl));
+			payUMoneyModel.setSuccessURI(String.valueOf(sUrl));
+			payUMoneyModel.setServiceProvider(serviceProvider);
+			payUMoneyModel.setBaseUrl(baseUrl);
+			//payUMoneyModel.setKey("UFu3ed");
+			payUMoneyModel.setKey("r8USItVb");
+			
+			values = payUMoneyAPI.hashCalMethod(payUMoneyModel);
+			
+			payUMoneyModel.setHash(values.get("hash").trim());
+			payUMoneyModel.setTxnid(values.get("txnid").trim());
+			
+		} catch (ServletException | IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return payUMoneyModel;
+	}
+
+	@Override
+	public void updateIncomeTaxRequestBeforePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
+		try {
+			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.read(Integer.parseInt(payUMoneyModel.getRequestId()));
+			if(payUMoneyModel.getTxnid() != null){
+				incomeTaxRequest.setPaymentTxnid(payUMoneyModel.getTxnid());
+			}
+			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
+			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
+			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+	@Override
+	public void updateIncomeTaxRequestAfterPayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
+		try {
+			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.findByNameSingle("payment_txnid", payUMoneyModel.getTxnid());
+			if(payUMoneyModel.getPayUMoneyTxnid() != null){
+				incomeTaxRequest.setPayuTxnid(payUMoneyModel.getPayUMoneyTxnid());
+			}
+			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
+			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
+			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 }

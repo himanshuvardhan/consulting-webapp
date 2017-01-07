@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -283,25 +284,25 @@
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Full Name</label>
-									<form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>
+									<form:input class="form-control" path="name" name="name" id="name" type="text" required="required"></form:input>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Email Id</label>
-									<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email"></form:input>
+									<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email" required="required"></form:input>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Phone Number</label>
-									<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text"></form:input>
+									<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text" required="required"></form:input>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="form-group">
 									<label>Pan Number</label>
-									<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
+									<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text" required="required"></form:input>
 								</div>
 							</div>
 						</div>

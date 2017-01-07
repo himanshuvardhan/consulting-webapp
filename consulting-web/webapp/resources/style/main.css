@@ -29,6 +29,10 @@ body {
 	transition: all ease 1s;
 }
 
+#uploadButton:hover {
+	background-color: #FFFFFF !important;
+}
+
 .removeButton{
 	border: none !important;
 	background: none !important;

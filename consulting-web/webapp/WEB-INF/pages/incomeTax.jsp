@@ -56,6 +56,12 @@
       <script src="resources/js/html5shiv.js"></script>
       <script src="resources/js/respond.min.js"></script>
     <![endif]-->
+    
+<style type="text/css">
+.btn.btn-primary.solid:hover {
+    background-color: none;
+}
+</style>
 
 </head>
 
@@ -160,31 +166,31 @@
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Full Name</label>
-								<form:input path="fullName" class="form-control" name="fullName" id="fullName" type="text"></form:input>
+								<form:input path="fullName" class="form-control" name="fullName" id="fullName" type="text" required="required"></form:input>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Email Id</label>
-								<form:input path="emailId" class="form-control" name="lastName" id="lastName" type="email"></form:input>
+								<form:input path="emailId" class="form-control" name="lastName" id="lastName" type="email" required="required"></form:input>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Phone Number</label>
-								<form:input path="phoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" type="text"></form:input>
+								<form:input path="phoneNumber" class="form-control" name="phoneNumber" id="phoneNumber" type="text" required="required"></form:input>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Bank Name</label>
-								<form:input path="bankName" class="form-control" name="bankName" id="bankName" type="text"></form:input>
+								<form:input path="bankName" class="form-control" name="bankName" id="bankName" type="text" required="required"></form:input>
 							</div>
 						</div>
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>Bank Account</label>
-								<form:input path="bankAccount" class="form-control" name="bankAccount" id="bankAccount" type="text"></form:input>
+								<form:input path="bankAccount" class="form-control" name="bankAccount" id="bankAccount" type="text" required="required"></form:input>
 							</div>
 						</div>
 						<div class="col-md-2">
@@ -198,8 +204,12 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 text-center">
-								<form:radiobutton  value="false" path="corporateUser"/><label>&nbsp;&nbsp;Individual <i class="fa fa-rupee"></i>  189/return</label>&nbsp;&nbsp;&nbsp;
-								<form:radiobutton  value="true" path="corporateUser"/><label>&nbsp;&nbsp;Corporate Employee <i class="fa fa-rupee"></i>  89/Return</label>
+							<form:radiobutton value="false" path="corporateUser" />
+							<label>&nbsp;&nbsp;Individual <i class="fa fa-rupee"></i> 189/return
+							</label>&nbsp;&nbsp;&nbsp;
+							<form:radiobutton value="true" path="corporateUser" />
+							<label>&nbsp;&nbsp;Corporate Employee <i class="fa fa-rupee"></i> 89/Return
+							</label>
 						</div>
 					</div>
 					<div class="row">
@@ -219,6 +229,18 @@
 					<div class="col-md-12 text-center">
 						<button disabled id="uploadButton" class="btn btn-primary solid blank ">Upload Form 16</button>
 					</div>
+					<div class="col-md-12 text-center">
+						<span id="successErrorMessage"></span>
+					</div>
+				</div>
+				<div class="row">
+					<form action="payMoney.htm" method="post">
+						<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
+						<input type="hidden" name="incomeTaxRequestIdForPayment" id="incomeTaxRequestIdForPayment" value="${incomeTaxModel.incomeTaxRequestId }" />
+						<div class="col-md-12 text-center">
+							<button class="btn btn-primary solid blank" type="submit">PayNow</button>
+						</div>
+					</form>
 				</div>
 				<div class="gap-40"></div>
 				<div class="row ">

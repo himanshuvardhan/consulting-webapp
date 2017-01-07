@@ -487,25 +487,25 @@
 											<div class="col-md-12">
 												<div class="form-group">
 													<label>Name</label>
-													<form:input class="form-control" path="name" name="name" id="name" type="text"></form:input>
+													<form:input class="form-control" path="name" name="name" id="name" type="text" required="required"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label>Phone Number</label>
-													<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text"></form:input>
+													<form:input class="form-control" path="phoneNumber" name="phoneNumber" id="phone_number" type="text" required="required"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label>Email Address</label>
-													<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email"></form:input>
+													<form:input class="form-control" path="emailId" name="emailId" id="emailId" type="email" required="required"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
 													<label>PAN Number</label>
-													<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text"></form:input>
+													<form:input class="form-control" path="panNumber" name="panNumber" id="panNumber" type="text" required="required"></form:input>
 												</div>
 											</div>
 											<div class="col-md-12 text-right">

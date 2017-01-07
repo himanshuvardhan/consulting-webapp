@@ -109,7 +109,7 @@
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>BookKeeping Request Successsfull</h2>
+					<h2>Payment Successsfull</h2>
 					<ul class="breadcrumb">
 						<li>Home</li>
 						<li>Pages</li>
@@ -130,7 +130,7 @@
 						<strong>SUCCESS</strong>
 					</div>
 					<div class="error-message">
-						<h3>BookKeeping Request Successsfull</h3>
+						<h3>Payment Successsfull</h3>
 					</div>
 					<div class="error-body">
 						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
