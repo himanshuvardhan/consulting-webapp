@@ -119,6 +119,7 @@
 		<property name="rootPath" value="${application.upload.root.path}"></property>
 		<property name="incomeTaxRequestDao" ref="incomeTaxRequestDao"></property>
 		<property name="applicationConfigDao" ref="applicationConfigDao"></property>
+		<property name="paymentTxnSummaryDao" ref="paymentTxnSummaryDao"></property>
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 		<property name="bccAddress" value="${notification.sender.email}"></property>
 		<property name="fromAddress" value="${notification.from.email}"></property>

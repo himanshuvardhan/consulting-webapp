@@ -13,45 +13,8 @@ public class IncomeTaxRequest implements java.io.Serializable {
 	private String requestorBankName;
 	private String requestorIfscCode;
 	private String userType;
-	private String paymentTxnid;
-	private String payuTxnid;
-	private String paymentStatus;
-	private String amountPaid;
 	private Date createdDt;
 	private Date updatedDt;
-	
-	
-	public String getAmountPaid() {
-		return amountPaid;
-	}
-
-	public void setAmountPaid(String amountPaid) {
-		this.amountPaid = amountPaid;
-	}
-
-	public String getPaymentStatus() {
-		return paymentStatus;
-	}
-
-	public void setPaymentStatus(String paymentStatus) {
-		this.paymentStatus = paymentStatus;
-	}
-
-	public String getPaymentTxnid() {
-		return paymentTxnid;
-	}
-
-	public void setPaymentTxnid(String paymentTxnid) {
-		this.paymentTxnid = paymentTxnid;
-	}
-
-	public String getPayuTxnid() {
-		return payuTxnid;
-	}
-
-	public void setPayuTxnid(String payuTxnid) {
-		this.payuTxnid = payuTxnid;
-	}
 
 	public String getUserType() {
 		return userType;

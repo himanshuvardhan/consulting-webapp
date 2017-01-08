@@ -64,11 +64,13 @@ public class IncomeTaxController {
 
 			if (incomeTaxManager.validateIncomeTaxForm(incomeTaxModel) && incomeTaxModel.getIncomeTaxRequestId() == 0) {
 				result = incomeTaxManager.requestIncomeTaxFilling(incomeTaxModel);
+				incomeTaxModel.setIncomeTaxRequestId(result);
 				incomeTaxManager.uploadForm16(incomeTaxModel);
 			} else if (incomeTaxManager.validateIncomeTaxForm(incomeTaxModel)) {
 				result = incomeTaxModel.getIncomeTaxRequestId();
 				incomeTaxModel.setEmailId(incomeTaxManager.getIncomeTaxFilling(incomeTaxModel.getIncomeTaxRequestId())
 						.getRequestorEmailId());
+				incomeTaxModel.setIncomeTaxRequestId(result);
 				incomeTaxManager.uploadForm16(incomeTaxModel);
 			}
 		} catch (ApplicationException e) {

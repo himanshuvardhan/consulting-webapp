@@ -70,6 +70,8 @@
 				</value>
 				<value>classpath:config/hbm/GSTRequest.hbm.xml
 				</value>
+				<value>classpath:config/hbm/PaymentTxnSummary.hbm.xml
+				</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -196,5 +198,13 @@
 			<value>com.quickasr.data.entity.GSTRequest</value>
 		</constructor-arg>
 	</bean>
+	
+	<bean id="paymentTxnSummaryDao" parent="abstractDaoTarget"
+		class="com.quickasr.data.dao.PaymentTxnSummaryDaoImpl">
+		<constructor-arg>
+			<value>com.quickasr.data.entity.PaymentTxnSummary</value>
+		</constructor-arg>
+	</bean>
+	
 
 </beans>

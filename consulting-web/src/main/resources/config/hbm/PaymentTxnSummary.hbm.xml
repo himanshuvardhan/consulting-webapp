@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.quickasr.data.entity.PaymentTxnSummary" table="paymet_txn_summary">
+        <id name="paymentId" type="int">
+            <column name="payment_id" />
+            <generator class="native"/>
+        </id>
+        <property name="serviceRequestId" type="int">
+            <column name="service_request_id" />
+        </property>
+        <property name="serviceType" type="string">
+            <column name="service_type" length="100"  />
+        </property>
+        <property name="paymentTxnid" type="string">
+            <column name="payment_txnid" length="200"  />
+        </property>
+        <property name="payuTxnid" type="string">
+            <column name="payu_txnid" length="200"  />
+        </property>
+        <property name="paymentStatus" type="string">
+            <column name="payment_status" length="200"  />
+        </property>
+         <property name="amountPaid" type="string">
+            <column name="amount_paid" length="500"  />
+        </property>
+		<property name="createdDt" type="timestamp">
+			<column length="250" name="created_dt" />
+		</property>
+		<property name="updatedDt" type="timestamp">
+			<column length="250" name="updated_dt" />
+		</property>
+    </class>
+</hibernate-mapping>

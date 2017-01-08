@@ -25,18 +25,6 @@
         <property name="userType" type="string">
             <column name="user_type" length="100" not-null="true" />
         </property>
-        <property name="paymentTxnid" type="string">
-            <column name="payment_txnid" length="200"  />
-        </property>
-        <property name="payuTxnid" type="string">
-            <column name="payu_txnid" length="200"  />
-        </property>
-        <property name="paymentStatus" type="string">
-            <column name="payment_status" length="200"  />
-        </property>
-         <property name="amountPaid" type="string">
-            <column name="amount_paid" length="500"  />
-        </property>
 		<property name="createdDt" type="timestamp">
 			<column length="250" name="created_dt" />
 		</property>

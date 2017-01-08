@@ -19,8 +19,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.quickasr.base.ApplicationException;
 import com.quickasr.data.dao.ApplicationConfigDao;
 import com.quickasr.data.dao.IncomeTaxRequestDao;
+import com.quickasr.data.dao.PaymentTxnSummaryDao;
 import com.quickasr.data.entity.ApplicationConfig;
 import com.quickasr.data.entity.IncomeTaxRequest;
+import com.quickasr.data.entity.PaymentTxnSummary;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.IncomeTaxModel;
 import com.quickasr.web.model.PayUMoneyModel;
@@ -33,6 +35,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	private IncomeTaxRequestDao incomeTaxRequestDao;
 	private boolean emailNotificationsEnabled;
 	private ApplicationConfigDao applicationConfigDao;
+	private PaymentTxnSummaryDao paymentTxnSummaryDao;
 	private String bccAddress;
 	private String fromAddress;
 
@@ -66,7 +69,8 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		boolean result = true;
 		try {
 
-			String fileLocation = this.rootPath + "tax_documents/" + incomeTaxModel.getEmailId() + "/";
+			String fileLocation = this.rootPath + "tax_documents/" + incomeTaxModel.getEmailId() + "_"
+					+ incomeTaxModel.getIncomeTaxRequestId() + "/";
 
 			Path path = Paths.get(fileLocation);
 			if (!Files.exists(path)) {
@@ -200,7 +204,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		}
 		return priceMap;
 	}
-	
+
 	@Override
 	public PayUMoneyModel generatePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		PayUMoneyAPI payUMoneyAPI = new PayUMoneyAPI();
@@ -238,14 +242,19 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	@Override
 	public void updateIncomeTaxRequestBeforePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		try {
-			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao
-					.read(Integer.parseInt(payUMoneyModel.getRequestId()));
+
+			PaymentTxnSummary paymentTxnSummary = new PaymentTxnSummary();
+			paymentTxnSummary.setAmountPaid(payUMoneyModel.getAmount());
+			paymentTxnSummary.setPaymentStatus(payUMoneyModel.getPaymentStatus());
 			if (payUMoneyModel.getTxnid() != null) {
-				incomeTaxRequest.setPaymentTxnid(payUMoneyModel.getTxnid());
+				paymentTxnSummary.setPaymentTxnid(payUMoneyModel.getTxnid());
 			}
-			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
-			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
-			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
+			paymentTxnSummary.setServiceRequestId(Integer.parseInt(payUMoneyModel.getRequestId()));
+			paymentTxnSummary.setServiceType(payUMoneyModel.getProductInfo());
+			paymentTxnSummary.setUpdatedDt(new Date());
+			paymentTxnSummary.setCreatedDt(new Date());
+			paymentTxnSummaryDao.saveOrUpdate(paymentTxnSummary);
+
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
@@ -254,14 +263,17 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	@Override
 	public void updateIncomeTaxRequestAfterPayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		try {
-			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.findByNameSingle("payment_txnid",
+
+			PaymentTxnSummary paymentTxnSummary = paymentTxnSummaryDao.findByNameSingle("payment_txnid",
 					payUMoneyModel.getTxnid());
 			if (payUMoneyModel.getPayUMoneyTxnid() != null) {
-				incomeTaxRequest.setPayuTxnid(payUMoneyModel.getPayUMoneyTxnid());
+				paymentTxnSummary.setPayuTxnid(payUMoneyModel.getPayUMoneyTxnid());
 			}
-			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
-			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
-			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
+			paymentTxnSummary.setAmountPaid(payUMoneyModel.getAmount());
+			paymentTxnSummary.setPaymentStatus(payUMoneyModel.getPaymentStatus());
+			paymentTxnSummary.setUpdatedDt(new Date());
+			paymentTxnSummaryDao.saveOrUpdate(paymentTxnSummary);
+
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
@@ -310,4 +322,9 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	public void setsUrl(String sUrl) {
 		this.sUrl = sUrl;
 	}
+
+	public void setPaymentTxnSummaryDao(PaymentTxnSummaryDao paymentTxnSummaryDao) {
+		this.paymentTxnSummaryDao = paymentTxnSummaryDao;
+	}
+
 }

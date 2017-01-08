@@ -37,7 +37,7 @@ CREATE TABLE `application_config` (
 
 LOCK TABLES `application_config` WRITE;
 /*!40000 ALTER TABLE `application_config` DISABLE KEYS */;
-INSERT INTO `application_config` VALUES (1,'application_style','preset2.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC'),(6,'INCOME_TAX_INDIVIDULA','289','APPLICATION_AMOUNT'),(7,'INCOME_TAX_CORPORATE','189','APPLICATION_AMOUNT');
+INSERT INTO `application_config` VALUES (1,'application_style','preset2.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC'),(6,'INCOME_TAX_INDIVIDULA','299','APPLICATION_AMOUNT'),(7,'INCOME_TAX_CORPORATE','199','APPLICATION_AMOUNT');
 /*!40000 ALTER TABLE `application_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,10 +203,6 @@ CREATE TABLE `income_tax_request` (
   `requestor_bank_name` varchar(45) DEFAULT NULL,
   `requestor_ifsc_code` varchar(45) DEFAULT NULL,
   `user_type` varchar(45) DEFAULT NULL,
-  `payment_txnid` varchar(200) DEFAULT NULL,
-  `payu_txnid` varchar(200) DEFAULT NULL,
-  `amount_paid` varchar(500) DEFAULT NULL,
-  `payment_status` varchar(45) DEFAULT NULL,
   `created_dt` datetime DEFAULT NULL,
   `updated_dt` datetime DEFAULT NULL,
   PRIMARY KEY (`income_tax_request_id`)
@@ -276,6 +272,36 @@ LOCK TABLES `loan_types` WRITE;
 /*!40000 ALTER TABLE `loan_types` DISABLE KEYS */;
 INSERT INTO `loan_types` VALUES ('Home Loan','Home Loan',1),('Loan Against Property','Loan Against Property',2),('Balance Transfer & Top ups','Balance Transfer & Top ups',3),('Educational Loan','Educational Loan',4),('Term Loan Synidation','Term Loan Synidation',5);
 /*!40000 ALTER TABLE `loan_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `paymet_txn_summary`
+--
+
+DROP TABLE IF EXISTS `paymet_txn_summary`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `paymet_txn_summary` (
+  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `payment_txnid` varchar(200) DEFAULT NULL,
+  `payu_txnid` varchar(200) DEFAULT NULL,
+  `service_request_id` int(11) DEFAULT NULL,
+  `service_type` varchar(100) DEFAULT NULL,
+  `amount_paid` varchar(500) DEFAULT NULL,
+  `payment_status` varchar(45) DEFAULT NULL,
+  `created_dt` datetime DEFAULT NULL,
+  `updated_dt` datetime DEFAULT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='To trck payments paid through the site';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `paymet_txn_summary`
+--
+
+LOCK TABLES `paymet_txn_summary` WRITE;
+/*!40000 ALTER TABLE `paymet_txn_summary` DISABLE KEYS */;
+/*!40000 ALTER TABLE `paymet_txn_summary` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -371,4 +397,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-08 13:21:58
+-- Dump completed on 2017-01-08 22:59:11
