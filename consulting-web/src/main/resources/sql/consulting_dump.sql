@@ -37,7 +37,7 @@ CREATE TABLE `application_config` (
 
 LOCK TABLES `application_config` WRITE;
 /*!40000 ALTER TABLE `application_config` DISABLE KEYS */;
-INSERT INTO `application_config` VALUES (1,'application_style','preset5.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC');
+INSERT INTO `application_config` VALUES (1,'application_style','preset2.css','UI'),(2,'ENTERPRENEUR_SERVED','200','UI_METRIC'),(3,'PROFESSIONAL_NETWORK','77','UI_METRIC'),(4,'GEOGRAPHIES','7','UI_METRIC'),(5,'TEAM_STRENGTH','27','UI_METRIC'),(6,'INCOME_TAX_INDIVIDULA','289','APPLICATION_AMOUNT'),(7,'INCOME_TAX_CORPORATE','189','APPLICATION_AMOUNT');
 /*!40000 ALTER TABLE `application_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,6 +203,10 @@ CREATE TABLE `income_tax_request` (
   `requestor_bank_name` varchar(45) DEFAULT NULL,
   `requestor_ifsc_code` varchar(45) DEFAULT NULL,
   `user_type` varchar(45) DEFAULT NULL,
+  `payment_txnid` varchar(200) DEFAULT NULL,
+  `payu_txnid` varchar(200) DEFAULT NULL,
+  `amount_paid` varchar(500) DEFAULT NULL,
+  `payment_status` varchar(45) DEFAULT NULL,
   `created_dt` datetime DEFAULT NULL,
   `updated_dt` datetime DEFAULT NULL,
   PRIMARY KEY (`income_tax_request_id`)
@@ -367,4 +371,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-15 21:31:31
+-- Dump completed on 2017-01-08 13:21:58
