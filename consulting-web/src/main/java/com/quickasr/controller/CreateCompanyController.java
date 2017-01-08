@@ -36,7 +36,11 @@ public class CreateCompanyController {
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
 			model.addAttribute("price", createCompanyManager.getCompanyPrices());
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		model.addAttribute("companyAlreadyExists", false);
 		return new ModelAndView("createCompany", "companyList", companyList);
@@ -52,7 +56,11 @@ public class CreateCompanyController {
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
 			model.addAttribute("price", createCompanyManager.getCompanyPrices());
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		model.addAttribute("companyName", companyName);
 		model.addAttribute("companyAlreadyExists", result);
@@ -71,7 +79,11 @@ public class CreateCompanyController {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		model.addAttribute("companyName", companyName);
 		model.addAttribute("companyDetail", companyModel);
@@ -83,7 +95,11 @@ public class CreateCompanyController {
 		try {
 			createCompanyManager.requestCompanyOrder(companyOrderModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 
 		return "redirect:/companySuccess.htm";
@@ -94,14 +110,14 @@ public class CreateCompanyController {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + createCompanyManager.getApplicationStylePreset("application_style"));
-		}  catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "companySuccess";
-	}
-
-	public ICreateCompanyManager getCreateCompanyManager() {
-		return createCompanyManager;
 	}
 
 	public void setCreateCompanyManager(ICreateCompanyManager createCompanyManager) {

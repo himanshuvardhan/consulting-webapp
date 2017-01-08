@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.quickasr.base.ApplicationException;
-import com.quickasr.service.IBookKeepingManager;
 import com.quickasr.service.IRegistrationServiceManager;
 import com.quickasr.web.model.ServiceRegistrationModel;
 
@@ -36,6 +35,9 @@ public class RegistrationServiceController {
 					+ registrationServiceManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		model.addAttribute("serviceMap", serviceMap);
 		return new ModelAndView("serviceRegistration", "serviceRegistrationModel", new ServiceRegistrationModel());
@@ -49,7 +51,11 @@ public class RegistrationServiceController {
 		try {
 			registrationServiceManager.applyForRegistrationService(serviceRegistrationModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 
 		return "redirect:/serviceRegistrationSuccess.htm";
@@ -61,13 +67,13 @@ public class RegistrationServiceController {
 			model.addAttribute("stylePreset", "resources/style/presets/"
 					+ registrationServiceManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "serviceRegistrationSuccess";
-	}
-
-	public IRegistrationServiceManager getRegistrationServiceManager() {
-		return registrationServiceManager;
 	}
 
 	public void setRegistrationServiceManager(IRegistrationServiceManager registrationServiceManager) {

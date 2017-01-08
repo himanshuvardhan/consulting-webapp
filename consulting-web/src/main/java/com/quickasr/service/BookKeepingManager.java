@@ -144,7 +144,7 @@ public class BookKeepingManager implements IBookKeepingManager {
 				}
 			}
 		} catch (Exception e) {
-			throw new ApplicationException("Error updating application style", e);
+			throw new ApplicationException("Error getting Metrics ", e);
 		}
 		return metricMap;
 	}

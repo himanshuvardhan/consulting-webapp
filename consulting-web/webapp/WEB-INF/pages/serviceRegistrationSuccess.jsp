@@ -206,9 +206,9 @@
 		<!-- Waypoints -->
 		<script type="text/javascript" src="resources/js/waypoints.min.js"></script>
 		<!-- Google Map API Key Source -->
-		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 		<!-- For Google Map -->
-		<script type="text/javascript" src="resources/js/gmap3.js"></script>
+		<!-- <script type="text/javascript" src="resources/js/gmap3.js"></script> -->
 		<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
 		<!-- Template custom -->
 		<script type="text/javascript" src="resources/js/custom.js"></script>

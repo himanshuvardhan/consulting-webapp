@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.quickasr.base.ApplicationException;
 import com.quickasr.service.BookKeepingManager;
-import com.quickasr.web.model.BookKeepingOrderModel;
 import com.quickasr.web.model.ContactModel;
 
 /**
@@ -37,7 +36,10 @@ public class HomeController {
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 			model.addAttribute("metricMap", bookKeepingManager.getUIMetric());
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
 			return new ModelAndView("error");
 		}
 		return new ModelAndView("index");
@@ -52,7 +54,11 @@ public class HomeController {
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 			model.addAttribute("metricMap", bookKeepingManager.getUIMetric());
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("index");
 	}
@@ -61,8 +67,12 @@ public class HomeController {
 	public @ResponseBody String updateStyle(@RequestParam(name = "presetStyle", required = true) String presetStyle) {
 		try {
 			bookKeepingManager.updateApplicationStylePreset(presetStyle);
-		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+		}  catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "success";
 	}
@@ -75,7 +85,11 @@ public class HomeController {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("contact", "contactModel", new ContactModel());
 	}
@@ -87,7 +101,11 @@ public class HomeController {
 		try {
 			bookKeepingManager.submitUserQuery(contactModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 
 		return "redirect:/contactSuccess.htm";
@@ -100,13 +118,13 @@ public class HomeController {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("contactSuccess");
-	}
-
-	public BookKeepingManager getBookKeepingManager() {
-		return bookKeepingManager;
 	}
 
 	public void setBookKeepingManager(BookKeepingManager bookKeepingManager) {

@@ -29,7 +29,11 @@ public class BookKeepingController {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("bookKeeping", "bookKeepingOrderModel", new BookKeepingOrderModel());
 	}
@@ -40,7 +44,11 @@ public class BookKeepingController {
 		try {
 			bookKeepingManager.applyForBookKeeping(bookKeepingOrderModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "redirect:/bookKeepingSuccess.htm";
 	}
@@ -50,13 +58,16 @@ public class BookKeepingController {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
-		}  catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "bookKeepingSuccess";
 	}
-	
-	
+
 	@RequestMapping(value = "/gst", method = RequestMethod.GET)
 	public ModelAndView gst(Model model) throws ApplicationException {
 		logger.debug("gst() is executed", "quickasr");
@@ -64,35 +75,43 @@ public class BookKeepingController {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("gst", "bookKeepingOrderModel", new BookKeepingOrderModel());
 	}
-	
+
 	@RequestMapping(value = "/applyForGST", method = RequestMethod.POST)
 	public String applyForGST(@ModelAttribute BookKeepingOrderModel bookKeepingOrderModel, Model model) {
 		logger.debug("applyForGST(bookKeepingOrderModel, model) is executed", "quickasr");
 		try {
 			bookKeepingManager.applyForGST(bookKeepingOrderModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "redirect:/gstSuccess.htm";
 	}
-	
+
 	@RequestMapping(value = "/gstSuccess", method = RequestMethod.GET)
 	public String gstSuccess(Model model) {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
-		}  catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "gstSuccess";
-	}
-
-	public IBookKeepingManager getBookKeepingManager() {
-		return bookKeepingManager;
 	}
 
 	public void setBookKeepingManager(IBookKeepingManager bookKeepingManager) {

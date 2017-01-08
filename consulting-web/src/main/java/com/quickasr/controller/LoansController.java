@@ -36,10 +36,14 @@ public class LoansController {
 			for (LoanTypeModel loanTypeModel : loanTypes) {
 				loanTypesMap.put(String.valueOf(loanTypeModel.getLoanId()), loanTypeModel.getLoanName());
 			}
-			
-			model.addAttribute("stylePreset", "resources/style/presets/"+loansManager.getApplicationStylePreset("application_style"));
+
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + loansManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		model.addAttribute("loanTypesMap", loanTypesMap);
 		return new ModelAndView("loans", "loanOrderModel", new LoanOrderModel());
@@ -52,6 +56,10 @@ public class LoansController {
 			loansManager.applyForLoan(loanOrderModel);
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "redirect:/loanSuccess.htm";
 	}
@@ -59,15 +67,15 @@ public class LoansController {
 	@RequestMapping(value = "/loanSuccess", method = RequestMethod.GET)
 	public String loanSuccess(@ModelAttribute LoanOrderModel loanOrderModel, Model model) {
 		try {
-			model.addAttribute("stylePreset", "resources/style/presets/"+loansManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + loansManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "loanSuccess";
-	}
-
-	public ILoansManager getLoansManager() {
-		return loansManager;
 	}
 
 	public void setLoansManager(ILoansManager loansManager) {

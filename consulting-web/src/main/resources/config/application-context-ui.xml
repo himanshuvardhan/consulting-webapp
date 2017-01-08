@@ -70,8 +70,8 @@
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
-		<property name="username" value="quickasr@gmail.com" />
-		<property name="password" value="Krishna786" />
+		<property name="username" value="${notification.sender.email}" />
+		<property name="password" value="${notification.sender.email.password}" />
 		<property name="protocol" value="smtp"></property>
 
 		<property name="javaMailProperties">

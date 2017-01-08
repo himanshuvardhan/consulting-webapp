@@ -47,7 +47,7 @@ public class IncomeTaxController {
 			logger.error(e.getErrorCode());
 			return new ModelAndView("error");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getStackTrace().toString());
 			return new ModelAndView("error");
 		}
 
@@ -75,7 +75,7 @@ public class IncomeTaxController {
 			logger.error(e.getErrorCode());
 			result = -1;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getStackTrace().toString());
 			result = -1;
 		}
 		modelMap.addAttribute("incomeTaxModel", incomeTaxModel);
@@ -105,7 +105,7 @@ public class IncomeTaxController {
 			logger.error(e.getErrorCode());
 			return "redirect:/error.htm";
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		}
 		redirectAttributes.addFlashAttribute("payUMoneyModel", payUMoneyModel);
@@ -121,7 +121,7 @@ public class IncomeTaxController {
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		}
 		return "payment";
@@ -139,8 +139,10 @@ public class IncomeTaxController {
 			payUMoneyModel.setAmount(request.getParameter("amount"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		}
 		return "paymentSuccess";
@@ -156,8 +158,10 @@ public class IncomeTaxController {
 			payUMoneyModel.setAmount(request.getParameter("amount"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
 		}
 		return "paymentFailure";

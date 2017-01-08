@@ -24,36 +24,46 @@ public class ImportExportController {
 	public ModelAndView importExport(Model model) {
 		logger.debug("importExport() is executed", "quickasr");
 		try {
-			model.addAttribute("stylePreset", "resources/style/presets/"+importExportManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + importExportManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("importExport", "importExportOrderModel", new ImportExportOrderModel());
 	}
-	
+
 	@RequestMapping(value = "/applyForImportExport", method = RequestMethod.POST)
 	public String applyForImportExport(@ModelAttribute ImportExportOrderModel importExportOrderModel, Model model) {
 		logger.debug("applyForImportExport(importExportOrderModel, model) is executed", "quickasr");
 		try {
 			importExportManager.applyForImportExport(importExportOrderModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "redirect:/importExportSuccess.htm";
 	}
-	
+
 	@RequestMapping(value = "/importExportSuccess", method = RequestMethod.GET)
 	public String importExportSuccess(Model model) {
 		try {
-			model.addAttribute("stylePreset", "resources/style/presets/"+importExportManager.getApplicationStylePreset("application_style"));
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + importExportManager.getApplicationStylePreset("application_style"));
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
 		}
 		return "importExportSuccess";
-	}
-
-	public ImportExportManager getImportExportManager() {
-		return importExportManager;
 	}
 
 	public void setImportExportManager(ImportExportManager importExportManager) {
