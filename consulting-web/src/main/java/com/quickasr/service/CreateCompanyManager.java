@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.jsoup.Connection.Method;
+import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -48,13 +49,15 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 
 			long startTime = System.currentTimeMillis();
 
-			Document document = Jsoup.connect(getComapnyAvailabilityURL())
-					.header("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8").method(Method.POST)
+			Response response = Jsoup.connect(getComapnyAvailabilityURL())
+					.header("Content-Type", "application/x-www-form-urlencoded").method(Method.POST)
 					.data("counter", "1").data("name1", companyName).data("name2", "").data("name3", "")
 					.data("name4", "").data("name5", "").data("name6", "").data("activityType1", "")
-					.data("activityType2", "").timeout(60 * 1000).get();
+					.data("activityType2", "").timeout(60 * 1000).ignoreContentType(true).execute();
 
 			long endTime = System.currentTimeMillis();
+			
+			Document document = response.parse();
 
 			logger.debug("External Request took " + (endTime - startTime) + " milliseconds");
 
