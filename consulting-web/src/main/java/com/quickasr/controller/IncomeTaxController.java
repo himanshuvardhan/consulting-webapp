@@ -1,5 +1,7 @@
 package com.quickasr.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -37,8 +39,16 @@ public class IncomeTaxController {
 		try {
 			model.addAttribute("stylePreset",
 					"resources/style/presets/" + incomeTaxManager.getApplicationStylePreset("application_style"));
+			Map<String, String> priceMap = incomeTaxManager.getIncomeTaxPrice();
+			for (Map.Entry<String, String> entry : priceMap.entrySet()) {
+				modelMap.addAttribute(entry.getKey(), entry.getValue());
+			}
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("error");
 		}
 
 		modelMap.addAttribute("incomeTaxModel", new IncomeTaxModel());
@@ -63,6 +73,10 @@ public class IncomeTaxController {
 			}
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+			result = -1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = -1;
 		}
 		modelMap.addAttribute("incomeTaxModel", incomeTaxModel);
 		return result;
@@ -89,6 +103,10 @@ public class IncomeTaxController {
 
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "redirect:/error.htm";
 		}
 		redirectAttributes.addFlashAttribute("payUMoneyModel", payUMoneyModel);
 		return "redirect:/payment.htm";
@@ -102,6 +120,9 @@ public class IncomeTaxController {
 			model.addAttribute("payUMoneyModel", payUMoneyModel);
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "redirect:/error.htm";
 		}
 		return "payment";
 	}
@@ -118,7 +139,9 @@ public class IncomeTaxController {
 			payUMoneyModel.setAmount(request.getParameter("amount"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			return "redirect:/error.htm";
 		}
 		return "paymentSuccess";
 	}
@@ -133,13 +156,11 @@ public class IncomeTaxController {
 			payUMoneyModel.setAmount(request.getParameter("amount"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
-			logger.error(e.getErrorCode());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			return "redirect:/error.htm";
 		}
 		return "paymentFailure";
-	}
-
-	public IIncomeTaxManager getIncomeTaxManager() {
-		return incomeTaxManager;
 	}
 
 	public void setIncomeTaxManager(IIncomeTaxManager incomeTaxManager) {

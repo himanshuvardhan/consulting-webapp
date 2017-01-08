@@ -35,7 +35,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
 	private String fromAddress;
-	
+
 	private String serviceProvider;
 	private String baseUrl;
 	private String fUrl;
@@ -56,7 +56,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		} catch (ApplicationException e) {
 			throw new ApplicationException("Error Validating Form", e);
 		} catch (Exception e) {
-			result = false;
+			throw new ApplicationException("Error Validating Form", e);
 		}
 		return result;
 	}
@@ -136,8 +136,8 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + ",<br><br>"
 					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
 					+ "Your order have been placed for the following <br>" + "Service : Income Tax Filling" + "<br>"
-					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "<br>" + "Request Time : " + new Date()
-					+ "<br><br>"
+					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "<br>" + "Request Time : "
+					+ new Date() + "<br><br>"
 					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
 					+ "<br>"
 					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
@@ -146,7 +146,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
 					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
-			emailer.sendMail(getFromAddress(), incomeTaxRequest.getRequestorEmailId(), getBccAddress(),
+			emailer.sendMail(fromAddress, incomeTaxRequest.getRequestorEmailId(), bccAddress,
 					"Income Tax Return Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
@@ -183,122 +183,54 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		}
 	}
 
-	public Emailer getEmailer() {
-		return emailer;
+	@Override
+	public Map<String, String> getIncomeTaxPrice() throws ApplicationException {
+		Map<String, String> priceMap = new HashMap<String, String>();
+		try {
+			List<ApplicationConfig> prices = applicationConfigDao.findByName("config_categ", "APPLICATION_AMOUNT");
+			if (prices.size() > 0) {
+				for (ApplicationConfig applicationConfig : prices) {
+					if (applicationConfig.getConfigName().equalsIgnoreCase("INCOME_TAX_INDIVIDULA")
+							|| applicationConfig.getConfigName().equalsIgnoreCase("INCOME_TAX_CORPORATE"))
+						priceMap.put(applicationConfig.getConfigName(), applicationConfig.getConfigValue());
+				}
+			}
+		} catch (Exception e) {
+			throw new ApplicationException(e);
+		}
+		return priceMap;
 	}
-
-	public void setEmailer(Emailer emailer) {
-		this.emailer = emailer;
-	}
-
-	public String getRootPath() {
-		return rootPath;
-	}
-
-	public void setRootPath(String rootPath) {
-		this.rootPath = rootPath;
-	}
-
-	public IncomeTaxRequestDao getIncomeTaxRequestDao() {
-		return incomeTaxRequestDao;
-	}
-
-	public void setIncomeTaxRequestDao(IncomeTaxRequestDao incomeTaxRequestDao) {
-		this.incomeTaxRequestDao = incomeTaxRequestDao;
-	}
-
-	public boolean isEmailNotificationsEnabled() {
-		return emailNotificationsEnabled;
-	}
-
-	public void setEmailNotificationsEnabled(boolean emailNotificationsEnabled) {
-		this.emailNotificationsEnabled = emailNotificationsEnabled;
-	}
-
-	public ApplicationConfigDao getApplicationConfigDao() {
-		return applicationConfigDao;
-	}
-
-	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
-		this.applicationConfigDao = applicationConfigDao;
-	}
-
-	public String getBccAddress() {
-		return bccAddress;
-	}
-
-	public void setBccAddress(String bccAddress) {
-		this.bccAddress = bccAddress;
-	}
-
-	public String getFromAddress() {
-		return fromAddress;
-	}
-
-	public void setFromAddress(String fromAddress) {
-		this.fromAddress = fromAddress;
-	}
-
-	public String getServiceProvider() {
-		return serviceProvider;
-	}
-
-	public void setServiceProvider(String serviceProvider) {
-		this.serviceProvider = serviceProvider;
-	}
-
-	public String getBaseUrl() {
-		return baseUrl;
-	}
-
-	public void setBaseUrl(String baseUrl) {
-		this.baseUrl = baseUrl;
-	}
-
-	public String getfUrl() {
-		return fUrl;
-	}
-
-	public void setfUrl(String fUrl) {
-		this.fUrl = fUrl;
-	}
-
-	public String getsUrl() {
-		return sUrl;
-	}
-
-	public void setsUrl(String sUrl) {
-		this.sUrl = sUrl;
-	}
-
+	
 	@Override
 	public PayUMoneyModel generatePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		PayUMoneyAPI payUMoneyAPI = new PayUMoneyAPI();
 		Map<String, String> values = new HashMap<String, String>();
 		try {
-			
-			if(payUMoneyModel.getUserType().equalsIgnoreCase("individual_user")){
-				payUMoneyModel.setAmount(applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_INDIVIDULA").getConfigValue());
-			}else{
-				payUMoneyModel.setAmount(applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_CORPORATE").getConfigValue());
+
+			if (payUMoneyModel.getUserType().equalsIgnoreCase("individual_user")) {
+				payUMoneyModel.setAmount(
+						applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_INDIVIDULA").getConfigValue());
+			} else {
+				payUMoneyModel.setAmount(
+						applicationConfigDao.findByNameSingle("config_name", "INCOME_TAX_CORPORATE").getConfigValue());
 			}
 			payUMoneyModel.setProductInfo(String.valueOf("Income Tax Return"));
 			payUMoneyModel.setFailureURI(String.valueOf(fUrl));
 			payUMoneyModel.setSuccessURI(String.valueOf(sUrl));
 			payUMoneyModel.setServiceProvider(serviceProvider);
 			payUMoneyModel.setBaseUrl(baseUrl);
-			//payUMoneyModel.setKey("UFu3ed");
+			// payUMoneyModel.setKey("UFu3ed");
 			payUMoneyModel.setKey("r8USItVb");
-			
+
 			values = payUMoneyAPI.hashCalMethod(payUMoneyModel);
-			
+
 			payUMoneyModel.setHash(values.get("hash").trim());
 			payUMoneyModel.setTxnid(values.get("txnid").trim());
-			
+
 		} catch (ServletException | IOException e) {
-			e.printStackTrace();
+			throw new ApplicationException(e);
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new ApplicationException(e);
 		}
 		return payUMoneyModel;
 	}
@@ -306,31 +238,76 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 	@Override
 	public void updateIncomeTaxRequestBeforePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		try {
-			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.read(Integer.parseInt(payUMoneyModel.getRequestId()));
-			if(payUMoneyModel.getTxnid() != null){
+			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao
+					.read(Integer.parseInt(payUMoneyModel.getRequestId()));
+			if (payUMoneyModel.getTxnid() != null) {
 				incomeTaxRequest.setPaymentTxnid(payUMoneyModel.getTxnid());
 			}
 			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
 			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
 			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
 		} catch (Exception e) {
-			// TODO: handle exception
+			throw new ApplicationException(e);
 		}
 	}
 
 	@Override
 	public void updateIncomeTaxRequestAfterPayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
 		try {
-			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.findByNameSingle("payment_txnid", payUMoneyModel.getTxnid());
-			if(payUMoneyModel.getPayUMoneyTxnid() != null){
+			IncomeTaxRequest incomeTaxRequest = incomeTaxRequestDao.findByNameSingle("payment_txnid",
+					payUMoneyModel.getTxnid());
+			if (payUMoneyModel.getPayUMoneyTxnid() != null) {
 				incomeTaxRequest.setPayuTxnid(payUMoneyModel.getPayUMoneyTxnid());
 			}
 			incomeTaxRequest.setPaymentStatus(payUMoneyModel.getPaymentStatus());
 			incomeTaxRequest.setAmountPaid(payUMoneyModel.getAmount());
 			incomeTaxRequestDao.saveOrUpdate(incomeTaxRequest);
 		} catch (Exception e) {
-			// TODO: handle exception
+			throw new ApplicationException(e);
 		}
 	}
 
+	public void setEmailer(Emailer emailer) {
+		this.emailer = emailer;
+	}
+
+	public void setRootPath(String rootPath) {
+		this.rootPath = rootPath;
+	}
+
+	public void setIncomeTaxRequestDao(IncomeTaxRequestDao incomeTaxRequestDao) {
+		this.incomeTaxRequestDao = incomeTaxRequestDao;
+	}
+
+	public void setEmailNotificationsEnabled(boolean emailNotificationsEnabled) {
+		this.emailNotificationsEnabled = emailNotificationsEnabled;
+	}
+
+	public void setApplicationConfigDao(ApplicationConfigDao applicationConfigDao) {
+		this.applicationConfigDao = applicationConfigDao;
+	}
+
+	public void setBccAddress(String bccAddress) {
+		this.bccAddress = bccAddress;
+	}
+
+	public void setFromAddress(String fromAddress) {
+		this.fromAddress = fromAddress;
+	}
+
+	public void setServiceProvider(String serviceProvider) {
+		this.serviceProvider = serviceProvider;
+	}
+
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
+
+	public void setfUrl(String fUrl) {
+		this.fUrl = fUrl;
+	}
+
+	public void setsUrl(String sUrl) {
+		this.sUrl = sUrl;
+	}
 }

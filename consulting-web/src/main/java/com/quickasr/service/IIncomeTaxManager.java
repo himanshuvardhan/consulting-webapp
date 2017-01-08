@@ -1,5 +1,7 @@
 package com.quickasr.service;
 
+import java.util.Map;
+
 import com.quickasr.base.ApplicationException;
 import com.quickasr.data.entity.IncomeTaxRequest;
 import com.quickasr.web.model.IncomeTaxModel;
@@ -15,5 +17,6 @@ public interface IIncomeTaxManager {
 	public PayUMoneyModel generatePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException;
 	public void updateIncomeTaxRequestBeforePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException;
 	public void updateIncomeTaxRequestAfterPayment(PayUMoneyModel payUMoneyModel) throws ApplicationException;
+	public Map<String, String> getIncomeTaxPrice() throws ApplicationException;
 
 }

@@ -86,6 +86,7 @@
 
 	<bean id="emailer" class="com.quickasr.util.Emailer">
 		<property name="mailSender" ref="mailSender" />
+		<property name="fromName" value="${application.name}"></property>
 	</bean>
 
 	<!-- Create Comapny Manager -->

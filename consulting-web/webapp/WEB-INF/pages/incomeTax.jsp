@@ -196,7 +196,7 @@
 						<div class="col-md-2">
 							<div class="form-group">
 								<label>IFSC Code</label>
-								<form:input path="ifscCode" class="form-control" name="ifscCode" id="ifscCode" type="text"></form:input>
+								<form:input path="ifscCode" class="form-control" name="ifscCode" id="ifscCode" type="text" required="required"></form:input>
 								<form:hidden path="incomeTaxRequestId" id="incomeTaxRequestId" value="${incomeTaxModel.incomeTaxRequestId }" />
 								<form:hidden path="otherDocuments" id="otherDocuments" value="${incomeTaxModel.otherDocuments }" />
 							</div>
@@ -205,10 +205,10 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<form:radiobutton value="false" path="corporateUser" />
-							<label>&nbsp;&nbsp;Individual <i class="fa fa-rupee"></i> 189/return
+							<label>&nbsp;&nbsp;Individual <i class="fa fa-rupee"></i> ${INCOME_TAX_INDIVIDULA }/return
 							</label>&nbsp;&nbsp;&nbsp;
 							<form:radiobutton value="true" path="corporateUser" />
-							<label>&nbsp;&nbsp;Corporate Employee <i class="fa fa-rupee"></i> 89/Return
+							<label>&nbsp;&nbsp;Corporate Employee <i class="fa fa-rupee"></i> ${INCOME_TAX_CORPORATE }/Return
 							</label>
 						</div>
 					</div>

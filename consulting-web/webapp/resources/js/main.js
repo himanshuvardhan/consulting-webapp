@@ -62,16 +62,28 @@ $('#uploadIncomeTaxData').fileupload(
 				});
 			},
 			success : function(data, xhr) {
-				$("#incomeTaxRequestId").val(data);
-				$("#incomeTaxRequestIdForPayment").val(data);
-				$('#uploadButton').unbind('click');
-				$("#uploadButton").attr("disabled", true);
-				$('#uploadButton').html("Upload Other Documents");
-				$("span.fileupload-new").html("Select Other Documents");
-				$("#otherDocuments").val(true);
-				$("#uploadButton").css("background-color", "red");
-				$("#uploadButton").css("border-color", "red");
-				$("#successErrorMessage").html("File Uploaded Successfuly");
+				if(data == -1){
+					$('#uploadButton').unbind('click');
+					$("#uploadButton").attr("disabled", true);
+					$('#uploadButton').html("Upload Form 16");
+					$("span.fileupload-new").html("Select Form 16");
+					$("#uploadButton").css("background-color", "red");
+					$("#uploadButton").css("border-color", "red");
+					$("#successErrorMessage").html("Request Not Submitted. Try Again");
+					$("#successErrorMessage").css('color','red');
+				}else{
+					$("#incomeTaxRequestId").val(data);
+					$("#incomeTaxRequestIdForPayment").val(data);
+					$('#uploadButton').unbind('click');
+					$("#uploadButton").attr("disabled", true);
+					$('#uploadButton').html("Upload Other Documents");
+					$("span.fileupload-new").html("Select Other Documents");
+					$("#otherDocuments").val(true);
+					$("#uploadButton").css("background-color", "red");
+					$("#uploadButton").css("border-color", "red");
+					$("#successErrorMessage").html("File Uploaded Successfuly");
+					$("#successErrorMessage").css('color','green');
+				}
 			},
 			error : function(xhr, ajaxOptions, thrownError) {
 				$('#uploadButton').unbind('click');
@@ -80,11 +92,13 @@ $('#uploadIncomeTaxData').fileupload(
 				$("span.fileupload-new").html("Select Form 16");
 				$("#uploadButton").css("background-color", "red");
 				$("#uploadButton").css("border-color", "red");
+				$("#successErrorMessage").html("Request Not Submitted. Try Again");
+				$("#successErrorMessage").css('color','red');
 			},
 			submit : function(e, data) {
 			},
 			done : function(e, data) {
-				$("#incomeTaxRequestId").val(data.result);
+				/*$("#incomeTaxRequestId").val(data.result);
 				$("#incomeTaxRequestIdForPayment").val(data.result);
 				$('#uploadButton').unbind('click');
 				$("#uploadButton").attr("disabled", true);
@@ -92,23 +106,31 @@ $('#uploadIncomeTaxData').fileupload(
 				$("span.fileupload-new").html("Select Other Documents");
 				$("#otherDocuments").val(true);
 				$("#uploadButton").css("background-color", "red");
-				$("#uploadButton").css("border-color", "red");
+				$("#uploadButton").css("border-color", "red");*/
 			},
 			change : function(e, data) {
-				var fileReader = new FileReader();
-				fileReader.onload = function(e) {
-					var int32View = new Uint8Array(e.target.result);
-					// https://en.wikipedia.org/wiki/List_of_file_signatures)
-					if (int32View.length > 2 && int32View[0] == 0x4D
-							&& int32View[1] == 0x5A) {
-						return false;
-					} else {
-
-						$("#uploadButton").attr("disabled", false);
-						$("#uploadButton").css("background-color", "#81c83c");
-						$("#uploadButton").css("border-color", "#81c83c");
-					}
-				};
-				fileReader.readAsArrayBuffer(data.files[0]);
+				
+				var $myForm =$("#uploadIncomeTaxDataForm");
+				if (!$myForm[0].checkValidity()) {
+					  //$myForm.find('button.submit').click()
+					$('<input type="submit">').hide().appendTo($myForm).click().remove();
+				}else{	
+					$("#successErrorMessage").html("");
+					var fileReader = new FileReader();
+					fileReader.onload = function(e) {
+						var int32View = new Uint8Array(e.target.result);
+						// https://en.wikipedia.org/wiki/List_of_file_signatures)
+						if (int32View.length > 2 && int32View[0] == 0x4D
+								&& int32View[1] == 0x5A) {
+							return false;
+						} else {
+							
+							$("#uploadButton").attr("disabled", false);
+							$("#uploadButton").css("background-color", "#81c83c");
+							$("#uploadButton").css("border-color", "#81c83c");
+						}
+					};
+					fileReader.readAsArrayBuffer(data.files[0]);
+				}			
 			}
 		});

@@ -38,6 +38,7 @@ public class HomeController {
 			model.addAttribute("metricMap", bookKeepingManager.getUIMetric());
 		} catch (ApplicationException e) {
 			logger.error(e.getErrorCode());
+			return new ModelAndView("error");
 		}
 		return new ModelAndView("index");
 	}
