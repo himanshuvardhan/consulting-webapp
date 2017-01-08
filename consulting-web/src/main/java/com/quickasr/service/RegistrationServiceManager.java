@@ -89,7 +89,7 @@ public class RegistrationServiceManager implements IRegistrationServiceManager {
 							+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
 
 			emailer.sendMail(getFromAddress(), registrationServiceRequest.getRequestorEmailId(),
-					getBccAddress(), "BookKeeping Order Confirmation", body);
+					getBccAddress(), "Service Registration Order Confirmation", body);
 			result = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Error Sending Email", e);
