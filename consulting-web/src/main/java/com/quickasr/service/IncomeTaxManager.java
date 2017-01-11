@@ -133,32 +133,6 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 		return result;
 	}
 
-	private boolean sendConfirmationEmail(IncomeTaxRequest incomeTaxRequest) throws ApplicationException {
-		logger.debug("sendConfirmationEmail() is executed", "quickasr");
-		boolean result = false;
-		try {
-			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + ",<br><br>"
-					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
-					+ "Your order have been placed for the following <br>" + "Service : Income Tax Filling" + "<br>"
-					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "<br>" + "Request Time : "
-					+ new Date() + "<br><br>"
-					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
-					+ "<br>"
-					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
-					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
-					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
-					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
-					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
-
-			emailer.sendMail(fromAddress, incomeTaxRequest.getRequestorEmailId(), bccAddress,
-					"Income Tax Return Order Confirmation", body);
-			result = true;
-		} catch (Exception e) {
-			throw new ApplicationException("Error Sending Email", e);
-		}
-		return result;
-	}
-
 	@Override
 	public IncomeTaxRequest getIncomeTaxFilling(int incomeTaxRequestId) throws ApplicationException {
 		IncomeTaxRequest incomeTaxRequest = new IncomeTaxRequest();
@@ -273,10 +247,65 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			paymentTxnSummary.setPaymentStatus(payUMoneyModel.getPaymentStatus());
 			paymentTxnSummary.setUpdatedDt(new Date());
 			paymentTxnSummaryDao.saveOrUpdate(paymentTxnSummary);
-
+			try {
+				this.sendPaymentEmail(payUMoneyModel);
+			} catch (Exception e) {
+				logger.error(e.getMessage());
+			}
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
+	}
+
+	private boolean sendConfirmationEmail(IncomeTaxRequest incomeTaxRequest) throws ApplicationException {
+		logger.debug("sendConfirmationEmail() is executed", "quickasr");
+		boolean result = false;
+		try {
+			String body = "Hi " + incomeTaxRequest.getRequestorFullName() + ",<br><br>"
+					+ "<b>Thanks for choosing us.</b>" + "<br><br>"
+					+ "Your order have been placed for the following <br>" + "Service : Income Tax Filling" + "<br>"
+					+ "Request Id : " + incomeTaxRequest.getIncomeTaxRequestId() + "<br>" + "Request Time : "
+					+ new Date() + "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
+
+			emailer.sendMail(fromAddress, incomeTaxRequest.getRequestorEmailId(), bccAddress,
+					"Income Tax Return Order Confirmation", body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException("Error Sending Email", e);
+		}
+		return result;
+	}
+
+	private boolean sendPaymentEmail(PayUMoneyModel payUMoneyModel) throws ApplicationException {
+		logger.debug("sendPaymentEmail() is executed", "quickasr");
+		boolean result = false;
+		try {
+			String body = "Hi " + payUMoneyModel.getFirstName() + ",<br><br>" + "<b>Thanks for choosing us.</b>"
+					+ "<br><br>" + "Your payment summary <br>" + "Service : " + payUMoneyModel.getProductInfo() + "<br>"
+					+ "Request Id : " + payUMoneyModel.getTxnid() + "<br>" + "Amount : Rs." + payUMoneyModel.getAmount()
+					+ "<br><br>"
+					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
+					+ "<br>"
+					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
+					+ "<br>" + "helped over 200 business owners in regard of their finance and accounting solutions. "
+					+ "<br><br>" + "<b>Have a great day.</b>" + "<br>" + "<b>Quick Accounting Team</b>" + "<br>"
+					+ "<b>For any queries please contact us on 0183-5060470</b>" + "<br>"
+					+ "<b>Office Timings :11 AM to 8PM (Monday-Saturday)</b>";
+
+			emailer.sendMail(fromAddress, payUMoneyModel.getEmail(), bccAddress,
+					"Payment Confirmation For " + payUMoneyModel.getProductInfo(), body);
+			result = true;
+		} catch (Exception e) {
+			throw new ApplicationException("Error Sending Email", e);
+		}
+		return result;
 	}
 
 	public void setEmailer(Emailer emailer) {

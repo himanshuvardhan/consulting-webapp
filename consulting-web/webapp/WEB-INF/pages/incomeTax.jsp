@@ -234,7 +234,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<form action="payMoney.htm" method="post">
+					<form action="incomeTaxPayment.htm" method="post">
 						<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
 						<input type="hidden" name="incomeTaxRequestIdForPayment" id="incomeTaxRequestIdForPayment" value="${incomeTaxModel.incomeTaxRequestId }" />
 						<div class="col-md-12 text-center">

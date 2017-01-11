@@ -84,8 +84,8 @@ public class IncomeTaxController {
 		return result;
 	}
 
-	@RequestMapping(value = "/payMoney", method = RequestMethod.POST)
-	public String payMoney(@RequestParam(name = "incomeTaxRequestIdForPayment") String incomeTaxRequestIdForPayment,
+	@RequestMapping(value = "/incomeTaxPayment", method = RequestMethod.POST)
+	public String incomeTaxPayment(@RequestParam(name = "incomeTaxRequestIdForPayment") String incomeTaxRequestIdForPayment,
 			Model modelMap, final RedirectAttributes redirectAttributes) throws ApplicationException {
 		logger.debug("payMoney() is executed", "quickasr");
 
@@ -139,6 +139,8 @@ public class IncomeTaxController {
 			payUMoneyModel.setTxnid(request.getParameter("txnid"));
 			payUMoneyModel.setPaymentStatus("SUCCESS");
 			payUMoneyModel.setAmount(request.getParameter("amount"));
+			payUMoneyModel.setEmail(request.getParameter("email"));
+			payUMoneyModel.setFirstName(request.getParameter("firstname"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
 			logger.error(e.getStackTrace().toString());
@@ -158,6 +160,9 @@ public class IncomeTaxController {
 			payUMoneyModel.setTxnid(request.getParameter("txnid"));
 			payUMoneyModel.setPaymentStatus("FAILED");
 			payUMoneyModel.setAmount(request.getParameter("amount"));
+			payUMoneyModel.setEmail(request.getParameter("email"));
+			payUMoneyModel.setFirstName(request.getParameter("firstname"));
+			payUMoneyModel.setProductInfo(request.getParameter("productinfo"));
 			incomeTaxManager.updateIncomeTaxRequestAfterPayment(payUMoneyModel);
 		} catch (ApplicationException e) {
 			logger.error(e.getStackTrace().toString());

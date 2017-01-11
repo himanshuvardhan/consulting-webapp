@@ -213,7 +213,7 @@
 										<div class="panel-body">
 											<div class="row">
 												<div class="col-md-12">
-													<p>Starting At Rs.3,499 only(All Inclusive)</p>
+													<p>Starting At <i class="fa fa-rupee"></i> ${IMPORT_EXPORT } only(All Inclusive)</p>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
