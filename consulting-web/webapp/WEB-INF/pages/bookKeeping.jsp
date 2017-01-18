@@ -343,7 +343,7 @@
 					<div class="row">
 						<div class="col-md-12 text-center">
 							<div class="copyright-info">
-								&copy; Copyright 2016 Quick Accounting & Consulting. <span>All Rights Reserved</span>
+								&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 							</div>
 						</div>
 					</div>
