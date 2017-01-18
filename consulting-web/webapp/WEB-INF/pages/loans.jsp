@@ -327,10 +327,10 @@
 											<li><b>Specialised Help -</b> The expenses incurred through a standard study course are many, caution deposits, library fees, building
 												deposits, laboratory fees, etc. With a comprehensive education loan, individual facets of the course can be better addressed without the
 												risk of running out of money. It's more organized and seamless with an education loan.</li>
-											<li><b>Widely and Easily Available -</b>A�Comprehensive education loans are a priority product in most banks" arsenal of products and
+											<li><b>Widely and Easily Available -</b>Comprehensive education loans are a priority product in most banks" arsenal of products and
 												the RBI lists them as part of the priority sector lending of banks. Conforming to some basic requirements and confirming your ability to
 												repay the borrowed amount is all it takes to get on-board.</li>
-											<li><b>Timely Assistance -</b>A�Often, good intent isn't backed by good monies. A good education loan offers timely help when it comes
+											<li><b>Timely Assistance -</b>Often, good intent isn't backed by good monies. A good education loan offers timely help when it comes
 												to a crucial pillar that promises a successful life- education. Nullifying the worry that accompanies the need to gather up the requisite
 												amount, a full-fledged education loan puts you at ease.</li>
 										</ul>
@@ -342,15 +342,15 @@
 											<li>Universally available. Anyone with a will to study can apply.</li>
 											<li>Education loans are provided to pursue all types of academic courses, in India and abroad. The courses include graduation,
 												post-graduation, vocational courses and other certificate courses.</li>
-											<li>Loan amounts can vary from a minimum of Rs.10 lakhs to a maximum of Rs.15 lakhs. For education abroad, banks will provide loans to
-												the quantum of Rs.20 lakhs.</li>
+											<li>Loan amounts can vary from a minimum of <i class="fa fa-rupee"></i> 10 lakhs to a maximum of <i class="fa fa-rupee"></i> 15 lakhs. For education abroad, banks will provide loans to
+												the quantum of <i class="fa fa-rupee"></i> 20 lakhs.</li>
 											<li>The applicant"s annual family income and the course pursued are primary determinants for the applicable loan amount.</li>
 											<li>Usually, female students are offered discounts and/or lower interest rates when it comes to education loans.</li>
 											<li>Government sponsored subsidy schemes, such as "Central Scheme to provide Interest subsidy (CSIS)" help students from the
 												economically backward sections of society avail the benefits of a robust loan for education.</li>
 											<li>The applicant need not repay the borrowed amount immediately. Post the completion of the course, the repayment tenure can stretch
 												upto 5-7 years.</li>
-											<li>Generally, loans below Rs.4 lakhs do not require a security or guarantor.</li>
+											<li>Generally, loans below <i class="fa fa-rupee"></i> 4 lakhs do not require a security or guarantor.</li>
 											<p>
 											<h5>Banks, in their individual capacity, will offer a whole suit of exclusive features and benefits. Check the same before zeroing in
 												on the one that best complies with your requirements.</h5>
@@ -368,7 +368,7 @@
 												financial institutions in India. The simple comparison option allows you to choose the loan that best suits your limitations and
 												requirements. Plus, detailed information on every available loan option.</li>
 											<li><b>Apply Online -</b>Post the comparison, use the simplistic Quickfillings interface to apply online for your chosen education
-												loan. Know it All-A�From important details such as education loan eligibility, documentation and the basic terms and conditions, to
+												loan. Know it All-From important details such as education loan eligibility, documentation and the basic terms and conditions, to
 												informational bytes that relate to the latest happenings across the education loan landscape in India, Quickfillings is a treasure trove
 												of helpful information.</li>
 											<li><b>Always With You -</b>Have a query or concern? Quickfillings's brand of superior customer support is always just a phone call,
@@ -402,7 +402,7 @@
 
 										<li><h4>Loan without Collateral</h4></li>
 										<p>The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) Scheme provides a way for Entrepreneurs to obtain a bank
-											loan of upto Rs.1 Crore without any collateral security</p>
+											loan of upto <i class="fa fa-rupee"></i> 1 Crore without any collateral security</p>
 										<li><h4>Financial Professional</h4></li>
 										<p>A well drafted Detailed Project Report will ensure easy approval of the requested credit facilities. So an experienced Financial
 											Professional with good writing, presentation and financial analysis skill must prepare the Detailed Project Report.</p>
