@@ -14,7 +14,7 @@ public class RegistrationServiceRequest implements java.io.Serializable {
 	private RegistrationServiceType registrationServiceType;
 	private Date createdDt;
 	private Date updatedDt;
-
+	
 	public RegistrationServiceType getRegistrationServiceType() {
 		return registrationServiceType;
 	}

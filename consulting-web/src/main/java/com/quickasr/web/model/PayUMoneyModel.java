@@ -19,7 +19,14 @@ public class PayUMoneyModel {
 	private String paymentStatus;
 	private String userType;
 	private int companyId;
+	private int serviceId;
 	
+	public int getServiceId() {
+		return serviceId;
+	}
+	public void setServiceId(int serviceId) {
+		this.serviceId = serviceId;
+	}
 	public int getCompanyId() {
 		return companyId;
 	}

@@ -168,5 +168,9 @@
 		<property name="emailNotificationsEnabled" value="${application.email.notifications.enabled}"></property>
 		<property name="bccAddress" value="${notification.sender.email}"></property>
 		<property name="fromAddress" value="${notification.from.email}"></property>
+		<property name="sUrl" value="${application.paymentsuccess.url}"></property>
+		<property name="fUrl" value="${application.paymentfailure.url}"></property>
+		<property name="baseUrl" value="${application.payment.base.url}"></property>
+		<property name="serviceProvider" value="${application.payment.service.provider}"></property>
 	</bean>
 </beans>

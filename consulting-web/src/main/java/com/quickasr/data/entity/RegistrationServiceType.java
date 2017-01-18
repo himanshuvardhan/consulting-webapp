@@ -6,6 +6,16 @@ public class RegistrationServiceType implements java.io.Serializable {
 	private int serviceId;
 	private String serviceType;
 	private String serviceName;
+	private Double servicePrice;
+
+	
+	public Double getServicePrice() {
+		return servicePrice;
+	}
+
+	public void setServicePrice(Double servicePrice) {
+		this.servicePrice = servicePrice;
+	}
 
 	public int getServiceId() {
 		return serviceId;

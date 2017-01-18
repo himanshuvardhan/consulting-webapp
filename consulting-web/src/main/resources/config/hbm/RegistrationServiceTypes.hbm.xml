@@ -12,5 +12,8 @@
 		<property name="serviceType" type="string">
 			<column name="service_type" length="100" not-null="true" />
 		</property>
+		 <property name="servicePrice" type="java.lang.Double">
+            <column name="service_price" />
+        </property>
 	</class>
 </hibernate-mapping>

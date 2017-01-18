@@ -136,6 +136,15 @@
 						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
 							class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
 					</div>
+					<div class="error-body">
+						<form action="serviceRegistrationPayment.htm" method="post">
+							<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input type="hidden"
+								name="serviceRequestIdForPayment" id="serviceRequestIdForPayment" value="${serviceRequestIdForPayment}" />
+							<div class="col-md-12 text-center">
+								<button class="btn btn-primary solid blank" type="submit">PayNow</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

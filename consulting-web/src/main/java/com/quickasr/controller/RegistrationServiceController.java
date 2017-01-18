@@ -11,10 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.quickasr.base.ApplicationException;
+import com.quickasr.data.entity.ImportExportRequest;
+import com.quickasr.data.entity.RegistrationServiceRequest;
 import com.quickasr.service.IRegistrationServiceManager;
+import com.quickasr.service.IncomeTaxManager;
+import com.quickasr.web.model.PayUMoneyModel;
 import com.quickasr.web.model.ServiceRegistrationModel;
 
 @Controller
@@ -24,6 +30,8 @@ public class RegistrationServiceController {
 
 	@Autowired
 	private IRegistrationServiceManager registrationServiceManager;
+	@Autowired
+	private IncomeTaxManager incomeTaxManager;
 
 	@RequestMapping(value = "/serviceRegistration", method = RequestMethod.GET)
 	public ModelAndView serviceRegistration(Model model) throws ApplicationException {
@@ -45,11 +53,12 @@ public class RegistrationServiceController {
 
 	@RequestMapping(value = "/applyForServiceRegistration", method = RequestMethod.POST)
 	public String applyForServiceRegistration(@ModelAttribute ServiceRegistrationModel serviceRegistrationModel,
-			Model model) {
+			Model model, final RedirectAttributes redirectAttributes) {
 		logger.debug("applyForServiceRegistration(serviceRegistrationModel, model) is executed", "quickasr");
 
 		try {
-			registrationServiceManager.applyForRegistrationService(serviceRegistrationModel);
+			int result =  registrationServiceManager.applyForRegistrationService(serviceRegistrationModel);
+			redirectAttributes.addFlashAttribute("serviceRequestIdForPayment", result);
 		} catch (ApplicationException e) {
 			logger.error(e.getStackTrace().toString());
 			return "redirect:/error.htm";
@@ -75,8 +84,42 @@ public class RegistrationServiceController {
 		}
 		return "serviceRegistrationSuccess";
 	}
+	
+	@RequestMapping(value = "/serviceRegistrationPayment", method = RequestMethod.POST)
+	public String serviceRegistrationPayment(@RequestParam(name = "serviceRequestIdForPayment") String serviceRequestIdForPayment,
+			Model modelMap, final RedirectAttributes redirectAttributes) throws ApplicationException {
+		logger.debug("payMoney() is executed", "quickasr");
+
+		PayUMoneyModel payUMoneyModel = new PayUMoneyModel();
+
+		try {
+			RegistrationServiceRequest registrationServiceRequest = registrationServiceManager.getRegistrationService(Integer.parseInt(serviceRequestIdForPayment));
+			payUMoneyModel.setRequestId(String.valueOf(registrationServiceRequest.getRegistrationServiceRequestId()));
+			payUMoneyModel.setEmail(String.valueOf(registrationServiceRequest.getRequestorEmailId()));
+			payUMoneyModel.setFirstName(String.valueOf(registrationServiceRequest.getRequestorFullName().split(" ")[0]));
+			payUMoneyModel.setPhone(String.valueOf(registrationServiceRequest.getRequestorPhoneNumber()));
+			payUMoneyModel.setServiceId(registrationServiceRequest.getRegistrationServiceType().getServiceId());
+			
+			payUMoneyModel = registrationServiceManager.generatePayment(payUMoneyModel);
+			incomeTaxManager.updateIncomeTaxRequestBeforePayment(payUMoneyModel);
+
+		} catch (ApplicationException e) {
+			logger.error(e.getErrorCode());
+			return "redirect:/error.htm";
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return "redirect:/error.htm";
+		}
+		redirectAttributes.addFlashAttribute("payUMoneyModel", payUMoneyModel);
+		return "redirect:/payment.htm";
+	}
 
 	public void setRegistrationServiceManager(IRegistrationServiceManager registrationServiceManager) {
 		this.registrationServiceManager = registrationServiceManager;
 	}
+
+	public void setIncomeTaxManager(IncomeTaxManager incomeTaxManager) {
+		this.incomeTaxManager = incomeTaxManager;
+	}
+	
 }
