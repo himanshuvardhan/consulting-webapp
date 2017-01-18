@@ -1,10 +1,13 @@
 package com.quickasr.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.ServletException;
 
 import org.jsoup.Connection.Method;
 import org.jsoup.Connection.Response;
@@ -24,6 +27,7 @@ import com.quickasr.data.entity.CompanyRequest;
 import com.quickasr.util.Emailer;
 import com.quickasr.web.model.CompanyModel;
 import com.quickasr.web.model.CompanyOrderModel;
+import com.quickasr.web.model.PayUMoneyModel;
 
 public class CreateCompanyManager implements ICreateCompanyManager {
 
@@ -37,6 +41,11 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	private ApplicationConfigDao applicationConfigDao;
 	private String bccAddress;
 	private String fromAddress;
+
+	private String serviceProvider;
+	private String baseUrl;
+	private String fUrl;
+	private String sUrl;
 
 	@Override
 	public boolean checkCompanyStatus(String companyName) throws ApplicationException {
@@ -56,7 +65,7 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 					.data("activityType2", "").timeout(60 * 1000).ignoreContentType(true).execute();
 
 			long endTime = System.currentTimeMillis();
-			
+
 			Document document = response.parse();
 
 			logger.debug("External Request took " + (endTime - startTime) + " milliseconds");
@@ -136,9 +145,9 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	}
 
 	@Override
-	public boolean requestCompanyOrder(CompanyOrderModel companyOrderModel) throws ApplicationException {
+	public int requestCompanyOrder(CompanyOrderModel companyOrderModel) throws ApplicationException {
 		logger.debug("requestCompanyOrder(CompanyOrderModel) is executed", "quickasr");
-		boolean result = false;
+		int result = 0;
 
 		try {
 
@@ -154,11 +163,9 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 			companyRequest.setUpdatedDt(new Date());
 			companyRequest.setCreatedDt(new Date());
 
-			companyRequestDao.saveOrUpdate(companyRequest);
+			result = companyRequestDao.create(companyRequest);
 			if (emailNotificationsEnabled) {
-				result = sendConfirmationEmail(companyRequest);
-			} else {
-				result = true;
+				sendConfirmationEmail(companyRequest);
 			}
 		} catch (Exception e) {
 			throw new ApplicationException("Error requesting company creation", e);
@@ -206,6 +213,47 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 		} catch (Exception e) {
 			return "preset1.css";
 		}
+	}
+
+	@Override
+	public PayUMoneyModel generatePayment(PayUMoneyModel payUMoneyModel) throws ApplicationException {
+		PayUMoneyAPI payUMoneyAPI = new PayUMoneyAPI();
+		Map<String, String> values = new HashMap<String, String>();
+		try {
+			
+			payUMoneyModel
+					.setAmount(String.valueOf(companyDao.read(payUMoneyModel.getCompanyId()).getCompanyPrice()));
+			payUMoneyModel.setProductInfo(String.valueOf("Company Request"));
+			payUMoneyModel.setFailureURI(String.valueOf(fUrl));
+			payUMoneyModel.setSuccessURI(String.valueOf(sUrl));
+			payUMoneyModel.setServiceProvider(serviceProvider);
+			payUMoneyModel.setBaseUrl(baseUrl);
+			// payUMoneyModel.setKey("UFu3ed");
+			payUMoneyModel.setKey("r8USItVb");
+
+			values = payUMoneyAPI.hashCalMethod(payUMoneyModel);
+
+			payUMoneyModel.setHash(values.get("hash").trim());
+			payUMoneyModel.setTxnid(values.get("txnid").trim());
+
+		} catch (ServletException | IOException e) {
+			throw new ApplicationException(e);
+		} catch (Exception e) {
+			throw new ApplicationException(e);
+		}
+		return payUMoneyModel;
+	}
+
+	@Override
+	public CompanyRequest getCompanyRequest(int companyRequestId) throws ApplicationException {
+		CompanyRequest companyRequest = new CompanyRequest();
+		try {
+			companyRequest = companyRequestDao.read(companyRequestId);
+		} catch (Exception e) {
+			throw new ApplicationException("Error getting compnay request data", e);
+		}
+
+		return companyRequest;
 	}
 
 	public boolean isProxyRequired() {
@@ -279,6 +327,21 @@ public class CreateCompanyManager implements ICreateCompanyManager {
 	public void setFromAddress(String fromAddress) {
 		this.fromAddress = fromAddress;
 	}
-	
+
+	public void setServiceProvider(String serviceProvider) {
+		this.serviceProvider = serviceProvider;
+	}
+
+	public void setBaseUrl(String baseUrl) {
+		this.baseUrl = baseUrl;
+	}
+
+	public void setfUrl(String fUrl) {
+		this.fUrl = fUrl;
+	}
+
+	public void setsUrl(String sUrl) {
+		this.sUrl = sUrl;
+	}
 
 }

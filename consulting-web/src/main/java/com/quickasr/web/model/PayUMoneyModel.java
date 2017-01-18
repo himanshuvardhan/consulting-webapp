@@ -18,7 +18,14 @@ public class PayUMoneyModel {
 	private String payUMoneyTxnid;
 	private String paymentStatus;
 	private String userType;
+	private int companyId;
 	
+	public int getCompanyId() {
+		return companyId;
+	}
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
 	public String getUserType() {
 		return userType;
 	}

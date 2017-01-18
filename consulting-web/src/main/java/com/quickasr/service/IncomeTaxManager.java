@@ -248,7 +248,9 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			paymentTxnSummary.setUpdatedDt(new Date());
 			paymentTxnSummaryDao.saveOrUpdate(paymentTxnSummary);
 			try {
-				this.sendPaymentEmail(payUMoneyModel);
+				if (emailNotificationsEnabled) {
+					this.sendPaymentEmail(payUMoneyModel);
+				}
 			} catch (Exception e) {
 				logger.error(e.getMessage());
 			}
@@ -290,7 +292,7 @@ public class IncomeTaxManager implements IIncomeTaxManager {
 			String body = "Hi " + payUMoneyModel.getFirstName() + ",<br><br>" + "<b>Thanks for choosing us.</b>"
 					+ "<br><br>" + "Your payment summary <br>" + "Service : " + payUMoneyModel.getProductInfo() + "<br>"
 					+ "Request Id : " + payUMoneyModel.getTxnid() + "<br>" + "Amount : Rs." + payUMoneyModel.getAmount()
-					+ "<br><br>"
+					+ "<br><br>" + "Payment Status: " + payUMoneyModel.getPaymentStatus() + "<br><br>"
 					+ "We are Quick Accounting & Consultants Pvt Ltd, India's  First Techno Based Finance consultants "
 					+ "<br>"
 					+ "platform for SME businesses, Individual Investors and Retail Business Group. As of today, we have  "
