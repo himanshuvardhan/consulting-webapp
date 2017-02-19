@@ -175,9 +175,9 @@
 											<li>To buy or acquire residential property, etc.</li>
 										</ul>
 										</p>
-										<p >Advices given by our loan experts help you in avoiding hassles that you may face by applying for those loans that do
-											not fulfill your requirements. We include all the essential details in our checklist that lets you have absolutely convenient experience in
-											finalizing your loan deal with bank or financial institution. We include details regarding:</p>
+										<p>Advices given by our loan experts help you in avoiding hassles that you may face by applying for those loans that do not fulfill
+											your requirements. We include all the essential details in our checklist that lets you have absolutely convenient experience in finalizing
+											your loan deal with bank or financial institution. We include details regarding:</p>
 										<li><h4>Interest Rates</h4>
 											<ul>
 												<li>Variable Interest Rate Home Loan: In this interest rate increases or decreases in accordance with the rates in the markets</li>
@@ -342,15 +342,17 @@
 											<li>Universally available. Anyone with a will to study can apply.</li>
 											<li>Education loans are provided to pursue all types of academic courses, in India and abroad. The courses include graduation,
 												post-graduation, vocational courses and other certificate courses.</li>
-											<li>Loan amounts can vary from a minimum of <i class="fa fa-rupee"></i> 10 lakhs to a maximum of <i class="fa fa-rupee"></i> 15 lakhs. For education abroad, banks will provide loans to
-												the quantum of <i class="fa fa-rupee"></i> 20 lakhs.</li>
+											<li>Loan amounts can vary from a minimum of <i class="fa fa-rupee"></i> 10 lakhs to a maximum of <i class="fa fa-rupee"></i> 15 lakhs.
+												For education abroad, banks will provide loans to the quantum of <i class="fa fa-rupee"></i> 20 lakhs.
+											</li>
 											<li>The applicant"s annual family income and the course pursued are primary determinants for the applicable loan amount.</li>
 											<li>Usually, female students are offered discounts and/or lower interest rates when it comes to education loans.</li>
 											<li>Government sponsored subsidy schemes, such as "Central Scheme to provide Interest subsidy (CSIS)" help students from the
 												economically backward sections of society avail the benefits of a robust loan for education.</li>
 											<li>The applicant need not repay the borrowed amount immediately. Post the completion of the course, the repayment tenure can stretch
 												upto 5-7 years.</li>
-											<li>Generally, loans below <i class="fa fa-rupee"></i> 4 lakhs do not require a security or guarantor.</li>
+											<li>Generally, loans below <i class="fa fa-rupee"></i> 4 lakhs do not require a security or guarantor.
+											</li>
 											<p>
 											<h5>Banks, in their individual capacity, will offer a whole suit of exclusive features and benefits. Check the same before zeroing in
 												on the one that best complies with your requirements.</h5>
@@ -401,8 +403,10 @@
 											documents, submitting the requests to banks or financial institutions and obtaining sanction & disbursement of credit facilities.</p>
 
 										<li><h4>Loan without Collateral</h4></li>
-										<p>The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) Scheme provides a way for Entrepreneurs to obtain a bank
-											loan of upto <i class="fa fa-rupee"></i> 1 Crore without any collateral security</p>
+										<p>
+											The Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) Scheme provides a way for Entrepreneurs to obtain a bank loan of
+											upto <i class="fa fa-rupee"></i> 1 Crore without any collateral security
+										</p>
 										<li><h4>Financial Professional</h4></li>
 										<p>A well drafted Detailed Project Report will ensure easy approval of the requested credit facilities. So an experienced Financial
 											Professional with good writing, presentation and financial analysis skill must prepare the Detailed Project Report.</p>
@@ -535,10 +539,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
@@ -550,6 +556,16 @@
 						<div class="copyright-info">
 							&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
 					</div>
 				</div>
 				<!--/ Row end -->

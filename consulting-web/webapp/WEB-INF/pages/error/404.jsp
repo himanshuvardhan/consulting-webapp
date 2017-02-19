@@ -147,10 +147,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
@@ -162,6 +164,16 @@
 						<div class="copyright-info">
 							&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
 					</div>
 				</div>
 				<!--/ Row end -->

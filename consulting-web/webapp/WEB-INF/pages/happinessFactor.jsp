@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +47,6 @@
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
 <link id="style-switch" href="${stylePreset }" media="screen" rel="stylesheet" type="text/css">
-
-<link id="style-switch" href="resources/style/main.css" media="screen" rel="stylesheet" type="text/css">
-
-<link id="style-switch" href="resources/file-uploader/css/jquery.fileupload.css" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -130,17 +127,12 @@
 		<!--/ Header end -->
 
 		<div id="banner-area">
-			<img src="resources/images/banner/banner2.jpg" alt="" />
+			<img src="resources/images/banner/banner1.jpg" alt="" />
 			<div class="parallax-overlay"></div>
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Income Tax Request Successsfull</h2>
-					<ul class="breadcrumb">
-						<li>Home</li>
-						<li>Pages</li>
-						<li><a href="index.htm"> Success</a></li>
-					</ul>
+					<h2>100% Satisfaction Guarantee!</h2>
 				</div>
 			</div>
 			<!-- Subpage title end -->
@@ -152,40 +144,44 @@
 		<section id="main-container" style="padding-bottom: 0px;">
 			<div class="container">
 
-				<div class="error-page text-center">
-					<div class="error-code">
-						<strong>SUCCESS</strong>
-					</div>
-					<div class="error-message">
-						<h3>Income Tax Request Successful</h3>
-					</div>
-					<form:form id="uploadIncomeTaxDataOtherForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxDataOther.htm"
-						enctype="multipart/form-data">
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<!-- CSRF Token -->
-								<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-								<form:hidden path="otherDocuments" id="otherDocuments" value="true" />
-								<div class="fileupload fileupload-new" data-provides="fileinput">
-									<span class="btn btn-white btn-file removeButton fileinput-button"> <span class="fileupload-new">Select Other Document </span> <form:input
-											id="uploadIncomeTaxDataOther" path="files" type="file" class="default"></form:input>
-									</span> <span id="fileNameUploaded"></span> <br>
-								</div>
-								<button disabled id="uploadButtonOther" class="btn btn-primary solid blank ">Upload Other Documents</button>
-								<br>
-							</div>
-						</div>
-					</form:form>
-					<div class="error-body">
-						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
-							class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
+				<!-- Company Profile -->
+				<div class="row">
+					<div class="col-md-12 heading">
+						<span class="title-icon classic pull-left"><i class="fa fa-suitcase"></i></span>
+						<h2 class="title classic">100% Satisfaction Guarantee!</h2>
 					</div>
 				</div>
+				<!-- Title row end -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="testimonial-content">
+							<p>www.Quickfillings.com guarantees your satisfaction with our services and support. Because our company was created to deliver excellence
+								and quality service, we strive to be the best legal service provider on the web. If you are not satisfied with our services, please contact us
+								immediately and we will correct the situation, provide a refund or offer credit that can be used for future www.Quickfillings.com orders.</p>
+							<h4>www.Quickfilling.com Satisfaction Guarantee Details:</h4>
+							<ol>
+								<li>If you're not satisfied, simply email us the query during our normal business hours. All requests made under this guarantee must be
+									made within 30 days of purchase. If the request made seems genuine, then we will further proceed to decide, whether refund is to be made or
+									credit is to be given for the further orders. Unfortunately, we can't refund or credit any money paid to government entities, such as filing
+									fees or taxes, or to other third parties with a role in processing your order. We also cannot refund any money paid by you directly to third
+									parties, such as payments made by you directly to attorneys affiliated with our legal plans or attorney-assisted products.</li>
+								<li>Please note that we cannot guarantee the results or outcome of your particular procedure. For instance, the government may reject a
+									company name approval application for legal reasons beyond the scope of www.Quickfillings.com service. In some cases, a government backlog
+									can lead to long delays before your process is complete.</li>
+								<li>3. Since we're dedicating time and effort to provide quality service, our guarantee only covers satisfaction issues caused by
+									www.QuickFillings.com - not changes to your situation or your state of mind.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="gap-40"></div>
 			</div>
 			<!--/ 1st container end -->
 
+
 			<div class="gap-60"></div>
 			<div class="gap-60"></div>
+
 
 			<!-- Footer start -->
 			<section id="copyright" class="copyright angle">
@@ -269,19 +265,11 @@
 			<!-- For Google Map -->
 			<!-- <script type="text/javascript" src="resources/js/gmap3.js"></script> -->
 			<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
-
-			<!-- jquery fileUpload -->
-			<script type="text/javascript" language="javascript" src="resources/js/jquery-ui.js"></script>
-			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/jquery.fileupload.js"></script>
-			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/vendor/jquery.ui.widget.js"></script>
-
-
 			<!-- Template custom -->
 			<script type="text/javascript" src="resources/js/custom.js"></script>
 
 			<script type="text/javascript" src="resources/js/main.js"></script>
 	</div>
 	<!-- Body inner end -->
-
 </body>
 </html>

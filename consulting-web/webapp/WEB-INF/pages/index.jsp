@@ -229,8 +229,8 @@
 								<span class="service-icon icon-pentagon"><i class="fa fa-book"></i></span>
 								<h3>Bookkeeping</h3>
 								<ul class="text-left">
-								<li>Business Requirement.</li>
-								<li>Professional Team</li>
+									<li>Business Requirement.</li>
+									<li>Professional Team</li>
 								</ul>
 							</div>
 						</div>
@@ -373,6 +373,16 @@
 						<div class="copyright-info">
 							&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
 					</div>
 				</div>
 				<!--/ Row end -->

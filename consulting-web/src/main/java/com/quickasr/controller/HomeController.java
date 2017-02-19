@@ -130,5 +130,69 @@ public class HomeController {
 	public void setBookKeepingManager(BookKeepingManager bookKeepingManager) {
 		this.bookKeepingManager = bookKeepingManager;
 	}
+	
+	@RequestMapping(value = "/termsAndConditions", method = RequestMethod.GET)
+	public ModelAndView termsAndConditions(Model model) {
+		logger.debug("termsAndConditions() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		}
+		return new ModelAndView("termsAndConditions");
+	}
+	
+	@RequestMapping(value = "/refundPolicy", method = RequestMethod.GET)
+	public ModelAndView refundPolicy(Model model) {
+		logger.debug("refundPolicy() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		}
+		return new ModelAndView("refundPolicy");
+	}
+	
+	@RequestMapping(value = "/privacyPolicy", method = RequestMethod.GET)
+	public ModelAndView privacyPolicy(Model model) {
+		logger.debug("privacyPolicy() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		}
+		return new ModelAndView("privacyPolicy");
+	}
+	
+	@RequestMapping(value = "/happinessFactor", method = RequestMethod.GET)
+	public ModelAndView happinessFactor(Model model) {
+		logger.debug("happinessFactor() is executed", "quickasr");
+		try {
+			model.addAttribute("stylePreset",
+					"resources/style/presets/" + bookKeepingManager.getApplicationStylePreset("application_style"));
+		} catch (ApplicationException e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		} catch (Exception e) {
+			logger.error(e.getStackTrace().toString());
+			return new ModelAndView("error");
+		}
+		return new ModelAndView("happinessFactor");
+	}
 
 }

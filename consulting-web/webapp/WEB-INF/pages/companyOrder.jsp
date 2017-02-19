@@ -280,6 +280,16 @@
 						</div>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
+					</div>
+				</div>
 				<!--/ Row end -->
 				<div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top affix">
 					<button class="btn btn-primary" title="Back to Top">

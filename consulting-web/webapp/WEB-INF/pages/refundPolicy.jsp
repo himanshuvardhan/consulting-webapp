@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,10 +47,6 @@
 <link rel="stylesheet" href="resources/style/cd-hero.css">
 <!-- Style Swicther -->
 <link id="style-switch" href="${stylePreset }" media="screen" rel="stylesheet" type="text/css">
-
-<link id="style-switch" href="resources/style/main.css" media="screen" rel="stylesheet" type="text/css">
-
-<link id="style-switch" href="resources/file-uploader/css/jquery.fileupload.css" media="screen" rel="stylesheet" type="text/css">
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
 <!--[if lt IE 9]>
@@ -130,17 +127,12 @@
 		<!--/ Header end -->
 
 		<div id="banner-area">
-			<img src="resources/images/banner/banner2.jpg" alt="" />
+			<img src="resources/images/banner/banner1.jpg" alt="" />
 			<div class="parallax-overlay"></div>
 			<!-- Subpage title start -->
 			<div class="banner-title-content">
 				<div class="text-center">
-					<h2>Income Tax Request Successsfull</h2>
-					<ul class="breadcrumb">
-						<li>Home</li>
-						<li>Pages</li>
-						<li><a href="index.htm"> Success</a></li>
-					</ul>
+					<h2>Refund Policy</h2>
 				</div>
 			</div>
 			<!-- Subpage title end -->
@@ -152,40 +144,62 @@
 		<section id="main-container" style="padding-bottom: 0px;">
 			<div class="container">
 
-				<div class="error-page text-center">
-					<div class="error-code">
-						<strong>SUCCESS</strong>
-					</div>
-					<div class="error-message">
-						<h3>Income Tax Request Successful</h3>
-					</div>
-					<form:form id="uploadIncomeTaxDataOtherForm" method="post" commandName="incomeTaxModel" action="uploadIncomeTaxDataOther.htm"
-						enctype="multipart/form-data">
-						<div class="row">
-							<div class="col-md-12 text-center">
-								<!-- CSRF Token -->
-								<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-								<form:hidden path="otherDocuments" id="otherDocuments" value="true" />
-								<div class="fileupload fileupload-new" data-provides="fileinput">
-									<span class="btn btn-white btn-file removeButton fileinput-button"> <span class="fileupload-new">Select Other Document </span> <form:input
-											id="uploadIncomeTaxDataOther" path="files" type="file" class="default"></form:input>
-									</span> <span id="fileNameUploaded"></span> <br>
-								</div>
-								<button disabled id="uploadButtonOther" class="btn btn-primary solid blank ">Upload Other Documents</button>
-								<br>
-							</div>
-						</div>
-					</form:form>
-					<div class="error-body">
-						Try using the button below to go to main page of the site <br /> <a href="index.htm" class="btn btn-primary solid blank"><i
-							class="fa fa-arrow-circle-left">&nbsp;</i> Go to Home</a>
+				<!-- Company Profile -->
+				<div class="row">
+					<div class="col-md-12 heading">
+						<span class="title-icon classic pull-left"><i class="fa fa-suitcase"></i></span>
+						<h2 class="title classic">Refund Policy</h2>
 					</div>
 				</div>
+				<!-- Title row end -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="testimonial-content">
+							<p>Quick Accounting And Consulting Private limited is committed to a high level of client service. This includes clearly communicating the
+								costs associated with the service and the process we use to facilitate payment of fees. Below, please find our process for refund of money for
+								incomplete services.</p>
+							<p>When a payment of fees is made to Quick Accounting and Consulting Private Limited, the fees paid in advance are not treated as Advance
+								Income. Rather, they are retained by Quick Accounting And Consulting Private Limited in a Client Account. While in the client account they
+								remain the client's money. Quick Accounting And Consulting Private Limited will earn the fees upon working on a client's matter.</p>
+							<p>These fees accrue at different rates and times depending on the performance of service (e.g. obtaining DSC, obtaining DIN, Incorporation
+								Filing, Trademark Filing etc.,). If the client's order is completed and there are outstanding fees and costs and no monies in the client's
+								account, the client may receive a final invoice from Quick Accounting And Consulting Private Limited of these final fees and costs.</p>
+							<p>Alternatively, if the client's matter is completed and all outstanding fees and costs are paid,and monies still remain in the client's
+								account, those monies are considered unearned fees.</p>
+							<p>In the event of case completion, Quick Accounting And Consulting Private Limited will promptly returns all the remaining unearned fees
+								to the client. In case, after completion of the services, there is balance fee to be paid by the client, Quick Accounting & Consulting Private
+								limited will raise an invoice and the balance payment will be due immediately.</p>
+							<p>Refunds are separate from the normal, above process of paying, retaining, earning, and returning service fees. Rather, refunds are
+								typically the result of an incomplete service, accounting error, or other issues relating to the service.</p>
+							<p>No refund is been processed if the service is been provided from Quick Accounting And Consulting private limited and there is a
+								rejection comes from the Registrar of Companies side in these following cases:
+							<ol>
+								<li>Name not Approved given by Client</li>
+								<li>Documents is not correct</li>
+							</ol>
+							</p>
+							<p>Quick Accounting And Consulting Private limited processes all written requests for refunds. Quick Accounting And Consulting Private
+								Limited will review the entire contents of the client's physical, electronic, and billing file when processing the request. Within five (5)
+								days, our company will send a written response denying the request, requesting more information, or granting the request. The decision as to
+								the response remains completely within the discretion of Quick Accounting And Consulting Private Limited.</p>
+							<p>In case of any cancellation by the user within 1 hour of the payment, all the money paid by the customer would be initiated for refund
+								without any question asked. But if the customer would take more than 1 hour to initate the cancellation request, the customer needs to bear a
+								charge of Rs. 2500 towards cancellation charges.</p>
+							<p>Ultimately, at Quick Accounting And Consulting Private Limited we would like to avoid the need of ever having to consider a refund.
+								However, we are always aiming to be as transparent in our representation as possible. So we encourage our clients to ask their questions or
+								communicate their concerns to our office immediately. We will then try to answer or address immediately. Such a process also permits our
+								Company to continue to grow and improve its services.</p>
+						</div>
+					</div>
+				</div>
+				<div class="gap-40"></div>
 			</div>
 			<!--/ 1st container end -->
 
+
 			<div class="gap-60"></div>
 			<div class="gap-60"></div>
+
 
 			<!-- Footer start -->
 			<section id="copyright" class="copyright angle">
@@ -269,19 +283,11 @@
 			<!-- For Google Map -->
 			<!-- <script type="text/javascript" src="resources/js/gmap3.js"></script> -->
 			<!-- Doc http://www.mkyong.com/google-maps/google-maps-api-hello-world-example/ -->
-
-			<!-- jquery fileUpload -->
-			<script type="text/javascript" language="javascript" src="resources/js/jquery-ui.js"></script>
-			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/jquery.fileupload.js"></script>
-			<script type="text/javascript" language="javascript" src="resources/file-uploader/js/vendor/jquery.ui.widget.js"></script>
-
-
 			<!-- Template custom -->
 			<script type="text/javascript" src="resources/js/custom.js"></script>
 
 			<script type="text/javascript" src="resources/js/main.js"></script>
 	</div>
 	<!-- Body inner end -->
-
 </body>
 </html>

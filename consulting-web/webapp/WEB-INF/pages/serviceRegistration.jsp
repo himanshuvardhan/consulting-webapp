@@ -207,22 +207,32 @@
 															<div class="tab-pane active animated fadeInRight" id="tab_a">
 																<ul style="margin-left: -100px;">
 																	<li><p>Online process. Save 25% cost.</p></li>
-																	<li><p>Basic Registration: <i class="fa fa-rupee"></i> 4,099 only(All Inclusive)</p></li>
-																	<li><p>State Registration: <i class="fa fa-rupee"></i> 12,499 only(All Inclusive)</p></li>
-																	<li><p>Central Registration: <i class="fa fa-rupee"></i> 21,499 only(All Inclusive)</p></li>
+																	<li><p>
+																			Basic Registration: <i class="fa fa-rupee"></i> 4,099 only(All Inclusive)
+																		</p></li>
+																	<li><p>
+																			State Registration: <i class="fa fa-rupee"></i> 12,499 only(All Inclusive)
+																		</p></li>
+																	<li><p>
+																			Central Registration: <i class="fa fa-rupee"></i> 21,499 only(All Inclusive)
+																		</p></li>
 																	<li><p>FSSAI application code in 7 days & license in 30-60 days</p></li>
 																</ul>
 															</div>
 															<div class="tab-pane animated fadeInLeft" id="tab_b">
 																<ul style="margin-left: -100px;">
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 3,499only(All Inclusive)</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 3,499only(All Inclusive)
+																		</p></li>
 																</ul>
 															</div>
 															<div class="tab-pane animated fadeIn" id="tab_c">
 																<ul style="margin-left: -100px;">
 																	<li><p>Ideal for trading business</p></li>
 																	<li><p>Online process. Save 40% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 4999 only (+registration fees)</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 4999 only (+registration fees)
+																		</p></li>
 																	<li><p>Trade License Registration in 10-20 days</p></li>
 																</ul>
 															</div>
@@ -230,7 +240,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Ideal for maintaining standard and quality</p></li>
 																	<li><p>Online process. Save 50% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 8,299 onwards</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 8,299 onwards
+																		</p></li>
 																	<li><p>ISO Registration in less than 15 days</p></li>
 																</ul>
 															</div>
@@ -238,7 +250,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Ideal for people engaged in online transactions</p></li>
 																	<li><p>Online process. Save 40% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 9,99 onwards</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 9,99 onwards
+																		</p></li>
 																	<li><p>Digital Signature in less than 2 days</p></li>
 																</ul>
 															</div>
@@ -246,7 +260,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Mandatory for all companies with > 10 employees</p></li>
 																	<li><p>Online process. Save 30% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 4,499 onwards</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 4,499 onwards
+																		</p></li>
 																	<li><p>ESI Registration in 2-8 days</p></li>
 																</ul>
 															</div>
@@ -254,7 +270,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Mandatory for companies with > 20 employees</p></li>
 																	<li><p>Online process. Save 30% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 3,499 onwards</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 3,499 onwards
+																		</p></li>
 																	<li><p>Employees Provident Fund Registration in 4-5 days</p></li>
 																</ul>
 															</div>
@@ -296,7 +314,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Made easy and simple</p></li>
 																	<li><p>Online process. Save 30% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 3,999 Onwards</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 3,999 Onwards
+																		</p></li>
 																	<li><p>Service Tax Registration in 5-15 days</p></li>
 																</ul>
 															</div>
@@ -304,7 +324,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Mandatory for entities engaged in sale of goods</p></li>
 																	<li><p>Online process. Save 40% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 9,999 only(All Inclusive)</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 9,999 only(All Inclusive)
+																		</p></li>
 																	<li><p>Sales Tax Registration in 4-5 days</p></li>
 																</ul>
 															</div>
@@ -312,7 +334,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Easily get PTEC & PTRC registered online</p></li>
 																	<li><p>Online process. Save 30% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 3,999 only(All Inclusive)</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 3,999 only(All Inclusive)
+																		</p></li>
 																	<li><p>Professional Tax Registration in 2-8 days</p></li>
 																</ul>
 															</div>
@@ -320,7 +344,9 @@
 																<ul style="margin-left: -100px;">
 																	<li><p>Easily get PTEC & PTRC registered online</p></li>
 																	<li><p>Online process. Save 30% cost.</p></li>
-																	<li><p>Starting At <i class="fa fa-rupee"></i> 12,999 only(All Inclusive)</p></li>
+																	<li><p>
+																			Starting At <i class="fa fa-rupee"></i> 12,999 only(All Inclusive)
+																		</p></li>
 																	<li><p>Excise Tax Registration Registration in less than 10 days</p></li>
 																</ul>
 															</div>
@@ -411,10 +437,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
@@ -426,6 +454,16 @@
 						<div class="copyright-info">
 							&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
 					</div>
 				</div>
 				<!--/ Row end -->

@@ -160,10 +160,10 @@
 					<div class="col-md-12 heading">
 						<span class="title-icon classic pull-left"><i class="fa fa-university"></i></span>
 						<c:if test="${not empty companyName && companyAlreadyExists}">
-							<h2 class="title classic">${companyName}&nbsp;is Not Available</h2>
+							<h2 class="title classic">${companyName}&nbsp;isNot Available</h2>
 						</c:if>
 						<c:if test="${not empty companyName && !companyAlreadyExists}">
-							<h2 class="title classic">${companyName}&nbsp;is available</h2>
+							<h2 class="title classic">${companyName}&nbsp;isavailable</h2>
 						</c:if>
 						<c:if test="${empty companyName}">
 							<h2 class="title classic">Pricing</h2>
@@ -179,7 +179,7 @@
 								<span class="plan-name">${companyName} <br> Private Limited
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><c:out value="${price['1']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><c:out value="${price['1']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 2 Directors</li>
@@ -206,7 +206,7 @@
 								<span class="plan-name">${companyName}<br> Limited Liability Partnership
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['2']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['2']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DPIN for 2 Partners</li>
@@ -233,7 +233,7 @@
 								<span class="plan-name">${companyName} <br> One Person Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['3']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['3']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 1 Director / Owner</li>
@@ -260,7 +260,7 @@
 								<span class="plan-name">${companyName} <br> Public Limited Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['4']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['4']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 3 Directors</li>
@@ -293,7 +293,7 @@
 								<span class="plan-name">${companyName} <br> Nidhi Limited Company
 								</span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['5']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['5']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 3 Directors</li>
@@ -319,7 +319,7 @@
 							<div class="plan text-center">
 								<span class="plan-name">${companyName} <br> Section 8 Company</small></span>
 								<p class="plan-price">
-									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['6']}"/></strong><sub>.00</sub>
+									<sup class="currency"><i class="fa fa-inr" aria-hidden="true"></i></sup><strong><strong><c:out value="${price['6']}" /></strong><sub>.00</sub>
 								</p>
 								<ul class="list-unstyled">
 									<li>DIN for 2 Directors</li>
@@ -355,10 +355,12 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<ul class="footer-social unstyled">
-							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-twitter"></i></span>
+							<li><a target="_blank" title="Twitter" href="https://twitter.com/QuickAsr"> <span class="icon-pentagon wow bounceIn"><i
+										class="fa fa-twitter"></i></span>
 							</a> <a target="_blank" title="Facebook" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-facebook"></i></span>
 							</a> <a target="_blank" title="Google+" href="#"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-google-plus"></i></span>
-							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
+							</a> <a target="_blank" title="linkedin" href="https://www.linkedin.com/in/quick-acounting-and-consulting-pvt-ltd-515a55133"> <span
+									class="icon-pentagon wow bounceIn"><i class="fa fa-linkedin"></i></span>
 							</a> <a target="" title="Skype" href="skype:Quickasr?userinfo "> <span class="icon-pentagon wow bounceIn"><i class="fa fa-skype"></i></span>
 							</a></li>
 						</ul>
@@ -370,6 +372,16 @@
 						<div class="copyright-info">
 							&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<ul class="footer-social unstyled">
+							<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+							<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+						</ul>
 					</div>
 				</div>
 				<!--/ Row end -->

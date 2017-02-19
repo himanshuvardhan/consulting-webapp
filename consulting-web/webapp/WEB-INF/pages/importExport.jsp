@@ -213,7 +213,9 @@
 										<div class="panel-body">
 											<div class="row">
 												<div class="col-md-12">
-													<p>Starting At <i class="fa fa-rupee"></i> ${IMPORT_EXPORT } only(All Inclusive)</p>
+													<p>
+														Starting At <i class="fa fa-rupee"></i> ${IMPORT_EXPORT } only(All Inclusive)
+													</p>
 												</div>
 												<div class="col-md-12">
 													<div class="form-group">
@@ -284,6 +286,16 @@
 							<div class="copyright-info">
 								&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-social unstyled">
+								<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+							</ul>
 						</div>
 					</div>
 					<!--/ Row end -->

@@ -56,10 +56,10 @@
       <script src="resources/js/html5shiv.js"></script>
       <script src="resources/js/respond.min.js"></script>
     <![endif]-->
-    
+
 <style type="text/css">
 .btn.btn-primary.solid:hover {
-    background-color: none;
+	background-color: none;
 }
 </style>
 
@@ -235,8 +235,8 @@
 				</div>
 				<div class="row">
 					<form action="incomeTaxPayment.htm" method="post">
-						<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" />
-						<input type="hidden" name="incomeTaxRequestIdForPayment" id="incomeTaxRequestIdForPayment" value="${incomeTaxModel.incomeTaxRequestId }" />
+						<input type="hidden" id="Csrf_RQ_PARAM_NAME" name="Csrf_RQ_PARAM_NAME" value="${Csrf_RQ_PARAM_NAME}" /> <input type="hidden"
+							name="incomeTaxRequestIdForPayment" id="incomeTaxRequestIdForPayment" value="${incomeTaxModel.incomeTaxRequestId }" />
 						<div class="col-md-12 text-center">
 							<button class="btn btn-primary solid blank" type="submit">PayNow</button>
 						</div>
@@ -355,6 +355,16 @@
 							<div class="copyright-info">
 								&copy; Copyright 2016 Quick Accounting & Consulting Pvt. Ltd. <span>All Rights Reserved</span>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-social unstyled">
+								<li style="display: inline-block;"><a href="privacyPolicy.htm">Privacy Policy</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="refundPolicy.htm"> Refund Policy</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="termsAndConditions.htm"> Terms and Conditions</a></li>&nbsp;|
+								<li style="display: inline-block;"><a href="happinessFactor.htm"> Happiness Factor</a></li>
+							</ul>
 						</div>
 					</div>
 					<!--/ Row end -->
